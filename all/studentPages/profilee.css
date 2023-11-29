@@ -12,7 +12,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-left: 550px;
+        
     }
     .container{
         display: flex;
@@ -412,3 +412,5 @@
     a {
         text-decoration: none;
     }
+    /* profile container css */
+
