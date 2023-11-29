@@ -52,7 +52,7 @@
 
         while ($row = mysqli_fetch_array($result)) {
             echo "<tr>";
-            echo ""
+            echo "";
             echo "</tr>";
         }
         ?>
