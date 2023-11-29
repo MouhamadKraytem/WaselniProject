@@ -10,13 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Table</title>
-    <link rel="stylesheet" href="./profile.css">
+    <link rel="stylesheet" href="./profilee.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
 
 <body>
- 
-<nav class="navbar">
+        <nav class="navbar">
             <h1 class="logo"> W'aselni</h1>
             <ul class="nav-links">
                 <li class="active"><i href ="#" class ="fa fa-home"></i><a href="#"></a></i>Home</li>
@@ -28,9 +27,9 @@
         <!-- <P class="img"><img src="dada.jpg"></p> -->
         <div class="container">
             <div class="prof">
-                <?php
+                <!-- <h2>Hello Student</h2> -->
+                <!-- <a href="./withprofile/home.php">update</a> -->
                 
-                ?>
             </div>
             <div class="table">
     <main class="table">
@@ -46,9 +45,9 @@
             <table>
                 <thead>
                     <tr>
-                        <th> Id <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Driver <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Location <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> From <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> To <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Schedule <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Status <span class="icon-arrow">&UpArrow;</span></th>
                         <th> .. <span class="icon-arrow">&UpArrow;</span></th>
@@ -59,91 +58,51 @@
                     <!-- Available // Full -->
                     <tr>
                         <?php
-                        include('../../connection.php');
-                        $query = "SELECT * FROM trip WHERE 1";
+                        include('../connection.php');
+                        $query = "SELECT 
+                                    user.id AS userID,
+                                    user.username,
+                                    trip.tripID,
+                                    trip.fromlocationID,
+                                    from_location.locationName AS fromLocationName,
+                                    trip.toLocationID,
+                                    to_location.locationName AS toLocationName,
+                                    time.time As time,  -- Assuming you want to select the time column from the time table
+                                    trip.availableNB
+                                FROM trip
+                                INNER JOIN user ON user.id = trip.DriverID
+                                INNER JOIN location AS from_location ON from_location.locationID = trip.fromlocationID
+                                INNER JOIN location AS to_location ON to_location.locationID = trip.toLocationID
+                                INNER JOIN time ON time.timeID = trip.time";
+                        
                         $res = mysqli_query($conn , $query);
 
                         while ($row = mysqli_fetch_array($res)) {
                             echo "<tr>";
-                            echo "<td>".$row['tripID']."</td>";
-                            echo "<td>".$row['DriverID']."</td>";
-                            echo "<td>".$row['fromlocationID']."</td>";
-                            echo "<td>".$row['toLocationID']."</td>";  
+                            echo "<td>".$row['username']."</td>";
+                            echo "<td>".$row['fromLocationName']."</td>";
+                            echo "<td>".$row['toLocationName']."</td>";  
+                            echo "<td>".$row['time']."</td>";  
                             if ($row['availableNB'] > 0) {
                                 echo "<td><p class='status delivered'>Available</p></td>";
+                                echo " <td><p class='status delivered'> request </p></td>" ;
                             }else{
-                                echo "<td><p class='status cancelled'>Available</p></td>";
+                                echo "<td><p class='status cancelled'>Unavailable</p></td>";
+                                echo " <td><p class='status cancelled'> request </p></td>" ;
                             }
-                            echo " <td><p class='status delivered'> request </p></td>" ;
                             echo "</tr>";
                         }
                         ?>
-                        <td> 52231326 </td>
-                        <td> Doummar alzahabi</td>
-                        <td> Sehet Lnour</td>
-                        <td> MW 8:00 9:30 </td>
-                        <td>
-                            <p class="status delivered">Available</p>
-                        </td>
-                        <td><p class="status delivered"> request </p></td>
-                        <!-- <td> <strong> $128.90 </strong></td> -->
-                    </tr>
-                    <tr>
-                        <td> 52231327 </td>
-                        <td>MD Kraytem </td>
-                        <td> Baddawi </td>
-                        <td> TTh 11:00 2:30 </td>
-                        <td>
-                            <p class="status cancelled">Cancelled</p>
-                        </td>
-                        <td><p class="status cancelled"> request </p></td>
-                        <!-- <td> <strong>$5350.50</strong> </td> -->
-                    </tr>
-                    <tr>
-                        <td> 52231328</td>
-                        <td>  Walid kammoun</td>
-                        <td> Sehet lnour </td>
-                        <td> MW 9:30 10:30 </td>
-                        <td>
-                            <p class="status shipped">Bussy</p>
-                        </td>
-                        <td><p class="status shipped"> request </p></td>
                         
-                        <!-- <td> <strong>$210.40</strong> </td> -->
-                    </tr>
-                    <tr>
-                        <td> 52231329</td>
-                        <td> Rachid othman </td>
-                        <td> Ebbe </td>
-                        <td> TT 11:00 12:15</td>
-                        
-                        <td>
-                            <p class="status delivered">Available</p>
-                        </td>
-                        <td><p class="status delivered">request</p></td>
-                        
-                        <!-- <td> <strong>$149.70</strong> </td> -->
-                    </tr>
-                    <tr>
-                        <td> 52231330</td>
-                        <td>  Abdullah Karhani</td>
-                        <td> Azmi </td>
-                        <td> MW 9:30 11:00 </td>
-                        <td>
-                            <p class="status pending">Pending</p>
-                        </td>
-                        <td><p class="status pending">request</p></td>
-                        <!-- <td> <strong>$399.99</strong> </td> -->
-                    </tr>
-                     
-                    </tr>
                 </tbody>
             </table>
+            
         </section>
     </main>
     </div>
-    </div>
-</body>
+    
+    </body>
+    
 
 </html>
 
