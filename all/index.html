@@ -1,0 +1,118 @@
+<!DOCTYPE htmL>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>HOME || DMZ</title>
+        <link rel="stylesheet" href="./home.css">
+        <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    </head>
+
+    <body>
+        <!--navbarrrrrrrrrrrrrrrrrrr-->
+        <nav class="navbar">
+            <h1 class="logo">W'aselni</h1>
+            <ul class="nav-links">
+                <li class="active"><i href ="#" class ="fa fa-home"></i><a href="#"> Home</a></i></li>
+                <li><i class="fa-solid fa-taxi"></i><a href="#"> Services</a></li>
+                <li><i href ="#" class ="fa fa-times-circle"></i><a href="#"> ABOUT</a></i></li>
+                <li class=""><i href ="#" class ="fa fa-id-card"><a href="#"> Contact-US</a></i></li>
+                
+            </ul>
+            <img src="./img/menu-btn.png" alt="" class="menu-btn">
+        </nav>
+        <header>
+            <div class="header-content">
+                <h2>Facilitating their transportation process</h2>
+                <div class="line"></div>
+                <h1>Tap into more</h1>
+                <a href="./AboutWebsite.html" class="ctn">Learn More</a>
+            </div>
+        </header>
+        <!--eventsssss-->
+
+        <section class="events">
+            <div class="title">
+                <h1>The driver</h1>
+                <div class="line"></div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <img src="./img/download.png" alt="" >
+                    <h4>Navigate at W'aselni </h4>
+                    <p>Use our premium rides for everyday trips and commutes.
+                         Well get you where you need to go so vou don't have to</p>
+                    <a href="#" class="ctn">Learn More</a>
+                </div>
+                <div class="col">
+                    <img src="./img/images.png" alt="" >
+                    <h4>Instructions </h4>
+                    <p>Are you traveling in a big group . 
+                        Take our premium max rides we can take up to 5 people to their next 
+                        destination</p>
+                    <a href="#" class="ctn">Learn More</a>
+                </div>
+            </div>
+        </section>
+        <!--section22222222222-->
+
+        <section class="explore">
+            <div class="explore-content">
+            <h1>EXPLORE THE W'ASELNI</h1>
+            <div class="line"></div>
+            <p>W'aselni is a company that specializes in providing transportation 
+                services for students to and from university campuses, 
+                aiming to facilitate the transportation needs of students.
+                 This company was founded based on a deep understanding of the challenges students
+                  face in their daily commute and aims to streamline this process and provide necessary
+                 conveniences to ensure students can easily and comfortably reach their universities.</p>
+                 <a href="#" class="ctn">Learn More</a>
+                 </div>
+        </section>
+<!--toursss-->
+
+<section class="tours">
+    <div class="row">
+        <div class="col content-col">
+            <h1>Your safety is our priority</h1>
+            <div class="line"></div>
+            <p>
+                With geolocated rides,verified drivers and a safety button available to take care of you during your ride.</p>
+                <a href="./about/services.html" class="ctn">Learn More</a>
+        </div>
+        <div class="col content-col">
+            <h1>The highest quality standards</h1>
+            <div class="line"></div>
+            <p>Professional drivers,modern vehicles and control ability</p>
+                <a href="#" class="ctn">Learn More</a>
+        </div>
+        
+        <div class="col image-col">
+            <div class="image-gallery">
+                <!-- <img src="./img/doumar1.jpg" alt=""> -->
+                <img src="./img/doumar2.jpg" alt="">
+                <img src="./img/doumar3.jpg" alt="">
+                <!-- <img src="./img/doummar4.jpeg" alt=""> -->
+            </div>
+        </div>
+    </div>
+    <a href="./signup/index.php" class="ctn" id="but">Let's get started</a>
+
+</section>
+<!-- <a href="../signup/index.php" >letstart</a> -->
+<!--footer-->
+<section class="footer">
+    <p>Email:alzahabidoummar@gmail.com | phone:0096171612665</p>
+   <p>Copyright @ 2023 || <b>october</b></p>
+</section>
+
+        <script>
+            const menuBtn= document.querySelector('.menu-btn')
+            const navlinks=document.querySelector('.nav-links')
+
+            menuBtn.addEventListener('click',()=>{
+                navlinks.classList.toggle('mobile-menu')
+            })
+        </script>
+    </body>
+</html>
