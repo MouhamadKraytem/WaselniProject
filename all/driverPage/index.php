@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DRIVER P |</title>
 </head>
 <body>
-    <h1>Profile Page</h1>
+    <h1 class="profile">Profile Page</h1>
     <p>show trip</p>
     <?php
     session_start();
@@ -24,8 +24,8 @@
             echo $row['gender']."<br>"  ;
 		}
     ?>
-    <h1>Available trip</h1>
-    <table>
+    <h1 class="Available">Available trip</h1>
+    <table border="1px">
         <tr>
             <th>driver name</th>
             <th>from</th>

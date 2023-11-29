@@ -1,5 +1,5 @@
 body {
-	background-color: rgb(75, 72, 82);
+	background-color: #0c356A;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -45,9 +45,9 @@ label {
 
 button {
 	float: right;
-	background: #555;
+	background: #f3cd34;
 	padding: 5px 15px;
-	color: #fff;
+	color: black;
 	border-radius: 5px;
 	margin-right: 10px;
 	border: 1PX solid #555;
@@ -70,7 +70,7 @@ h1 {
 
 a {
 	float: right;
-	background: #555;
+	background: #0c356A;
 	padding: 2px 5px;
 	color: #fff;
 	border-radius: 5px;
@@ -108,7 +108,7 @@ h3 {
 }
 
 a {
-	color: #333333;
+	color: #f3cd34;
 	font-size: 14px;
 	text-decoration: none;
 	margin: 15px 0px;
