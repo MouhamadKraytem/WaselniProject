@@ -59,8 +59,13 @@
                     <!-- Available // Full -->
                     <tr>
                         <?php
-                        include('../../connection.php');
-                        $query = "SELECT * FROM trip WHERE 1";
+                        include('../connection.php');
+                        // $query = "SELECT user.id, user.username, trip.tripID ,trip.fromlocationID , trip.toLocationID , trip.time ,trip.availableNB , location.locationName
+                        // FROM trip
+                        // INNER JOIN user ON user.id = trip.DriverID
+                        // INNER JOIN location ON location.locationID = trip.fromlocationID
+                        // INNER JOIN location ON location.locationID = trip.toLocationID";
+                        $query = "SELECT * FROM trip";
                         $res = mysqli_query($conn , $query);
 
                         while ($row = mysqli_fetch_array($res)) {

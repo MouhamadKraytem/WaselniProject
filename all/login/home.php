@@ -16,7 +16,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
      if ($_SESSION['role'] == "driver") {
           header("location:../driverPage/index.php");
      }else {
-          header("location:../studentPages/profile/profileStudent.php");
+          header("location:../studentPages/profileStudent.php");
      }
      ?>
      <a href="logout.php">Logout</a>
