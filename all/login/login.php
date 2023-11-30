@@ -1,9 +1,10 @@
 <?php 
+
 session_start(); 
-include "../connection.php";
+include('../connection.php');
 
-if (isset($_POST['uname']) && isset($_POST['password'])) {
-
+if (isset($_POST['sb'])) {
+	// echo"sub";
 	function validate($data){
 		$data = trim($data);
 		$data = stripslashes($data);
@@ -25,9 +26,9 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 
 		$result = mysqli_query($conn, $sql);
 
-		if (mysqli_num_rows($result) === 1) {
-			$row = mysqli_fetch_assoc($result);
-            if ($row['username'] === $uname && $row['password'] === $pass) {
+		
+			$row = mysqli_fetch_array($result);
+            if ($row['username'] == $uname && $row['password'] == $pass) {
 
 				$_SESSION['username'] = $row['username'];
 				$_SESSION['role'] = $row['role'];
@@ -39,7 +40,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 				header("Location: index.php?error=Incorect User name or password");
 				exit();
 			}
-		}
+		
 	}
 	
 }else{

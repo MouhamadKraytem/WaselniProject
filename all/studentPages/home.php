@@ -1,12 +1,12 @@
 <?php
 
-// include 'config.php';
-// session_start();
-// $user_id = $_SESSION['user_id'];
+include '../connection.php';
+session_start();
+$user_id = $_SESSION['id'];
 
-// if(!isset($user_id)){
-//    header('location:login.php');
-// };
+if(!isset($user_id)){
+   header('location:login.php');
+};
 
 // if(isset($_GET['logout'])){
 //    unset($user_id);
@@ -31,10 +31,9 @@
 
       <div class="profile">
          <?php
-            // $select = mysqli_query($conn, "SELECT * FROM `user` WHERE id = '$user_id'") or die('query failed');
-            // if(mysqli_num_rows($select) > 0){
-            //    $fetch = mysqli_fetch_assoc($select);
-            // }
+            $query =  "SELECT * FROM `user` WHERE id = '$user_id'";
+            $res = mysqli_query($conn,$query);
+            $userData = mysqli_fetch_array($res);
             // if($fetch['image'] == ''){
             //    echo '<img src="images/default-avatar.png">';
             // }else{
@@ -43,7 +42,7 @@
             ?>
             <img src="./withprofile/images/default-avatar.png" alt="">
 
-         <h3> Student <?php //echo $fetch['name']; ?></h3>
+         <h3> Welcome back , <?php echo $userData['name']; ?></h3>
          <a href="./withprofile/profile.php" class="btn">update profile</a>
          <a href="home.php?logout=<?php //echo $user_id; ?>" class="delete-btn">logout</a>
          <!-- <p>new <a href="login.php">login</a> or <a href="register.php">register</a></p> -->

@@ -27,9 +27,9 @@
 		<label>Password</label>
 		<input type="password" name="password" placeholder="Password"><br>
 
-		<button type="submit">Login</button>
-		<p>You don't have an account ?<a href="../signup/index.php" class=sign>Sign In</a></p>
+		<button type="submit" name =sb>Login</button>
 	</form>
+	
 		</div>
 </body>
 </html>
