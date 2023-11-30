@@ -30,7 +30,10 @@
 *::-webkit-scrollbar-thumb{
    background-color: var(--blue);
 }
-
+body{
+   margin: 0;
+   padding:0;
+}
 .btn,
 .delete-btn{
    width: 100%;
@@ -125,8 +128,9 @@
    background-color: var(--light-bg);
    display: flex;
    align-items: center;
-   justify-content: center;
+   justify-content: space-evenly;
    padding:20px;
+   
 }
 
 .container .profile{

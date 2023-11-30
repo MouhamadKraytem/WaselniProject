@@ -17,20 +17,17 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>home</title>
+   
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="./withprofile/css/style.css">
 
 </head>
-<body>
+
    
-   <div class="container">
+   
 
       <div class="profile">
          <?php
@@ -44,14 +41,13 @@
             //    echo '<img src="uploaded_img/'.$fetch['image'].'">';
             // }
             ?>
-            <img src="./images/default-avatar.png" alt="">
-         <h3><?php //echo $fetch['name']; ?></h3>
-         <a href="update_profile.php" class="btn">update profile</a>
+            <img src="./withprofile/images/default-avatar.png" alt="">
+
+         <h3> Student <?php //echo $fetch['name']; ?></h3>
+         <a href="./withprofile/profile.php" class="btn">update profile</a>
          <a href="home.php?logout=<?php //echo $user_id; ?>" class="delete-btn">logout</a>
-         <p>new <a href="login.php">login</a> or <a href="register.php">register</a></p>
+         <!-- <p>new <a href="login.php">login</a> or <a href="register.php">register</a></p> -->
       </div>
 
-   </div>
 
-</body>
-</html>
+

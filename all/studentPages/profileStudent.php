@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Table</title>
-    <link rel="stylesheet" href="./profile.css">
+    <link rel="stylesheet" href="./profil.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
 
@@ -26,11 +26,9 @@
         </nav>
         <!-- <P class="img"><img src="dada.jpg"></p> -->
         <div class="container">
-            <div class="prof">
-                <!-- <h2>Hello Student</h2> -->
-                <!-- <a href="./withprofile/home.php">update</a> -->
-                
-            </div>
+              <?php
+                include("./home.php");
+            ?>
             <div class="table">
     <main class="table">
         <section class="table__header">
@@ -95,12 +93,14 @@
                         ?>
                         
                 </tbody>
-            </table>
+        </table>
             
         </section>
     </main>
-    </div>
-    
+    </div>  
+
+
+</div>
     </body>
     
 

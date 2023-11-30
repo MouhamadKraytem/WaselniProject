@@ -9,27 +9,20 @@
     body {
         min-height: 100vh;
         background: url(images/html_table.jpg) center / cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        
         
     }
     .container{
-        display: flex;
-        justify-content: space-evenly;
-        margin-left: -40%;
+        
+        
         
     }
-    .prof{
-        position: absolute;
-        left: 0;
-        
-    }
+    
     main.table {
         width: 55vw;
         height: 70vh;
         background-color: #fff5;
-
+        margin: 30px ;
         backdrop-filter: blur(7px);
         box-shadow: 0 .4rem .8rem #0005;
         border-radius: .8rem;
@@ -229,7 +222,7 @@
     }
 
     thead th:hover {
-        color: #6c00bd;
+        color: #0023bd;
     }
 
     thead th.active span.icon-arrow {
@@ -413,4 +406,8 @@
         text-decoration: none;
     }
     /* profile container css */
+    .prof{
+    position: absolute;
+    right: 0;
+    }
 
