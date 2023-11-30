@@ -68,7 +68,7 @@ h1 {
 	color: #fff;
 }
 
-a {
+.social {
 	float: right;
 	background: #0c356A;
 	padding: 2px 5px;
@@ -155,4 +155,7 @@ form {
 	background-color: #243B55;
 	color: white;
 	
+}
+p .sign{
+	color:blue;
 }

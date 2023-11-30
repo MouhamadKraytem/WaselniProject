@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Table</title>
-    <link rel="stylesheet" href="./profilee.css">
+    <link rel="stylesheet" href="./profile.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
 
@@ -60,15 +60,15 @@
                         <?php
                         include('../connection.php');
                         $query = "SELECT 
-                                    user.id AS userID,
-                                    user.username,
-                                    trip.tripID,
-                                    trip.fromlocationID,
-                                    from_location.locationName AS fromLocationName,
-                                    trip.toLocationID,
-                                    to_location.locationName AS toLocationName,
-                                    time.time As time,  -- Assuming you want to select the time column from the time table
-                                    trip.availableNB
+                                user.id AS userID,
+                                user.username,
+                                trip.tripID,
+                                trip.fromlocationID,
+                                from_location.locationName AS fromLocationName,
+                                trip.toLocationID,
+                                to_location.locationName AS toLocationName,
+                                time.time As time,  
+                                trip.availableNB
                                 FROM trip
                                 INNER JOIN user ON user.id = trip.DriverID
                                 INNER JOIN location AS from_location ON from_location.locationID = trip.fromlocationID
