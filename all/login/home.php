@@ -14,7 +14,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
      <h1>Hello, <?php echo $_SESSION['username']; ?></h1>
      <?php
      if ($_SESSION['role'] == "driver") {
-          header("location:../driverPage/index.php");
+          header("location:../driverPages/profileDriver.php");
      }else {
           header("location:../studentPages/profileStudent.php");
      }
