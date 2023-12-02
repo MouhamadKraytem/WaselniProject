@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2023 at 09:57 PM
+-- Generation Time: Dec 02, 2023 at 12:59 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,22 +24,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `day`
+-- Table structure for table `days`
 --
 
-CREATE TABLE `day` (
-  `day` varchar(20) NOT NULL
+CREATE TABLE `days` (
+  `dayID` int(11) NOT NULL,
+  `day` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `day`
+-- Dumping data for table `days`
 --
 
-INSERT INTO `day` (`day`) VALUES
-('Monday'),
-('Thursday'),
-('Tuesday'),
-('Wednesday');
+INSERT INTO `days` (`dayID`, `day`) VALUES
+(1, 'Monday'),
+(2, 'Tuesday'),
+(3, 'Wednesday'),
+(4, 'Thursday');
 
 -- --------------------------------------------------------
 
@@ -83,14 +84,34 @@ INSERT INTO `location` (`locationID`, `locationName`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `request`
+--
+
+CREATE TABLE `request` (
+  `requestID` int(11) NOT NULL,
+  `tripID` int(11) NOT NULL,
+  `studentID` int(11) NOT NULL,
+  `answer` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reservetrip`
 --
 
 CREATE TABLE `reservetrip` (
   `reservationID` int(11) NOT NULL,
   `tripID` int(11) NOT NULL,
-  `studentID` int(11) NOT NULL
+  `studentID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reservetrip`
+--
+
+INSERT INTO `reservetrip` (`reservationID`, `tripID`, `studentID`) VALUES
+(2, 5, NULL);
 
 -- --------------------------------------------------------
 
@@ -144,6 +165,7 @@ CREATE TABLE `trip` (
   `fromlocationID` int(11) NOT NULL,
   `toLocationID` int(11) NOT NULL,
   `time` int(11) NOT NULL,
+  `dayID` int(11) NOT NULL,
   `availableNB` int(11) NOT NULL,
   `DriverID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -152,9 +174,8 @@ CREATE TABLE `trip` (
 -- Dumping data for table `trip`
 --
 
-INSERT INTO `trip` (`tripID`, `fromlocationID`, `toLocationID`, `time`, `availableNB`, `DriverID`) VALUES
-(3, 4, 1, 9, 2, 46),
-(4, 1, 2, 6, 0, 31);
+INSERT INTO `trip` (`tripID`, `fromlocationID`, `toLocationID`, `time`, `dayID`, `availableNB`, `DriverID`) VALUES
+(5, 2, 1, 7, 4, 3, 49);
 
 -- --------------------------------------------------------
 
@@ -178,19 +199,19 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `username`, `gender`, `password`, `role`, `email`) VALUES
 (31, 'mouhamad', 'male', 'Mouhamad123$', 'driver', 'moohamadkraytem15@gmail.com'),
 (34, 'Bahaa', 'male', 'Yuri7179#', 'student', 'mouaha@gmail.com'),
-(46, 'Ammar', 'male', 'Ammar123#', 'student', 'ammar123@gmail.com'),
-(47, '', 'female', '', 'student', ''),
-(48, 'omar', 'male', '1231', 'driver', 'khtmeto@gmail.com');
+(46, 'Ammar', 'male', 'Mouhamad123#', 'student', 'mouhaamd12@gmail.com'),
+(48, 'omar', 'male', '1231', 'driver', 'khtmeto@gmail.com'),
+(49, 'Doummar', 'female', 'Doummar123#', 'driver', 'doummar123@gmail.com');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `day`
+-- Indexes for table `days`
 --
-ALTER TABLE `day`
-  ADD PRIMARY KEY (`day`);
+ALTER TABLE `days`
+  ADD PRIMARY KEY (`dayID`);
 
 --
 -- Indexes for table `gender`
@@ -203,6 +224,14 @@ ALTER TABLE `gender`
 --
 ALTER TABLE `location`
   ADD PRIMARY KEY (`locationID`);
+
+--
+-- Indexes for table `request`
+--
+ALTER TABLE `request`
+  ADD PRIMARY KEY (`requestID`),
+  ADD KEY `studentID` (`studentID`),
+  ADD KEY `tripID` (`tripID`);
 
 --
 -- Indexes for table `reservetrip`
@@ -232,7 +261,8 @@ ALTER TABLE `trip`
   ADD KEY `fromlocationID` (`fromlocationID`),
   ADD KEY `toLocationID` (`toLocationID`),
   ADD KEY `trip_ibfk_3` (`DriverID`),
-  ADD KEY `time` (`time`);
+  ADD KEY `trip_ibfk_4` (`time`),
+  ADD KEY `dayID` (`dayID`);
 
 --
 -- Indexes for table `user`
@@ -247,16 +277,28 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `days`
+--
+ALTER TABLE `days`
+  MODIFY `dayID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `location`
 --
 ALTER TABLE `location`
   MODIFY `locationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `request`
+--
+ALTER TABLE `request`
+  MODIFY `requestID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `reservetrip`
 --
 ALTER TABLE `reservetrip`
-  MODIFY `reservationID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `reservationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `time`
@@ -268,17 +310,24 @@ ALTER TABLE `time`
 -- AUTO_INCREMENT for table `trip`
 --
 ALTER TABLE `trip`
-  MODIFY `tripID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `tripID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `request`
+--
+ALTER TABLE `request`
+  ADD CONSTRAINT `request_ibfk_1` FOREIGN KEY (`studentID`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `request_ibfk_2` FOREIGN KEY (`tripID`) REFERENCES `trip` (`tripID`);
 
 --
 -- Constraints for table `reservetrip`
@@ -294,7 +343,8 @@ ALTER TABLE `trip`
   ADD CONSTRAINT `trip_ibfk_1` FOREIGN KEY (`fromlocationID`) REFERENCES `location` (`locationID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `trip_ibfk_2` FOREIGN KEY (`toLocationID`) REFERENCES `location` (`locationID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `trip_ibfk_3` FOREIGN KEY (`DriverID`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `trip_ibfk_4` FOREIGN KEY (`time`) REFERENCES `time` (`timeId`);
+  ADD CONSTRAINT `trip_ibfk_4` FOREIGN KEY (`time`) REFERENCES `time` (`timeId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `trip_ibfk_5` FOREIGN KEY (`dayID`) REFERENCES `days` (`dayID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `user`

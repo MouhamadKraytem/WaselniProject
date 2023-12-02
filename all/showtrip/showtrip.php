@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   
@@ -49,39 +49,28 @@
                             </thead>
                             <tbody>
                                 <?php 
-                                   include '../connection.php';
+                                include("../connection.php");
 
-                                    if(isset($_GET['search']))
-                                    {
-                                        $filtervalues = $_GET['search'];
-                                        $query = "SELECT * FROM trip WHERE CONCAT('name','from','to','time') LIKE '%$filtervalues%' ";
-                                        $query_run = mysqli_query($conn, $query);
-
-                                        if(mysqli_num_rows($query_run) > 0)
-                                        {
-                                            foreach($query_run as $items)
-                                            {
-                                                ?>
-                                                <tr>
-                                                    <td><?= $items['id']; ?></td>
-                                                    <td><?= $items['name']; ?></td>
-                                                    <td><?= $items['from']; ?></td>
-                                                    <td><?= $items['to']; ?></td>
-                                                    <td><?= $items['time']; ?></td>
-                                                </tr>
-                                                <?php
-                                            }
-                                        }
-                                        else
-                                        {
-                                            ?>
-                                                <tr>
-                                                    <td colspan="4">No Record Found</td>
-                                                </tr>
-                                            <?php
-                                        }
+                                if(isset($_POST['search'])){
+                                
+                                }else{
+                                    include("./getAlltrip.php");
+                                    while ($row = mysqli_fetch_array($getTripResult)) {
+                                        echo "<tr>";
+                                        echo "<td>".$row['driverUsername']."</td>";
+                                        echo "<td>".$row['fromLocationName']."</td>";
+                                        echo "<td>".$row['toLocationName']."</td>";
+                                        echo "<td>".$row['tripDay']."</td>";
+                                        echo "<td>".$row['tripTime']."</td>";
+                                        echo "<td><button>request</button></td>";           
+                                        echo "</tr>";
                                     }
+                                }
+                                
+                                
                                 ?>
+                                
+                                <?php ?>
                             </tbody>
                         </table>
                     </div>
@@ -89,7 +78,7 @@
             </div>
         </div>
         <br>
-        <button type="submit" class="btn btn-primary"><a href="#">Return </button>
+        <a href="../studentPages/profileStudent.php"><button class="btn btn-primary">Return</button></a> 
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
