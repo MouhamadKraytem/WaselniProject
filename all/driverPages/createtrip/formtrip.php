@@ -27,35 +27,46 @@
         <div class="main-user-info">
         <div class="user-input-box">
             <label for="email">From</label>
-            <input type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter the area"/>
+            <!-- <input type="email" id="email" name="email" placeholder="Enter the area"/> -->
+            <select name="from" id="">
+              <option value="liu">liu</option>
+              <option value="liu">koura</option>
+              <option value="liu">baddawi</option>
+            </select>
           </div>
           <div class="user-input-box">
             <label for="phoneNumber">To</label>
-            <input type="text"
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    placeholder="Enter the area"/>
+            <select name="to" id="">
+              <option value="liu">liu</option>
+              <option value="liu">koura</option>
+              <option value="liu">baddawi</option>
+            </select>
           </div>
           <div class="user-input-box">
             <label for="time">Time</label>
-            <input type="time"
-                    id="time"
-                    name="time"
-                    placeholder="Enter the time"/>
+            <select name="from" id="">
+              <option value="liu">8:00:00</option>
+              <option value="liu">8:30:00</option>
+              <option value="liu">9:00:00</option>
+            </select>
           </div>
           <div class="user-input-box">
             <label for="phoneNumber">Days</label>
-            <input type="text"
-                    id="Day"
-                    name="Day"
-                    placeholder="Enter the Day"/>
+            <select name="from" id="">
+              <option value="liu">Monday</option>
+              <option value="liu">Tuesday</option>
+              <option value="liu">Wednesday</option>
+              <option value="liu">Thursday</option>
+            </select>
           </div>
           <div class="user-input-box">
             <label for="Available">Available Place</label>
-            <input type="Available" id="Available" name="Available" placeholder=" "/>
+            <select name="from" id="">
+              <option value="liu">1</option>
+              <option value="liu">2</option>
+              <option value="liu">3</option>
+              <option value="liu">4</option>
+            </select>
           </div>
            
         <!-- <div class="gender-details-box">

@@ -60,7 +60,7 @@ body{
     margin: 5px 0;
 }
 
-.user-input-box input{
+.user-input-box select{
     height: 40px;
     width: 95%;
     border-radius: 7px;
@@ -108,7 +108,7 @@ body{
 }
 
 .form-submit-btn input:hover{
-    background:  #0c356A;
+    background:  #454124;
     color: black;
 }
 
