@@ -26,14 +26,14 @@
       <form action="#">
         <div class="main-user-info">
         <div class="user-input-box">
-            <label for="email">from</label>
+            <label for="email">From</label>
             <input type="email"
                     id="email"
                     name="email"
                     placeholder="Enter the area"/>
           </div>
           <div class="user-input-box">
-            <label for="phoneNumber">to</label>
+            <label for="phoneNumber">To</label>
             <input type="text"
                     id="phoneNumber"
                     name="phoneNumber"
@@ -54,15 +54,11 @@
                     placeholder="Enter the Day"/>
           </div>
           <div class="user-input-box">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter Password"/>
+            <label for="Available">Available Place</label>
+            <input type="Available" id="Available" name="Available" placeholder=" "/>
           </div>
-          <div class="user-input-box">
-            <label for="confirmPassword">Confirm Password</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password"/>
-          </div>
-        </div>
-        <div class="gender-details-box">
+           
+        <!-- <div class="gender-details-box">
           <span class="gender-title">Gender</span>
           <div class="gender-category">
             <input type="radio" name="gender" id="male">
@@ -70,7 +66,7 @@
             <input type="radio" name="gender" id="female">
             <label for="female">Female</label>
              
-          </div>
+          </div> -->
         </div>
         <div class="form-submit-btn">
           <input type="submit" value="Register">
