@@ -40,10 +40,10 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
+                                    <th>Driver Name</th>
                                     <th>From</th>
-                                    <th>TO</th>
+                                    <th>To</th>
+                                    <th>Day</th>
                                     <th>Time</th>
                                 </tr>
                             </thead>
@@ -88,6 +88,7 @@
                 </div>
             </div>
         </div>
+        <br>
         <button type="submit" class="btn btn-primary"><a href="#">Return </button>
     </div>
 

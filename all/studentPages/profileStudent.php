@@ -49,9 +49,10 @@ include('../connection.php');
                         <th> Driver <span class="icon-arrow">&UpArrow;</span></th>
                         <th> From <span class="icon-arrow">&UpArrow;</span></th>
                         <th> To <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Schedule <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Time <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Day <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Status <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> .. <span class="icon-arrow">&UpArrow;</span></th>
+                        <!-- <th> .. <span class="icon-arrow">&UpArrow;</span></th> -->
                         <!-- <th> Amount <span class="icon-arrow">&UpArrow;</span></th> -->
                     </tr>
                 </thead>
@@ -59,6 +60,8 @@ include('../connection.php');
                     <!-- Available // Full -->
                     <tr>
                         <?php
+                        //this code for offering trips to students
+                        /*
                         include('../connection.php');
                         $query = "SELECT 
                                 user.id AS userID,
@@ -93,10 +96,12 @@ include('../connection.php');
                             }
                             echo "</tr>";
                         }
+                        */
                         ?>
                         
-                </tbody>
-        </table>
+                    </tbody>
+                </table>
+                <p><a href="../showtrip/showtrip.php">find trips</a></p>
             
         </section>
     </main>
