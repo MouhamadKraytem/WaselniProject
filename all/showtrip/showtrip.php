@@ -41,7 +41,6 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-        
                                     <th>Name</th>
                                     <th>From</th>
                                     <th>TO</th>
@@ -66,8 +65,6 @@
                                                 <tr>
                                                     <td><?= $items['id']; ?></td>
                                                     <td><?= $items['name']; ?></td>
-                                                     
-                                                   
                                                     <td><?= $items['from']; ?></td>
                                                     <td><?= $items['to']; ?></td>
                                                     <td><?= $items['time']; ?></td>
@@ -91,9 +88,16 @@
                 </div>
             </div>
         </div>
+        <button type="submit" class="btn btn-primary"><a href="#">Return </button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+<style>
+a{
+    color:white;
+    text-decoration:none;
+}
+    </style>
