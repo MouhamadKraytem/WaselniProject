@@ -61,12 +61,15 @@ body{
 }
 
 .user-input-box select{
+
   height: 40px;
   width: 95%;
   border-radius: 7px;
   outline: none;
   border: 1px solid grey;
   padding: 0 10px;
+
+
 }
 
 .gender-title{
@@ -108,8 +111,11 @@ body{
 }
 
 .form-submit-btn input:hover{
-  background:  #454124;
+
+  background:  white;
   color: black;
+    
+
 }
 
 @media(max-width: 600px){
