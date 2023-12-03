@@ -181,8 +181,14 @@ ul{
   background-color: #f3cd34;
 }
 .nav-links li a{
+
   text-decoration: none;
   border:#0c356A;
   color: azure;
-   
+
+
+}
+form .err{
+    color: aqua;
+
 }

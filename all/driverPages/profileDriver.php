@@ -1,7 +1,5 @@
 <?php 
 include('../connection.php');
-
-
 ?>
 
 
@@ -13,7 +11,7 @@ include('../connection.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Table</title>
-    <link rel="stylesheet" href="./profil.css">
+    <link rel="stylesheet" href="./profils.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
@@ -37,10 +35,10 @@ include('../connection.php');
     <main class="table">
         <section class="table__header">
             <h1>Your Trips</h1>
-            <div class="input-group">
+            <a href="./createtrip/formtrip.php" class='newtrip'>create a trip</a>
+            <!-- <div class="input-group">
                 <input type="search" placeholder="Search Data...">
-            </div>
-            
+            </div> -->
         </section>
 
         <section class="table__body">
@@ -86,12 +84,13 @@ include('../connection.php');
                             echo "<td>".$row['toLocationName']."</td>";  
                             echo "<td>".$row['time']."</td>";  
                             echo "<td>".$row['availableNB'] ."</td>";
-                            echo "<td><i class='fa fa-users' aria-hidden='true'></i></td>";
-                            echo "<td><i class='fa fa-pencil-square-o' aria-hidden='true'></i></td>";
-                            echo "<td><i class='fa fa-trash-o' aria-hidden='true'></i></td>";
+                            echo "<td><a href='#'><i class='fa fa-users' aria-hidden='true'></a></td>";
+                            echo "<td><a href='#'><i class='fa fa-pencil-square-o' aria-hidden='true'></a></td>";
+                            echo "<td><a href='deleteTrip.php?tripID=".$row['tripID']."'><i class='fa fa-trash-o' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                         }
                         ?>
+                        
                         
                 </tbody>
         </table>

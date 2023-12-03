@@ -410,4 +410,8 @@
     position: absolute;
     right: 0;
     }
+    
+    li i:hover{
+        cursor: pointer;
+    }
 
