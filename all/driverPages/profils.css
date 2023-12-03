@@ -12,11 +12,6 @@
         
         
     }
-    .container{
-        
-        
-        
-    }
     
     main.table {
         width: 55vw;
@@ -127,7 +122,7 @@
         top: 0;
         left: 0;
         background-color: #d5d1defe;
-        cursor: pointer;
+        
         text-transform: capitalize;
     }
 
@@ -221,9 +216,7 @@
         border: 1.4px solid #6c00bd;
     }
 
-    thead th:hover {
-        color: #0023bd;
-    }
+
 
     thead th.active span.icon-arrow {
         background-color: #6c00bd;
@@ -265,18 +258,14 @@
     .export__file .export__file-options {
         position: absolute;
         right: 0;
-
         width: 12rem;
         border-radius: .5rem;
         overflow: hidden;
         text-align: center;
-
         opacity: 0;
         transform: scale(.8);
         transform-origin: top right;
-
         box-shadow: 0 .2rem .5rem #0004;
-
         transition: .2s;
     }
 
@@ -318,7 +307,7 @@
      
 
     .navbar {
-        /* background-color: #fff6 !important; */
+        
         position: absolute;
         top: 0;
         left: 0;
@@ -402,12 +391,14 @@
         }
     }
 
-    a {
-        text-decoration: none;
-    }
+a {
+    text-decoration: none;
+}
     /* profile container css */
-    .prof{
+.prof{
     position: absolute;
     right: 0;
-    }
-
+}
+.newTrip{
+    background-color: #232323;
+}
