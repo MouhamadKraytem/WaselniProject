@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
     VALUES (NULL,'$from','$to','$time','$day','$availableNB','$id')";
 
     mysqli_query($conn , $query);
-    session_start();
+    
     $_SESSION['insert'] = "insert sucess";
     header("location:../profileDriver.php");
     session_destroy();

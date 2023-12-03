@@ -29,7 +29,7 @@ if (isset($_POST['sb'])) {
 		
 			$row = mysqli_fetch_array($result);
             if ($row['username'] == $uname && $row['password'] == $pass) {
-
+				session_start();
 				$_SESSION['username'] = $row['username'];
 				$_SESSION['role'] = $row['role'];
 				$_SESSION['id'] = $row['id'];
