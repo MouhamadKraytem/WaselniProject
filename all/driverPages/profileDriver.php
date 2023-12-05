@@ -34,8 +34,9 @@ include('../connection.php');
             <div class="table">
     <main class="table">
         <section class="table__header">
-            <h1>Your Trips</h1>
+            <!-- <h1>Your Trips</h1> -->
             <a href="./createtrip/formtrip.php" class='newtrip'>create a trip</a>
+            <a href="#"  class="trip">Your Trips</a>
             <!-- <div class="input-group">
                 <input type="search" placeholder="Search Data...">
             </div> -->
@@ -95,8 +96,29 @@ include('../connection.php');
                 </tbody>
         </table>
     </section>
+   
 </main>
-<h3>trip request</h3>
+ 
+<!-- <h3>trip request</h3> -->
+<section class="table__body">
+ 
+            <!-- <table>
+            <h3>trip request</h3> -->
+<thead> 
+<a href="./triprequest/triprequest.php "  >Trip Request</a>
+                    <!-- <tr>
+                    
+                        <th> From </th>
+                        <th> To </th>
+                        <th> Schedule </th>
+                        <th> available space </th>
+                        <th> Show Students</th>
+                        <th> Edit</th>
+                        <th> Delete</th>
+                        <th> Amount <span class="icon-arrow">&UpArrow;</span></th> -->
+                    <!-- </tr>
+                </thead>
+                    </table> --> 
     </div>  
 
 
