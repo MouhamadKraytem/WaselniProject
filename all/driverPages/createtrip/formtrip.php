@@ -112,7 +112,16 @@ if (isset($_POST['return'])) {
             </select>
           </div>
           <div class="user-input-box">
-            <label for="day">Select Day</label>
+
+
+            <!-- <label for="Days">Days</label>
+            <select name="from" id="">
+              <option value="liu">Monday</option>
+              <option value="liu">Tuesday</option>
+              <option value="liu">Wednesday</option>
+              <option value="liu">Thursday</option> -->
+
+            <label for="Days">Select Day</label>
             <select name="day" id="">
               <?php
               $query = "SELECT * FROM `days` WHERE 1";
@@ -121,6 +130,7 @@ if (isset($_POST['return'])) {
                 echo "<option value=".$row['dayID'].">".$row['day']."</option>";
               }
               ?>
+
             </select>
           </div>
           <div class="user-input-box">
