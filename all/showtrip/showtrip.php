@@ -1,3 +1,17 @@
+
+<?php
+require("../connection.php");
+$query = "SELECT * FROM reservetrip WHERE 1";
+$res= mysqli_query($conn , $query);
+while ($row = mysqli_fetch_array($res)) {
+    if (isset($_POST[$row['reservationID']])) {
+        unset($_POST);
+        header('../index.html');
+
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,10 +35,10 @@
                         <div class="row">
                             <div class="col-md-7">
 
-                                <form action="" method="GET">
+                                <form action="" method="post">
                                     <div class="input-group mb-3">
-                                        <input type="text" name="search" required value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>" class="form-control" placeholder="Search data">
-                                        <button type="submit" class="btn btn-primary">Search</button>
+                                        <input type="text" name="dname"  class="form-control" placeholder="Search data">
+                                        <button type="submit" class="btn btn-primary" name=search>Search</button>
                                     </div>
                                 </form>
 
@@ -45,27 +59,51 @@
                                     <th>To</th>
                                     <th>Day</th>
                                     <th>Time</th>
+                                    <th>available Place</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                                include("../connection.php");
-
-                                if(isset($_POST['search'])){
                                 
+                                if(isset($_POST['search'])){
+                                require("./fliterTrip.php");
                                 }else{
-                                    include("./getAlltrip.php");
+                                    require("./getAlltrip.php");
+                                }
                                     while ($row = mysqli_fetch_array($getTripResult)) {
                                         echo "<tr>";
-                                        echo "<td>".$row['driverUsername']."</td>";
-                                        echo "<td>".$row['fromLocationName']."</td>";
-                                        echo "<td>".$row['toLocationName']."</td>";
-                                        echo "<td>".$row['tripDay']."</td>";
-                                        echo "<td>".$row['tripTime']."</td>";
-                                        echo "<td><button>request</button></td>";           
+                                        echo "<td>".$row['driverName']."</td>";
+                                        echo "<td>".$row['fromLocation']."</td>";
+                                        echo "<td>".$row['toLocation']."</td>";
+                                        echo "<td>".$row['day']."</td>";
+                                        echo "<td>".$row['time']."</td>";
+                                        echo "<td>".$row['availableNB']."</td>";
+                                        echo "<td><a href='sendRequest.php?tripID=".$row['tripID']."'><button>send request</button></a></td>";
+
+                                        if (isset($_GET['err'])) {
+                                            if ($_GET['err'] == $row['tripID'] ) {
+                                                # code...
+                                                echo "<td>request already sended</td>";
+                                            }else {
+                                                # code...
+                                                echo "<td></td>";
+                                            }
+                                        }
+                                        if (isset($_GET['req'])) {
+                                            if ($_GET['req'] == $row['tripID'] ) {
+                                                # code...
+                                                echo "<td>request sended</td>";
+                                            }else {
+                                                # code...
+                                                echo "<td></td>";
+                                            }
+                                        }
                                         echo "</tr>";
                                     }
-                                }
+                                    unset($_POST);
+                                    
+                                
                                 
                                 
                                 ?>
