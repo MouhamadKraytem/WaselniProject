@@ -2,11 +2,7 @@
 
 include '../connection.php';
 session_start();
-$user_id = $_SESSION['id'];
 
-if(!isset($user_id)){
-   header('location:login.php');
-};
 
 if(isset($_GET['logout'])){
    unset($user_id);
@@ -31,6 +27,8 @@ if(isset($_GET['logout'])){
 
       <div class="profile">
          <?php
+         $user_id =$_SESSION['id'] ;
+
             $query =  "SELECT * FROM `user` WHERE id = '$user_id'";
             $res = mysqli_query($conn,$query);
             $userData = mysqli_fetch_array($res);

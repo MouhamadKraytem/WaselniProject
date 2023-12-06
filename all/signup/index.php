@@ -20,24 +20,24 @@ include('./signup.php');
 
                 <i class="fa fa-user fa-lg"></i>
                 <input type="text" id="user" name="username" placeholder="Enter Username" ><br>
-                <span class="error"><?php echo $errors['username'];?></span>
+                <span class="error"><?php echo isset($errors['username']) ? $errors['username'] : '' ?></span>
                 <br>
                 
 
                 <i class="fa-solid fa-envelope fa-lg"></i>
                 <input type="email" id="email" name="email" placeholder="Enter Email" ><br>
-                <span class="error"><?php echo $errors['email']?></span>
+                <span class="error"><?php echo isset($errors['email']) ? $errors['email'] : '' ?></span>
                 <br>
 
 
                 <i class="fa-solid fa-lock fa-lg"></i>
                 <input type="password" id="pass" name="pass" placeholder="Create Password" ><br>
-                <span class="error"><?php echo $errors['password']?></span>
+                <span class="error"><?php echo isset($errors['password']) ? $errors['password'] : '' ?></span>
                 <br>
 
                 <i class="fa-solid fa-lock fa-lg"></i>
                 <input type="password" id="cpass" name="cpass" placeholder="Retype Password" ><br>
-                <span class="error"><?php echo $errors['cpassword']?></span>
+                <span class="error"><?php echo isset($errors['cpassword']) ? $errors['cpassword']: '' ?></span>
                 <br>
 
                 <label for="gender">Select your gender:</label>

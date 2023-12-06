@@ -2,6 +2,9 @@
 
 <?php
 include('../../connection.php');
+if (isset($_SESSION['id'])) {
+  header('location:../profileDriver.php');
+}
 $error="";
 if (isset($_POST['submit'])) {
   session_start();
@@ -36,7 +39,7 @@ if (isset($_POST['submit'])) {
     mysqli_query($conn , $query);
     
     $_SESSION['insert'] = "insert sucess";
-    header("location:../profileDriver.php");
+    header("location:../home.php");
     session_destroy();
   }
   // endif;

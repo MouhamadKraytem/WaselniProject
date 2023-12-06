@@ -2,10 +2,10 @@
     include('../connection.php');
 
     $errors = array(
-    'username' => "",
+    /* 'username' => "",
     'email' => "",
     'password' => "",
-    'cpassword' => "",
+    'cpassword' => "", */
     );
     $Namepattern = '/^[^0-9]+$/';
         
@@ -74,8 +74,8 @@
         }
         //End data validation
 
-
-        if($count_user == 0 && $count_email==0){  
+// $count_user == 0 && $count_email==0
+        if(count($errors) <= 0){  
             
             if($password == $cpassword || $username!="" || $email !="") {
     
