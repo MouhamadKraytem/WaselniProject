@@ -13,7 +13,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 <body>
      <h1>Hello, <?php echo $_SESSION['username']; ?></h1>
      <?php
-     if ($_SESSION['role'] == "driver") {
+     include('../connection.php');
+     $id = $_SESSION['id'];
+     $query = "SELECT * FROM user WHERE id = $id";
+     $res= mysqli_query($conn , $query);
+
+     $row = mysqli_fetch_array($res);
+
+     if ($row['role'] == "driver") {
           header("location:../driverPages/profileDriver.php");
      }else {
           header("location:../studentPages/profileStudent.php");

@@ -31,7 +31,7 @@ if (isset($_POST['sb'])) {
             if ($row['username'] == $uname && $row['password'] == $pass) {
 				session_start();
 				$_SESSION['username'] = $row['username'];
-				$_SESSION['role'] = $row['role'];
+				
 				$_SESSION['id'] = $row['id'];
 					
 				header("Location:home.php");

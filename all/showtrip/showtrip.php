@@ -93,7 +93,7 @@ while ($row = mysqli_fetch_array($res)) {
                                         if (isset($_GET['req'])) {
                                             if ($_GET['req'] == $row['tripID'] ) {
                                                 # code...
-                                                echo "<td>request sended</td>";
+                                                echo "<td>request sent</td>";
                                             }else {
                                                 # code...
                                                 echo "<td></td>";

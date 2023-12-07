@@ -1,14 +1,9 @@
 <?php
 
-include '../connection.php';
-session_start();
+include('../connection.php')
 
 
-if(isset($_GET['logout'])){
-   unset($user_id);
-   session_destroy();
-   header('location:../login/');
-}
+
 
 ?>
 
@@ -27,6 +22,7 @@ if(isset($_GET['logout'])){
 
       <div class="profile">
          <?php
+         session_start();
          $user_id =$_SESSION['id'] ;
 
             $query =  "SELECT * FROM `user` WHERE id = '$user_id'";
@@ -45,6 +41,16 @@ if(isset($_GET['logout'])){
          <a href="home.php?logout=<?php //echo $user_id; ?>" class="delete-btn">logout</a>
          <!-- <p>new <a href="login.php">login</a> or <a href="register.php">register</a></p> -->
       </div>
+
+      <?php
+      
+if(isset($_GET['logout'])){
+   
+   session_destroy();
+   unset($_GET);
+   header('location:../login/');
+}
+      ?>
 
 
 

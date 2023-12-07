@@ -20,7 +20,7 @@
 
         while ($row = mysqli_fetch_array($result)) {
             if ($row['tripID']== $tripId && $row['studentID'] == $userId) {
-                header('location:./showtrip.php?err='.$tripId.'');
+                header("location:./showtrip.php?err=".$tripId."");
             }
         }
         $newReq = "INSERT INTO `request`( `tripID`, `studentID`)

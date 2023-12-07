@@ -39,8 +39,8 @@ if (isset($_POST['submit'])) {
     mysqli_query($conn , $query);
     
     $_SESSION['insert'] = "insert sucess";
-    header("location:../home.php");
-    session_destroy();
+    header("location:../profileDriver.php");
+    
   }
   // endif;
 }
