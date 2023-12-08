@@ -477,3 +477,52 @@ h3 {
     background-color: #a2313a;
     color: #fff;
 }
+.navbar {
+        
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px;
+    color: whitesmoke;
+    background-color: aliceblue;
+
+
+}
+
+ul {
+    list-style: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+
+}
+.navbar .nav-links li{
+    background-color: #243B55;
+    border-radius: 30px;
+    padding: 5px 30px;
+    border: 1px solid black;
+}
+.navbar .nav-links li:hover {
+    color:  white;
+    border-radius: 30px;
+    border:1px solid white  ;
+}
+.nav-links li {
+    margin: 0 30px;
+    color: white;
+    background-color:#0c356A ;
+
+}
+.nav-links li:hover{
+    background-color: #f3cd34;
+  }
+
+.logo {
+    color: black;
+}

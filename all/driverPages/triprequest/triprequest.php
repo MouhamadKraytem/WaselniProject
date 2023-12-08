@@ -5,11 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="./profile.css">
+    <link rel="stylesheet" href="./profilee.css">
     <title>triprequest</title>
 </head>
 <body>
-    
+<nav class="navbar">
+            <h1 class="logo"> W'aselni</h1>
+            <ul class="nav-links">
+                <li class="active"></i><a href="#"></a></i>Home</li>
+                <li class="active"></i><a href="#"></a>Services</li>
+                <li class="active"></i><a href="#"></a></i>ABOUT</li>
+                <li class="active"><a href="#"></a></i>Contact-US</li>
+            </ul>
+        </nav>
 
  <h3>Trip Request </h3>
  <div class="batikh">
