@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-<<<<<<< HEAD
-    
-=======
     <link rel="stylesheet" href="./profilee.css">
->>>>>>> b1e04f57d12fdd7033d9c45c56f38a7022cb2cb4
     <title>triprequest</title>
 </head>
 <body>

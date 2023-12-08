@@ -14,19 +14,26 @@
         session_start();
         $tripId = $_GET['tripID'];
         $userId = $_SESSION['id'];
-
+        
         $getAllRequest = "SELECT * FROM `request` WHERE 1";
         $result = mysqli_query($conn , $getAllRequest);
-
+        
+        $error = true;
         while ($row = mysqli_fetch_array($result)) {
-            if ($row['tripID']== $tripId && $row['studentID'] == $userId) {
-                header("location:./showtrip.php?err=".$tripId."");
+            if ($row['tripID'] == "$tripId" && $row['studentID'] == "$userId") {
+                $error = false;
             }
         }
-        $newReq = "INSERT INTO `request`( `tripID`, `studentID`)
-        VALUES ('$tripId','$userId')";
-        $res = mysqli_query($conn, $newReq);
-        header('location:./showtrip.php?req='.$tripId.'');
+        if ($error) {
+            # code...
+            $newReq = "INSERT INTO `request`( `tripID`, `studentID`)
+            VALUES ('$tripId','$userId')";
+            $res = mysqli_query($conn, $newReq);
+            header('location:./showtrip.php?req='.$tripId.'');
+        }else {
+            # code...
+            header('location:./showtrip.php?err='.$tripId.'');
+        }
         
     }else {
         header("location:./showtrip.php");

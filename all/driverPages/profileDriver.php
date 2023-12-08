@@ -28,7 +28,7 @@ include('../connection.php');
         </nav>
         <!-- <P class="img"><img src="dada.jpg"></p> -->
         <div class="container">
-              <?php
+            <?php
                 include("./home.php");
             ?>
             <div class="table">
@@ -96,9 +96,9 @@ include('../connection.php');
                 </tbody>
         </table>
     </section>
-   
+
 </main>
- 
+
 <!-- <h3>trip request</h3> -->
 <section class="table__body">
  
