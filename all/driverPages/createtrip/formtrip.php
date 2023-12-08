@@ -54,22 +54,22 @@ if (isset($_POST['return'])) {
     <meta charset="utf-8" />
     <title>Create Trip | NEW</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-    <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="forme.css" />
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
   </head>
   <body>
-        <!--navbar-->
+        
         <nav class="navbar">
             <h1 class="logo">W'aselni</h1>
             <ul class="nav-links">
-                <li class="active"><i href ="#" class ="fa fa-home"></i><a href="#"> Home</a></i></li>
-                <li><i class="fa-solid fa-taxi"></i><a href="#"> Services</a></li>
-                <li><i href ="#" class ="fa fa-times-circle"></i><a href="#"> ABOUT</a></i></li>
+                <li class="active"><i href ="#" class ="fa fa-home"><a href="#"> Home</a></i></li>
+                <li><i class="fa-solid fa-taxi"><a href="#"> Services</a></i></li>
+                <li><i href ="#" class ="fa fa-times-circle"><a href="#"> ABOUT</a></i></li>
                 <li class=""><i href ="#" class ="fa fa-id-card"><a href="#"> Contact-US</a></i></li>
                 
             </ul>
-          
         </nav>
+ 
     <div class="container">
       <h1 class="form-title">Create New Trip</h1>
       <form action="./formtrip.php" method =post >

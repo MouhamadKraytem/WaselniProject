@@ -155,10 +155,12 @@ body{
   width: 100%;
   justify-content: space-between;
   padding: 20px;
-  color: black;
+  /* color: black; */
+  background-color: whitesmoke;
 
 }
 
+ 
 ul{
   list-style: none;
   z-index: 2;
@@ -167,16 +169,20 @@ ul{
   display: flex;
   align-items: center;
    
+   
 
 }
 .nav-links li {
   margin: 0 30px;
   background-color: #0c356A;
   color: azure;
-  border-radius: 15%;
+  border-radius: 0;
+   
+ 
 
 
 }
+ 
 .nav-links li:hover{
   background-color: #f3cd34;
 }
@@ -185,6 +191,7 @@ ul{
   text-decoration: none;
   border:#0c356A;
   color: azure;
+ 
 
 
 }
@@ -192,3 +199,21 @@ form .err{
     color: aqua;
 
 }
+.navbar .nav-links li{
+  background-color: #243B55;
+  border-radius: 30px;
+  padding: 5px 30px;
+  border: 1px solid black;
+}
+.navbar .nav-links li:hover {
+  color:  white;
+  border-radius: 30px;
+  border:1px solid white  ;
+}
+
+
+/* body{
+  height: 100vh;
+  background-color: var(--body-color);
+} */
+
