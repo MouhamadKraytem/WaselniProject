@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="./profile.css">
+    <link rel="stylesheet" href="./profil.css">
     <title>triprequest</title>
 </head>
 <body>
@@ -44,22 +44,23 @@ $query = "SELECT
             l1.locationName AS fromLocation,
             t.toLocationID,
             l2.locationName AS toLocation,
-            t.time,
+            tid.time,
             d.day,
             t.availableNB,
             u.username AS driverName,
             r.studentID,
             u2.username AS studentName,
             r.answer
-          FROM
+        FROM
             request r
-          JOIN trip t ON r.tripID = t.tripID
-          JOIN location l1 ON t.fromlocationID = l1.locationID
-          JOIN location l2 ON t.toLocationID = l2.locationID
-          JOIN days d ON t.dayID = d.dayID
-          JOIN user u ON t.DriverID = u.id
-          JOIN user u2 ON r.studentID = u2.id
-          WHERE u.id = $id";
+        JOIN trip t ON r.tripID = t.tripID
+        JOIN location l1 ON t.fromlocationID = l1.locationID
+        JOIN location l2 ON t.toLocationID = l2.locationID
+        JOIN days d ON t.dayID = d.dayID
+        JOIN user u ON t.DriverID = u.id
+        JOIN user u2 ON r.studentID = u2.id
+        JOIN time tid ON t.time = tid.timeID
+        WHERE u.id = $id";
 
                         $res = mysqli_query($conn, $query);
                             while ($row = mysqli_fetch_array($res)) {
@@ -69,9 +70,8 @@ $query = "SELECT
                                 echo "<td>".$row['toLocation']."</td>";    
                                 echo "<td>".$row['day']." ".$row['time']."</td>";    
                                 echo "<td>".$row['availableNB']."</td>";    
-                                echo "<td><a href='answer.php?ans=true'><button class=acc>accept request</button></a></td>";
-                                echo "<td><a href='answer.php?ans=false'><button class=dec>decline request</button></a></td>";
-
+                                echo "<td><a href='answer.php?ans=true&reqId=".$row['requestID']."&studentID=".$row['studentID']."&tripID=".$row['tripID']."'><button class=acc>accept request</button></a></td>";
+                                echo "<td><a href='answer.php?ans=false&reqId=".$row['requestID']."&studentID=".$row['studentID']."&tripID=".$row['tripID']."'><button class=dec>decline request</button></a></td>";
                                 echo "</tr>";
                             }
                     
@@ -83,5 +83,5 @@ $query = "SELECT
     </div>
 </div>
 </body>
- 
+
 </html>
