@@ -13,7 +13,7 @@ include('../connection.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Table</title>
-    <link rel="stylesheet" href="./profil.css">
+    <link rel="stylesheet" href="./profile.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
 
@@ -21,10 +21,10 @@ include('../connection.php');
         <nav class="navbar">
             <h1 class="logo"> W'aselni</h1>
             <ul class="nav-links">
-                <li class="active"><i href ="#" class ="fa fa-home"></i><a href="#"></a></i>Home</li>
-                <li class="active"><i class="fa-solid fa-taxi"></i><a href="#"></a>Services</li>
-                <li class="active"><i href ="#" class ="fa fa-times-circle"></i><a href="#"></a></i>ABOUT</li>
-                <li class="active"><i href ="#" class ="fa fa-id-card"><a href="#"></a></i>Contact-US</li>
+                <li class="active"><a href="#"></a>Home</li>
+                <li class="active"><a href="#"></a>Services</li>
+                <li class="active"></i><a href="#"></a></i>ABOUT</li>
+                <li class="active"><a href="#"></a></i>Contact-US</li>
             </ul>
         </nav>
         <!-- <P class="img"><img src="dada.jpg"></p> -->

@@ -4,19 +4,21 @@
 
         box-sizing: border-box;
         font-family: sans-serif;
+        
     }
 
     body {
         min-height: 100vh;
         background: url(images/html_table.jpg) center / cover;
-        
-        
-    }
-    .container{
-        
-        
+       
+        background-color: #ebc474;
         
     }
+    /* .container{
+        
+         
+        
+    } */
     
     main.table {
         width: 55vw;
@@ -323,10 +325,11 @@
         top: 0;
         left: 0;
         display: flex;
-        width: 90%;
+        width: 100%;
         justify-content: space-between;
         padding: 20px;
         color: whitesmoke;
+        background-color: aliceblue;
 
 
     }
@@ -341,13 +344,26 @@
 
 
     }
-
+    .navbar .nav-links li{
+        background-color: #243B55;
+        border-radius: 30px;
+        padding: 5px 30px;
+        border: 1px solid black;
+    }
+    .navbar .nav-links li:hover {
+        color:  white;
+        border-radius: 30px;
+        border:1px solid white  ;
+    }
     .nav-links li {
         margin: 0 30px;
-        color: black;
+        color: white;
+        background-color: #0023bd;
 
     }
-
+    .nav-links li:hover{
+        background-color: #ebc474;
+    }
     .logo {
         color: black;
     }
