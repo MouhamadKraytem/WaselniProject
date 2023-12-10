@@ -16,8 +16,8 @@ if (isset($_GET['ans']) && isset($_GET['reqId']) && isset($_GET['studentID']) &&
     if ($ans == "true") {
         $reserve = mysqli_query($conn , $reserveTrip);
         
-        $updateAvailableNb = "UPDATE `trip` SET `availableNB`='availableNB - 1'
-                                WHERE `tripID` = $tripID";
+        $updateAvailableNb = "UPDATE `trip` SET `availableNB`=`availableNB` - 1
+                                WHERE `tripID` = $tripID AND `availableNB` > 0";
         $update = mysqli_query($conn , $updateAvailableNb);
         $delete = mysqli_query($conn , $deleteRequest);
         header('location:./triprequest.php');

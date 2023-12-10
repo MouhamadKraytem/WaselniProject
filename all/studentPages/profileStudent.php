@@ -13,7 +13,7 @@ include('../connection.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Table</title>
-    <link rel="stylesheet" href="./profile.css">
+    <link rel="stylesheet" href="./profil.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
 
@@ -46,12 +46,11 @@ include('../connection.php');
             <table>
                 <thead>
                     <tr>
-                        <th> Driver <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> From <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> To <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Time <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Day <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Status <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Driver </th>
+                        <th> From </th>
+                        <th> To </th>
+                        <th> Schedule </th>
+                        <th> Leave </th>
                         <!-- <th> .. <span class="icon-arrow">&UpArrow;</span></th> -->
                         <!-- <th> Amount <span class="icon-arrow">&UpArrow;</span></th> -->
                     </tr>
@@ -60,43 +59,46 @@ include('../connection.php');
                     <!-- Available // Full -->
                     <tr>
                         <?php
-                        //this code for offering trips to students
-                        /*
+                        $id=$_SESSION['id'];
+                        
                         include('../connection.php');
-                        $query = "SELECT 
-                                user.id AS userID,
-                                user.username,
-                                trip.tripID,
-                                trip.fromlocationID,
-                                from_location.locationName AS fromLocationName,
-                                trip.toLocationID,
-                                to_location.locationName AS toLocationName,
-                                time.time As time,  
-                                trip.availableNB
-                                FROM trip
-                                INNER JOIN user ON user.id = trip.DriverID
-                                INNER JOIN location AS from_location ON from_location.locationID = trip.fromlocationID
-                                INNER JOIN location AS to_location ON to_location.locationID = trip.toLocationID
-                                INNER JOIN time ON time.timeID = trip.time";
+                        $query = "SELECT
+                            r.* ,
+                            t.tripID,
+                            d.day,
+                            tm.time,
+                            l_from.locationName AS fromLocationName,
+                            l_to.locationName AS toLocationName,
+                            driver.username AS driverName
+                        FROM
+                            reservetrip r
+                        JOIN
+                            trip t ON r.tripID = t.tripID
+                        JOIN
+                            days d ON t.dayID = d.dayID
+                        JOIN
+                            time tm ON t.time = tm.timeId
+                        JOIN
+                            location l_from ON t.fromlocationID = l_from.locationID
+                        JOIN
+                            location l_to ON t.toLocationID = l_to.locationID
+                        JOIN
+                            user driver ON t.DriverID = driver.id
+                        WHERE
+                            r.studentID = $id";
                         
                         $res = mysqli_query($conn , $query);
 
                         while ($row = mysqli_fetch_array($res)) {
                             echo "<tr>";
-                            echo "<td>".$row['username']."</td>";
+                            echo "<td>".$row['driverName']."</td>";
                             echo "<td>".$row['fromLocationName']."</td>";
                             echo "<td>".$row['toLocationName']."</td>";  
-                            echo "<td>".$row['time']."</td>";  
-                            if ($row['availableNB'] > 0) {
-                                echo "<td><p class='status delivered'>Available</p></td>";
-                                echo " <td><p class='status delivered'> request </p></td>" ;
-                            }else{
-                                echo "<td><p class='status cancelled'>Unavailable</p></td>";
-                                echo " <td><p class='status cancelled'> request </p></td>" ;
-                            }
+                            echo "<td>".$row['day']." ".$row['time']."</td>";  
+                            echo "<td><a href=canceltrip.php?tripid =".$row['tripID']."><i class='fa fa-trash-o' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                         }
-                        */
+                        
                         ?>
                         
                     </tbody>

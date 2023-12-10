@@ -62,20 +62,22 @@ include('../connection.php');
                         <?php
                         include('../connection.php');
                         $query = "SELECT 
-                                user.id AS userID,
-                                user.username,
-                                trip.tripID,
-                                trip.fromlocationID,
-                                from_location.locationName AS fromLocationName,
-                                trip.toLocationID,
-                                to_location.locationName AS toLocationName,
-                                time.time As time,  
-                                trip.availableNB
-                                FROM trip
-                                INNER JOIN user ON user.id = trip.DriverID
-                                INNER JOIN location AS from_location ON from_location.locationID = trip.fromlocationID
-                                INNER JOIN location AS to_location ON to_location.locationID = trip.toLocationID
-                                INNER JOIN time ON time.timeID = trip.time";
+                            user.id AS userID,
+                            user.username,
+                            trip.tripID,
+                            trip.fromlocationID,
+                            from_location.locationName AS fromLocationName,
+                            trip.toLocationID,
+                            to_location.locationName AS toLocationName,
+                            time.time AS tripTime,
+                            days.day AS tripDay,
+                            trip.availableNB
+                        FROM trip
+                        INNER JOIN user ON user.id = trip.DriverID
+                        INNER JOIN location AS from_location ON from_location.locationID = trip.fromlocationID
+                        INNER JOIN location AS to_location ON to_location.locationID = trip.toLocationID
+                        INNER JOIN time ON time.timeId = trip.time
+                        INNER JOIN days ON days.dayID = trip.dayID";
                         
                         $res = mysqli_query($conn , $query);
 
@@ -83,7 +85,7 @@ include('../connection.php');
                             echo "<tr>";
                             echo "<td>".$row['fromLocationName']."</td>";
                             echo "<td>".$row['toLocationName']."</td>";  
-                            echo "<td>".$row['time']."</td>";  
+                            echo "<td>".$row['tripDay']." ".$row['tripTime']."</td>";  
                             echo "<td>".$row['availableNB'] ."</td>";
                             echo "<td><a href='tripStudents.php?trip=".$row['tripID']."'><i class='fa fa-users' aria-hidden='true'></a></td>";
                             echo "<td><a href='#'><i class='fa fa-pencil-square-o' aria-hidden='true'></a></td>";

@@ -15,6 +15,8 @@
         $tripId = $_GET['tripID'];
         $userId = $_SESSION['id'];
         
+
+        
         $getAllRequest = "SELECT * FROM `request` WHERE 1";
         $result = mysqli_query($conn , $getAllRequest);
         
