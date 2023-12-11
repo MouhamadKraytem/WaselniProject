@@ -53,7 +53,7 @@ include('../connection.php');
                         <th> Show Students</th>
                         <th> Edit</th>
                         <th> Delete</th>
-                        <!-- <th> Amount <span class="icon-arrow">&UpArrow;</span></th> -->
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -98,29 +98,43 @@ include('../connection.php');
                 </tbody>
         </table>
     </section>
-
 </main>
-
-<!-- <h3>trip request</h3> -->
 <section class="table__body">
- 
-            <!-- <table>
-            <h3>trip request</h3> -->
 <thead> 
-<a href="./triprequest/triprequest.php "  >Trip Request</a>
-                    <!-- <tr>
-                    
-                        <th> From </th>
-                        <th> To </th>
-                        <th> Schedule </th>
-                        <th> available space </th>
-                        <th> Show Students</th>
-                        <th> Edit</th>
-                        <th> Delete</th>
-                        <th> Amount <span class="icon-arrow">&UpArrow;</span></th> -->
-                    <!-- </tr>
-                </thead>
-                    </table> --> 
+    <?php
+    //get nb of request 
+    $id = $_SESSION['id'];
+    $query = "SELECT
+            r.requestID,
+            r.tripID,
+            t.fromlocationID,
+            l1.locationName AS fromLocation,
+            t.toLocationID,
+            l2.locationName AS toLocation,
+            tid.time,
+            d.day,
+            t.availableNB,
+            u.username AS driverName,
+            r.studentID,
+            u2.username AS studentName,
+            r.answer
+        FROM
+            request r
+        JOIN trip t ON r.tripID = t.tripID
+        JOIN location l1 ON t.fromlocationID = l1.locationID
+        JOIN location l2 ON t.toLocationID = l2.locationID
+        JOIN days d ON t.dayID = d.dayID
+        JOIN user u ON t.DriverID = u.id
+        JOIN user u2 ON r.studentID = u2.id
+        JOIN time tid ON t.time = tid.timeID
+        WHERE u.id = $id";
+
+        $res = mysqli_query($conn, $query);
+        $nb = mysqli_num_rows($res);
+                        
+    ?>
+<a href="./triprequest/triprequest.php " >Trip Request <?php echo "($nb)"; ?></a>
+
     </div>  
 
 

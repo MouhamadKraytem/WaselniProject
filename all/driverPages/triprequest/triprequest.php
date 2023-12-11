@@ -71,6 +71,8 @@ $query = "SELECT
         WHERE u.id = $id";
 
                         $res = mysqli_query($conn, $query);
+                        $nb = mysqli_num_rows($res);
+                        $_SESSION['nbReq'] = $nb;
                             while ($row = mysqli_fetch_array($res)) {
                                 echo "<tr>";
                                 echo "<td>".$row['studentName']."</td>";    
