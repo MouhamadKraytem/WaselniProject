@@ -23,7 +23,9 @@ WHERE
         SELECT 1
         FROM reservetrip rt
         WHERE rt.tripID = t.tripID AND rt.studentID = $id
-    )";
+    )
+Order By driverName ASC
+";
 
 
 

@@ -39,7 +39,7 @@ while ($row = mysqli_fetch_array($res)) {
 
                                 <form action="" method="post">
                                     <div class="input-group mb-3">
-                                        <input type="text" name="dname"  class="form-control" placeholder="Search data">
+                                        <input type="text" name="dname"  class="form-control" placeholder="Search Driver Name">
                                         <button type="submit" class="btn btn-primary" name=search>Search</button>
                                     </div>
                                 </form>

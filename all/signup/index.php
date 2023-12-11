@@ -36,7 +36,7 @@ include('./signup.php');
                 <br>
 
                 <i class="fa-solid fa-lock fa-lg"></i>
-                <input type="password" id="cpass" name="cpass" placeholder="Retype Password" ><br>
+                <input type="password" id="cpass" name="cpass" placeholder="Retype Password"><br>
                 <span class="error"><?php echo isset($errors['cpassword']) ? $errors['cpassword']: '' ?></span>
                 <br>
 

@@ -159,3 +159,8 @@ form {
 p .sign{
 	color:blue;
 }
+p .link{
+	font-size: larger;
+	color:red;
+	font-weight: bolder;
+}

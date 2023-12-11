@@ -5,7 +5,7 @@
 <html>
 <head>
 	<title>LOGIN</title>
-	<link rel="stylesheet" type="text/css" href="./loginStyles.css">
+	<link rel="stylesheet" type="text/css" href="./loginStyle.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -28,8 +28,8 @@
 		<input type="password" name="password" placeholder="Password"><br>
 
 		<button type="submit" name =sb>Login</button>
+		<p>you don't have an account? <a href="../signup/index.php" class=link>Sign In</a></p>
 	</form>
-	
 		</div>
 </body>
 </html>
