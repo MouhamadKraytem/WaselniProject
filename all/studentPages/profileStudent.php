@@ -95,7 +95,7 @@ include('../connection.php');
                             echo "<td>".$row['fromLocationName']."</td>";
                             echo "<td>".$row['toLocationName']."</td>";  
                             echo "<td>".$row['day']." ".$row['time']."</td>";  
-                            echo "<td><a href=canceltrip.php?tripid =".$row['tripID']."><i class='fa fa-trash-o' aria-hidden='true'></i></a></td>";
+                            echo "<td><a href=canceltrip.php?reservationID=".$row['reservationID']."&tripID=".$row['tripID']."><i class='fa fa-trash-o' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                         }
                         
