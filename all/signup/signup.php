@@ -11,14 +11,6 @@
         
     $Passpattern = '/^(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{9,}$/';
     if (isset($_POST['sb'])) {
-
-        // session_start();
-        // $_SESSION['username']=mysqli_real_escape_string($conn, $_POST['username']);
-        // $_SESSION['email']=mysqli_real_escape_string($conn, $_POST['email']);
-        // $_SESSION['pass']=mysqli_real_escape_string($conn, $_POST['pass']);
-        // $_SESSION['gender']=mysqli_real_escape_string($conn, $_POST['gender']);
-        // $_SESSION['rol']=mysqli_real_escape_string($conn, $_POST['rol']);
-
         
         $username = mysqli_real_escape_string($conn, $_POST['username']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
@@ -40,12 +32,14 @@
         $count_email = mysqli_num_rows($result);  
         #####################################################################################
         
+        setcookie('username' , $username , 86400+time());
         //Verifie data  :
 
 
         //Verifie Name
         if (empty($username)) {
             $errors['username'] = "please enter your first name";
+
         }else if (!preg_match($Namepattern , $username)) {
             $errors['username'] = "name not match";
         }else if($count_user > 0){
@@ -84,7 +78,7 @@
                 //insert query
                 $sql = "INSERT INTO `user` (`id`, `username`, `gender`, `password`, `role`, `email`) 
                 VALUES (NULL, '$username', '$gender', '$password', '$rol', '$email');";
-        
+        zzz
                 $result = mysqli_query($conn, $sql);
         
                 if ($result) {

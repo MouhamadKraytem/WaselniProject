@@ -7,7 +7,7 @@ include('./signup.php');
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>sign</title>
+    <title>Sign In Waselni</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="./singnInStyle.css">
@@ -15,11 +15,11 @@ include('./signup.php');
   <body>
       <div id="form">
             <h1 id="heading">Welcom Back  </h1><br>
-           
+            
             <form name="form" action="./index.php" method=post>
 
                 <i class="fa fa-user fa-lg"></i>
-                <input type="text" id="user" name="username" placeholder="Enter Username" ><br>
+                <input type="text" id="user" name="username" placeholder="Enter Username" value = <?php echo isset($_COOKIE['username']) ? $_COOKIE['username'] : ''; ?> > <br>
                 <span class="error"><?php echo isset($errors['username']) ? $errors['username'] : '' ?></span>
                 <br>
                 
@@ -36,7 +36,7 @@ include('./signup.php');
                 <br>
 
                 <i class="fa-solid fa-lock fa-lg"></i>
-                <input type="password" id="cpass" name="cpass" placeholder="Retype Password"><br>
+                <input type="password" id="cpass" name="cpass" placeholder="Retype Password" ><br>
                 <span class="error"><?php echo isset($errors['cpassword']) ? $errors['cpassword']: '' ?></span>
                 <br>
 

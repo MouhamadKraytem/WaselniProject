@@ -22,7 +22,7 @@
 			<p class="error"><?php echo $_GET['error']; ?></p>
 		<?php } ?>
 		<label>User Name</label>
-		<input type="text" name="uname" placeholder="User Name"><br>
+		<input type="text" name="uname" placeholder="User Name" value=<?php echo isset($errors['name']) ? $errors['email'] : ''?> ><br>
 
 		<label>Password</label>
 		<input type="password" name="password" placeholder="Password"><br>
