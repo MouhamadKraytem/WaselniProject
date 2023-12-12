@@ -20,6 +20,8 @@ while ($row = mysqli_fetch_array($res)) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- small css file -->
+    <link rel="stylesheet" href="./showTripStyle.css">
     <title>Show trip for students :</title>
 </head>
 <body>
@@ -37,7 +39,7 @@ while ($row = mysqli_fetch_array($res)) {
 
                                 <form action="" method="post">
                                     <div class="input-group mb-3">
-                                        <input type="text" name="dname"  class="form-control" placeholder="Search data">
+                                        <input type="text" name="dname"  class="form-control" placeholder="Search Driver Name">
                                         <button type="submit" class="btn btn-primary" name=search>Search</button>
                                     </div>
                                 </form>
@@ -79,24 +81,33 @@ while ($row = mysqli_fetch_array($res)) {
                                         echo "<td>".$row['day']."</td>";
                                         echo "<td>".$row['time']."</td>";
                                         echo "<td>".$row['availableNB']."</td>";
-                                        echo "<td><a href='sendRequest.php?tripID=".$row['tripID']."'><button>send request</button></a></td>";
+                                        echo "<td class = link><a href='sendRequest.php?tripID=".$row['tripID']."'><button class=but>send request</button></a></td>";
 
                                         if (isset($_GET['err'])) {
                                             if ($_GET['err'] == $row['tripID'] ) {
                                                 # code...
-                                                echo "<td>request already sended</td>";
+                                                echo "<td class = dynamic>request already sended</td>";
                                             }else {
                                                 # code...
-                                                echo "<td></td>";
+                                                echo "<td class = dynamic></td>";
                                             }
                                         }
                                         if (isset($_GET['req'])) {
                                             if ($_GET['req'] == $row['tripID'] ) {
                                                 # code...
-                                                echo "<td>request sent</td>";
+                                                echo "<td class = dynamic>request sent</td>";
                                             }else {
                                                 # code...
-                                                echo "<td></td>";
+                                                echo "<td class = dynamic></td>";
+                                            }
+                                        }
+                                        if (isset($_GET['full'])) {
+                                            if ($_GET['full'] == $row['full'] ) {
+                                                # code...
+                                                echo "<td class = dynamic>this trip are full</td>";
+                                            }else {
+                                                # code...
+                                                echo "<td class = dynamic></td>";
                                             }
                                         }
                                         echo "</tr>";

@@ -333,12 +333,16 @@ ul {
     color:  white;
     border-radius: 30px;
     border:1px solid white  ;
+    cursor: pointer;
 }
 .nav-links li {
     margin: 0 30px;
     color: white;
-    background-color:#0c356A ;
+    background-color:#687a92 ;
 
+}
+.nav-links li a{
+    color: white;
 }
 .nav-links li:hover{
     background-color: #f3cd34;

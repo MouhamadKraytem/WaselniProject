@@ -121,7 +121,8 @@
     td {
         border-collapse: collapse;
         padding: 1rem;
-        text-align: left;
+        text-align: center;
+        vertical-align:auto;
     }
 
     thead th {
@@ -349,6 +350,7 @@
         border-radius: 30px;
         padding: 5px 30px;
         border: 1px solid black;
+        cursor: pointer;
     }
     .navbar .nav-links li:hover {
         color:  white;
