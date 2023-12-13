@@ -78,7 +78,7 @@
                 //insert query
                 $sql = "INSERT INTO `user` (`id`, `username`, `gender`, `password`, `role`, `email`) 
                 VALUES (NULL, '$username', '$gender', '$password', '$rol', '$email');";
-        zzz
+    
                 $result = mysqli_query($conn, $sql);
         
                 if ($result) {
