@@ -1,5 +1,6 @@
 <?php 
 include('../connection.php');
+session_start();
 ?>
 
 
@@ -14,6 +15,11 @@ include('../connection.php');
     <link rel="stylesheet" href="./profileee.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <style>
+        .navLINK{
+            color:white;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,7 +29,7 @@ include('../connection.php');
                 <li class="active"></i><a href="#"></a></i>Home</li>
                 <li class="active"></i><a href="#"></a>Services</li>
                 <li class="active"></i><a href="#"></a></i>ABOUT</li>
-                <li class="active"><a href="#"></a></i>Contact-US</li>
+                <li class="active navLINK"><a href="../contactform/contact.php">Contact-US</a></li>
             </ul>
         </nav>
         <!-- <P class="img"><img src="dada.jpg"></p> -->

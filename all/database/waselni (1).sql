@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2023 at 12:59 PM
+-- Generation Time: Dec 13, 2023 at 08:13 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `waselni`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `messageID` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `message` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`messageID`, `userID`, `message`) VALUES
+(1, 49, 'd'),
+(2, 49, 'hello lorem');
 
 -- --------------------------------------------------------
 
@@ -91,8 +111,16 @@ CREATE TABLE `request` (
   `requestID` int(11) NOT NULL,
   `tripID` int(11) NOT NULL,
   `studentID` int(11) NOT NULL,
-  `answer` tinyint(1) DEFAULT NULL
+  `answer` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `request`
+--
+
+INSERT INTO `request` (`requestID`, `tripID`, `studentID`, `answer`) VALUES
+(71, 36, 46, NULL),
+(72, 35, 46, NULL);
 
 -- --------------------------------------------------------
 
@@ -111,7 +139,9 @@ CREATE TABLE `reservetrip` (
 --
 
 INSERT INTO `reservetrip` (`reservationID`, `tripID`, `studentID`) VALUES
-(2, 5, NULL);
+(17, 35, 51),
+(18, 35, 46),
+(19, 38, 46);
 
 -- --------------------------------------------------------
 
@@ -147,7 +177,6 @@ CREATE TABLE `time` (
 --
 
 INSERT INTO `time` (`timeId`, `time`) VALUES
-(6, '11:00:00'),
 (7, '08:00:00'),
 (8, '09:00:00'),
 (9, '09:30:00'),
@@ -175,7 +204,9 @@ CREATE TABLE `trip` (
 --
 
 INSERT INTO `trip` (`tripID`, `fromlocationID`, `toLocationID`, `time`, `dayID`, `availableNB`, `DriverID`) VALUES
-(5, 2, 1, 7, 4, 3, 49);
+(35, 2, 1, 9, 2, 1, 49),
+(36, 3, 1, 10, 3, 3, 49),
+(38, 1, 3, 7, 1, 0, 53);
 
 -- --------------------------------------------------------
 
@@ -189,23 +220,35 @@ CREATE TABLE `user` (
   `gender` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `role` varchar(30) NOT NULL,
-  `email` varchar(30) NOT NULL
+  `email` varchar(30) NOT NULL,
+  `Description` varchar(500) DEFAULT NULL,
+  `locationID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `gender`, `password`, `role`, `email`) VALUES
-(31, 'mouhamad', 'male', 'Mouhamad123$', 'driver', 'moohamadkraytem15@gmail.com'),
-(34, 'Bahaa', 'male', 'Yuri7179#', 'student', 'mouaha@gmail.com'),
-(46, 'Ammar', 'male', 'Mouhamad123#', 'student', 'mouhaamd12@gmail.com'),
-(48, 'omar', 'male', '1231', 'driver', 'khtmeto@gmail.com'),
-(49, 'Doummar', 'female', 'Doummar123#', 'driver', 'doummar123@gmail.com');
+INSERT INTO `user` (`id`, `username`, `gender`, `password`, `role`, `email`, `Description`, `locationID`) VALUES
+(31, 'mouhamad', 'male', 'Mouhamad123$', 'driver', 'moohamadkraytem15@gmail.com', NULL, NULL),
+(34, 'Bahaa', 'male', 'Yuri7179#', 'student', 'mouaha@gmail.com', NULL, NULL),
+(46, 'Ammar', 'male', 'Mouhamad123#', 'student', 'mouhaamd12@gmail.com', NULL, NULL),
+(48, 'omar', 'male', '1231', 'driver', 'khtmeto@gmail.com', NULL, NULL),
+(49, 'Doummar', 'female', 'Doummar123#', 'driver', 'doummar123@gmail.com', NULL, NULL),
+(50, 'Naim', 'male', '12345678', 'student', 'naim@gmail.com', NULL, NULL),
+(51, 'Ahmad', 'male', 'Ahmad123#', 'student', 'ahmad123@gmail.com', NULL, NULL),
+(52, 'Tarek', 'female', '$2y$10$mNjl3mQEnbk0Rw9sLGdUD.J', 'driver', 'tarekrimeh234@gmail.com', NULL, NULL),
+(53, 'Shaza', 'female', 'Shaza123#', 'driver', 'shaza123@gmail.com', NULL, NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`messageID`);
 
 --
 -- Indexes for table `days`
@@ -270,11 +313,18 @@ ALTER TABLE `trip`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD KEY `gender` (`gender`),
-  ADD KEY `role` (`role`);
+  ADD KEY `role` (`role`),
+  ADD KEY `locationID` (`locationID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `messageID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `days`
@@ -292,13 +342,13 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `requestID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `requestID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT for table `reservetrip`
 --
 ALTER TABLE `reservetrip`
-  MODIFY `reservationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `reservationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `time`
@@ -310,13 +360,13 @@ ALTER TABLE `time`
 -- AUTO_INCREMENT for table `trip`
 --
 ALTER TABLE `trip`
-  MODIFY `tripID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `tripID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- Constraints for dumped tables
@@ -351,7 +401,8 @@ ALTER TABLE `trip`
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`gender`) REFERENCES `gender` (`gender`),
-  ADD CONSTRAINT `user_ibfk_2` FOREIGN KEY (`role`) REFERENCES `role` (`role`);
+  ADD CONSTRAINT `user_ibfk_2` FOREIGN KEY (`role`) REFERENCES `role` (`role`),
+  ADD CONSTRAINT `user_ibfk_3` FOREIGN KEY (`locationID`) REFERENCES `location` (`locationID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
