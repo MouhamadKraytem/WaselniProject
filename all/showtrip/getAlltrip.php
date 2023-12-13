@@ -9,7 +9,8 @@ $getAllAvailableTrips = "SELECT
     u.username AS driverName,
     d.day,
     ti.time,
-    t.availableNB
+    t.availableNB,
+    t.DriverID
 FROM
     trip t
 JOIN location l1 ON t.fromlocationID = l1.locationID

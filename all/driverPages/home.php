@@ -1,30 +1,13 @@
 <?php
-
-include('../connection.php')
-
-
-
-
+include('../connection.php');
 ?>
-
-
-
 <head>
-   
-
    <!-- custom css file link  -->
    <link rel="stylesheet" href="./withprofile/css/style.css">
-
 </head>
-
-   
-   
-
       <div class="profile">
          <?php
-         session_start();
          $user_id =$_SESSION['id'] ;
-
             $query =  "SELECT * FROM `user` WHERE id = '$user_id'";
             $res = mysqli_query($conn,$query);
             $userData = mysqli_fetch_array($res);

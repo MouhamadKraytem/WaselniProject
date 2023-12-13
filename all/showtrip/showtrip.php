@@ -54,7 +54,7 @@ while ($row = mysqli_fetch_array($res)) {
                 <div class="card mt-4">
                     <div class="card-body">
                         <table class="table table-bordered">
-                            <thead>
+                            <thead> 
                                 <tr>
                                     <th>Driver Name</th>
                                     <th>From</th>
@@ -75,7 +75,7 @@ while ($row = mysqli_fetch_array($res)) {
                                 }
                                     while ($row = mysqli_fetch_array($getTripResult)) {
                                         echo "<tr>";
-                                        echo "<td>".$row['driverName']."</td>";
+                                        echo "<td><a href=../profile2/profile2.php?userid=".$row['DriverID']." class=profileLink>".$row['driverName']."</a></td>";
                                         echo "<td>".$row['fromLocation']."</td>";
                                         echo "<td>".$row['toLocation']."</td>";
                                         echo "<td>".$row['day']."</td>";
@@ -135,8 +135,9 @@ while ($row = mysqli_fetch_array($res)) {
 </body>
 </html>
 <style>
-a{
-    color:white;
+a.profileLink{
+    color:black;
     text-decoration:none;
+    
 }
     </style>
