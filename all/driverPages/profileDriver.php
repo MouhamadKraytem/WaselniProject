@@ -1,6 +1,7 @@
 <?php 
 include('../connection.php');
 session_start();
+$driverId = $_SESSION['id'];
 ?>
 
 
@@ -83,7 +84,8 @@ session_start();
                         INNER JOIN location AS from_location ON from_location.locationID = trip.fromlocationID
                         INNER JOIN location AS to_location ON to_location.locationID = trip.toLocationID
                         INNER JOIN time ON time.timeId = trip.time
-                        INNER JOIN days ON days.dayID = trip.dayID";
+                        INNER JOIN days ON days.dayID = trip.dayID
+                        WHERE trip.DriverID = $driverId";
                         
                         $res = mysqli_query($conn , $query);
 
