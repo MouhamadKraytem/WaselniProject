@@ -39,8 +39,8 @@ while ($row = mysqli_fetch_array($res)) {
 
                                 <form action="" method="post">
                                     <div class="input-group mb-3">
-                                        <input type="text" name="dname"  class="form-control" placeholder="Search Driver Name">
-                                        <button type="submit" class="btn btn-primary" name=search>Search</button>
+                                        <input type="text" name="dname"  class="form-control" placeholder="Search Driver Name"  onkeyup="showtrip(this.value)">
+                                        <button type="submit" class="btn btn-primary" name=search >Search</button>
                                     </div>
                                 </form>
 
@@ -65,61 +65,8 @@ while ($row = mysqli_fetch_array($res)) {
                                     
                                 </tr>
                             </thead>
-                            <tbody>
-                                <?php 
-                                
-                                if(isset($_POST['search'])){
-                                require("./fliterTrip.php");
-                                }else{
-                                    require("./getAlltrip.php");
-                                }
-                                    while ($row = mysqli_fetch_array($getTripResult)) {
-                                        echo "<tr>";
-                                        echo "<td><a href=../profile2/profile2.php?userid=".$row['DriverID']." class=profileLink>".$row['driverName']."</a></td>";
-                                        echo "<td>".$row['fromLocation']."</td>";
-                                        echo "<td>".$row['toLocation']."</td>";
-                                        echo "<td>".$row['day']."</td>";
-                                        echo "<td>".$row['time']."</td>";
-                                        echo "<td>".$row['availableNB']."</td>";
-                                        echo "<td class = link><a href='sendRequest.php?tripID=".$row['tripID']."'><button class=but>send request</button></a></td>";
+                            <tbody id=result>
 
-                                        if (isset($_GET['err'])) {
-                                            if ($_GET['err'] == $row['tripID'] ) {
-                                                # code...
-                                                echo "<td class = dynamic>request already sended</td>";
-                                            }else {
-                                                # code...
-                                                echo "<td class = dynamic></td>";
-                                            }
-                                        }
-                                        if (isset($_GET['req'])) {
-                                            if ($_GET['req'] == $row['tripID'] ) {
-                                                # code...
-                                                echo "<td class = dynamic>request sent</td>";
-                                            }else {
-                                                # code...
-                                                echo "<td class = dynamic></td>";
-                                            }
-                                        }
-                                        if (isset($_GET['full'])) {
-                                            if ($_GET['full'] == $row['full'] ) {
-                                                # code...
-                                                echo "<td class = dynamic>this trip are full</td>";
-                                            }else {
-                                                # code...
-                                                echo "<td class = dynamic></td>";
-                                            }
-                                        }
-                                        echo "</tr>";
-                                    }
-                                    unset($_POST);
-                                    
-                                
-                                
-                                
-                                ?>
-                                
-                                <?php ?>
                             </tbody>
                         </table>
                     </div>
@@ -130,6 +77,7 @@ while ($row = mysqli_fetch_array($res)) {
         <a href="../studentPages/profileStudent.php"><button class="btn btn-primary">Return</button></a> 
     </div>
 
+    <script src = "./main.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
@@ -141,3 +89,5 @@ a.profileLink{
     
 }
     </style>
+
+    

@@ -1,7 +1,7 @@
 <?php 
 include('../connection.php');
 session_start();
-$driverId = $_SESSION['id'];
+$id = $_SESSION['id'];
 ?>
 
 
@@ -85,7 +85,7 @@ $driverId = $_SESSION['id'];
                         INNER JOIN location AS to_location ON to_location.locationID = trip.toLocationID
                         INNER JOIN time ON time.timeId = trip.time
                         INNER JOIN days ON days.dayID = trip.dayID
-                        WHERE trip.DriverID = $driverId";
+                        WHERE trip.DriverID = $id";
                         
                         $res = mysqli_query($conn , $query);
 
@@ -111,7 +111,7 @@ $driverId = $_SESSION['id'];
 <thead> 
     <?php
     //get nb of request 
-    $id = $_SESSION['id'];
+    
     $query = "SELECT
             r.requestID,
             r.tripID,

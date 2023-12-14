@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="./profilee.css">
-    <title>triprequest</title>
+    <link rel="stylesheet" href="./profile.css">
+    <title>trip Request</title>
 </head>
 <body>
 <nav class="navbar">
@@ -36,7 +36,7 @@
                         <th></th>
                         <th></th>
                         <!-- <th> Amount <span class="icon-arrow">&UpArrow;</span></th> -->
-                    </tr>
+                    </tr> 
                 </thead>
                 <tbody>
                     <?php 
@@ -75,7 +75,7 @@ $query = "SELECT
                         $_SESSION['nbReq'] = $nb;
                             while ($row = mysqli_fetch_array($res)) {
                                 echo "<tr>";
-                                echo "<td>".$row['studentName']."</td>";    
+                                echo "<td><a href='../../profile2/profile2.php?userid=".$row['studentID']."'>".$row['studentName']."</a></td>";    
                                 echo "<td>".$row['fromLocation']."</td>";    
                                 echo "<td>".$row['toLocation']."</td>";    
                                 echo "<td>".$row['day']." ".$row['time']."</td>";    
@@ -84,10 +84,15 @@ $query = "SELECT
                                 echo "<td><a href='answer.php?ans=false&reqId=".$row['requestID']."&studentID=".$row['studentID']."&tripID=".$row['tripID']."'><button class=dec>decline request</button></a></td>";
                                 echo "</tr>";
                             }
-                    
-                    ?>
-                </tbody>
+                            ?>
+                        </tbody>
             </table>
+                            <?php
+                        if ($nb ==0 ) {
+                            # code...
+                            echo "<p class=no>No Current Request</p>";
+                        }
+                        ?>
         </div>
         <a href="../profileDriver.php" class = return>Return</a>
     </div>
