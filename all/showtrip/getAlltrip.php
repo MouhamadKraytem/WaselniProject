@@ -1,9 +1,10 @@
 <?php
 require('../connection.php');
-session_start();
-$id = $_SESSION['id'];
+
+$id = 46;
 $getAllAvailableTrips = "SELECT
     t.tripID,
+    t.DriverID,
     l1.locationName AS fromLocation,
     l2.locationName AS toLocation,
     u.username AS driverName,
@@ -30,5 +31,44 @@ Order By driverName ASC
 
 
 
-$getTripResult = mysqli_query($conn , $getAllAvailableTrips);
+                                        $getTripResult = mysqli_query($conn , $getAllAvailableTrips);
+                                        while ($row = mysqli_fetch_array($getTripResult)) {
+                                        echo "<tr>";
+                                        echo "<td><a href=../profile2/profile2.php?userid=".$row['DriverID']." class=profileLink>".$row['driverName']."</a></td>";
+                                        echo "<td>".$row['fromLocation']."</td>";
+                                        echo "<td>".$row['toLocation']."</td>";
+                                        echo "<td>".$row['day']."</td>";
+                                        echo "<td>".$row['time']."</td>";
+                                        echo "<td>".$row['availableNB']."</td>";
+                                        echo "<td class = link><button class=but onclick=sendRequest(".$row['tripID'].")>send request</button></td>";
+                                        
+                                        if (isset($_GET['err'])) {
+                                            if ($_GET['err'] == $row['tripID'] ) {
+                                                # code...
+                                                echo "<td class = dynamic>request already sended</td>";
+                                            }else {
+                                                # code...
+                                                echo "<td class = dynamic></td>";
+                                            }
+                                        }
+                                        if (isset($_GET['req'])) {
+                                            if ($_GET['req'] == $row['tripID'] ) {
+                                                # code...
+                                                echo "<td class = dynamic>request sent</td>";
+                                            }else {
+                                                # code...
+                                                echo "<td class = dynamic></td>";
+                                            }
+                                        }
+                                        if (isset($_GET['full'])) {
+                                            if ($_GET['full'] == $row['full'] ) {
+                                                # code...
+                                                echo "<td class = dynamic>this trip are full</td>";
+                                            }else {
+                                                # code...
+                                                echo "<td class = dynamic></td>";
+                                            }
+                                        }
+                                        echo "</tr>";
+                                    }
 ?>

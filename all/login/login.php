@@ -33,6 +33,7 @@ if (isset($_POST['sb'])) {
 				$_SESSION['username'] = $row['username'];
 				
 				$_SESSION['id'] = $row['id'];
+				$_SESSION['role'] = $row['role'];
 					
 				header("Location:home.php");
 				exit();

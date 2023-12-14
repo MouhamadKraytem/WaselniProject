@@ -13,14 +13,14 @@ if(isset($_POST['update_profile'])){
 
    $update_name = mysqli_real_escape_string($conn, $_POST['update_name']);
    $update_email = mysqli_real_escape_string($conn, $_POST['update_email']);
-   if ($userData['username'] != $update_name || $userData['username'] != $update_name):
+   if ($userData['username'] != $update_name || $userData['username'] != $update_name ):
       # code...
-   
+      
    if (!empty($update_name) && !empty($update_email)) {
       # code...
       $nameAndEmailUpdate = "UPDATE `user` SET `username`='$update_name',`email`='$update_email' WHERE id = '$user_id'";
-         mysqli_query($conn, $nameAndEmailUpdate) ;
-         $message[] = 'username And email update sucessfull';
+      mysqli_query($conn, $nameAndEmailUpdate) ;
+      $message[] = 'username And email update sucessfull';
    }else {
       # code...
       if (!empty($update_name)) {
@@ -33,6 +33,7 @@ if(isset($_POST['update_profile'])){
          mysqli_query($conn, $emailUpdate) ;
          $message[] = 'email update sucessfull';
       }
+
    }
 
    $old_pass = $userData['password'];
@@ -117,7 +118,7 @@ if(isset($_POST['update_profile'])){
             <span>your email :</span>
             <input type="email" name="update_email" placeholder= "<?php echo $userData['email']; ?>" class="box">
             <span>update your pic :</span>
-            <input type="file" name="update_image" accept="image/jpg, image/jpeg, image/png" class="box">
+            <input type="file" name="update_image"  accept="image/jpg, image/jpeg, image/png" class="box">
          </div>
          <div class="inputBox">
             <input type="hidden" name="old_pass" value="<?php echo $userData['password']; ?>">

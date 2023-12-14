@@ -527,3 +527,11 @@ ul {
 .logo {
     color: black;
 }
+
+.no{
+    position: absolute;
+    top:50%;
+    left:38%;
+    font-size: larger;
+    font-weight: 700;
+}

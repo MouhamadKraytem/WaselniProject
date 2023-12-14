@@ -19,16 +19,18 @@
             }
         }
         if ($error) {
-            # code...
+            
             $newReq = "INSERT INTO `request`( `tripID`, `studentID`)
             VALUES ('$tripId','$userId')";
             $res = mysqli_query($conn, $newReq);
-            header('location:./showtrip.php?req='.$tripId.'');
+            // header('location:./showtrip.php?req='.$tripId.'');
+            echo "<td class = dynamic>request sent</td>";
+
         }else {
             # code...
-            header('location:./showtrip.php?err='.$tripId.'');
+            // header('location:./showtrip.php?err='.$tripId.'');
+                    echo "<td class = dynamic>request already sended</td>";
         }
-        
     }else {
         header("location:./showtrip.php");
     }

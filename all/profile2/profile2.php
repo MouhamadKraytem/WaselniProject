@@ -2,8 +2,13 @@
 include('../connection.php');
 
 if (isset($_GET['userid'])) {
+
+    session_start();    
     $userId = $_GET["userid"];
-    $getUserInfo = "SELECT * FROM user WHERE id = $userId ";
+    $getUserInfo = "SELECT user.*, l.locationName
+    FROM user 
+    JOIN location AS l ON user.locationID = l.locationID
+    WHERE id = $userId";
     $getUserInfoRes= mysqli_query($conn , $getUserInfo);
 
     $row = mysqli_fetch_array($getUserInfoRes);
@@ -21,7 +26,7 @@ if (isset($_GET['userid'])) {
 <html>
     <head>
     
-        <link rel="stylesheet" href=" style.css">
+        <link rel="stylesheet" href=" userProfile.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <title><?php echo "".$row['username']." profile"; ?></title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -33,14 +38,14 @@ if (isset($_GET['userid'])) {
             <div class="bio_card">
                 <div class="left">
                     <div class="btn">
-                       <i class="fas fa-plus"></i>
+                        <i class="fas fa-plus"></i>
                     </div>
                     
                         <img class="cover" src="Aixen.jpg ">
                             <div class="box">
-                            <img class="profile" src="./doummar.jpg">
+                            <img class="profile" src=<?php echo $row['image']; ?>>
                             </div>
-                        <h1><?php echo "".$row['username']." "; ?></h1>
+                        <h1><?php echo  $row['username']; ?></h1>
                         <div class="info">
                             <div class="col">
                             <i class="fab fa-twitter"></i>
@@ -56,21 +61,27 @@ if (isset($_GET['userid'])) {
                     </div>
                 <div class="right">
                     <div class="text">
-                        <h1>PRofile-page</h1>
-                    <h2> <?php echo "".$row['role']." "; ?></h2>
+
+                    <div class=sec1>
+                        <h1>Profile-page</h1>
+                        <h2> <?php echo "".$row['role']." "; ?></h2>
+                    </div>
+                    <div class=sec1>
                     <h3>BIO:</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fermentum pellentesque scelerisque. Proin iaculis ante velit, sit amet mollis lacus blandit non. Aenean sed dolor sed nibh feugiat dapibus a id mauris. Proin in neque eget metus dapibus tempor ac eu leo. Nunc vestibulum ut felis ac blandit. Pellentesque faucibus quam quis orci tincidunt tempor. In hac habitasse platea dictumst. Aenean arcu sem, feugiat sed nisl in, tempus rutrum mi. Phasellus porta pulvinar ante, nec volutpat est egestas id. Sed interdum urna a enim sodales, in ornare urna pellentesque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas feugiat mauris tristique eros finibus congue.
-                    </p>
-                    <h3>Location : </h3>
-                    <p>Lebanon/Minieh-danieh </p>
-                    
+                    <?php
+                        echo "<p class=desc>descriptiom</p>";
+                    ?>
+                    </div>
+                    <div class=sec1>
+                    <h3 id = loc>Location : </h3>
+                    <p><?php echo $row['locationName']; ?> </p>
                     <button><i class="far fa-envelope"></i> send a message</button>
                     </div>
+                    </div>
                   
-                </div>
+                </div> 
             </div>
-            <a href="">Return</a>
+            
         </div>
         
     <script>
