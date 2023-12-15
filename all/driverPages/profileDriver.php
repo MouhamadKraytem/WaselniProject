@@ -77,12 +77,10 @@ $id = $_SESSION['id'];
                 <a href="./triprequest/triprequest.php " class="tripR" >Trip Request <?php echo "($nb)"; ?></a>
     <main class="table">
         <section class="table__header">
-            <!-- <h1>Your Trips</h1> -->
+            <h1>Your Trips</h1>
             <a href="./createtrip/formtrip.php" class='newtrip'>create a trip</a>
             <a href="#"  class="trip">Your Trips</a>
-            <!-- <div class="input-group">
-                <input type="search" placeholder="Search Data...">
-            </div> -->
+
         </section>
     
         <section class="table__body">
