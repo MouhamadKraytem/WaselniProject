@@ -9,10 +9,11 @@
 body {
     min-height: 100vh;
     /* background: url(images/html_table.jpg) center / cover; */
-    /* background-color: #243B55; */
+    background-color: #0c356A !important;
+    }
     
     
-}
+
 
 main.table {
     position: absolute;
@@ -227,8 +228,8 @@ tbody td.active {
     justify-content: space-between;
     padding: 20px;
     color: whitesmoke;
-    background-color: #0c356A !important;
-    
+    background-color: hsl(214, 80%, 23%) !important;
+    width: 100%;
 }
 
 ul {
@@ -315,6 +316,7 @@ background-color: #6fcaea;
     justify-content: center;
     
     
+}
 
 h3 {
     text-align: center;
