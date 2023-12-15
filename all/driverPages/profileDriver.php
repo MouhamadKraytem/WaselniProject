@@ -2,7 +2,40 @@
 include('../connection.php');
 session_start();
 $id = $_SESSION['id'];
+
 ?>
+<?php
+    //get nb of request 
+    
+    $query = "SELECT
+            r.requestID,
+            r.tripID,
+            t.fromlocationID,
+            l1.locationName AS fromLocation,
+            t.toLocationID,
+            l2.locationName AS toLocation,
+            tid.time,
+            d.day,
+            t.availableNB,
+            u.username AS driverName,
+            r.studentID,
+            u2.username AS studentName,
+            r.answer
+        FROM
+            request r
+        JOIN trip t ON r.tripID = t.tripID
+        JOIN location l1 ON t.fromlocationID = l1.locationID
+        JOIN location l2 ON t.toLocationID = l2.locationID
+        JOIN days d ON t.dayID = d.dayID
+        JOIN user u ON t.DriverID = u.id
+        JOIN user u2 ON r.studentID = u2.id
+        JOIN time tid ON t.time = tid.timeID
+        WHERE u.id = $id";
+
+        $res = mysqli_query($conn, $query);
+        $nb = mysqli_num_rows($res);
+                        
+    ?>
 
 
 <!DOCTYPE html>
@@ -13,7 +46,7 @@ $id = $_SESSION['id'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Table</title>
-    <link rel="stylesheet" href="./profileee.css">
+    <link rel="stylesheet" href="./profile.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <style>
@@ -24,7 +57,7 @@ $id = $_SESSION['id'];
 </head>
  
   <body>
- 
+        <div class="page">
         <nav class="navbar">
             <h1 class="logo"> W'aselni</h1>
             <ul class="nav-links">
@@ -41,14 +74,13 @@ $id = $_SESSION['id'];
             ?>
             
             <div class="table">
+                <a href="./triprequest/triprequest.php " class="tripR" >Trip Request <?php echo "($nb)"; ?></a>
     <main class="table">
         <section class="table__header">
-            <!-- <h1>Your Trips</h1> -->
+            <h1>Your Trips</h1>
             <a href="./createtrip/formtrip.php" class='newtrip'>create a trip</a>
             <a href="#"  class="trip">Your Trips</a>
-            <!-- <div class="input-group">
-                <input type="search" placeholder="Search Data...">
-            </div> -->
+
         </section>
     
         <section class="table__body">
@@ -109,48 +141,6 @@ $id = $_SESSION['id'];
         </table>
     </section>
 </main>
-<section class="table__body">
-<thead> 
-    
-    <?php
-    //get nb of request 
-    
-    $query = "SELECT
-            r.requestID,
-            r.tripID,
-            t.fromlocationID,
-            l1.locationName AS fromLocation,
-            t.toLocationID,
-            l2.locationName AS toLocation,
-            tid.time,
-            d.day,
-            t.availableNB,
-            u.username AS driverName,
-            r.studentID,
-            u2.username AS studentName,
-            r.answer
-        FROM
-            request r
-        JOIN trip t ON r.tripID = t.tripID
-        JOIN location l1 ON t.fromlocationID = l1.locationID
-        JOIN location l2 ON t.toLocationID = l2.locationID
-        JOIN days d ON t.dayID = d.dayID
-        JOIN user u ON t.DriverID = u.id
-        JOIN user u2 ON r.studentID = u2.id
-        JOIN time tid ON t.time = tid.timeID
-        WHERE u.id = $id";
-
-        $res = mysqli_query($conn, $query);
-        $nb = mysqli_num_rows($res);
-                        
-    ?>
-<a href="./triprequest/triprequest.php " class="tripR" >Trip Request <?php echo "($nb)"; ?></a>
-<style>
-   
-    </style>
-    </div>  
-
-
 </div>
     </body>
     

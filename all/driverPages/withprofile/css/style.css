@@ -60,7 +60,7 @@ body{
 }
 
 .delete-btn:hover{
-   background-color: var(--dark-red);
+   background-color: var(--red);
 }
 
 .message{
