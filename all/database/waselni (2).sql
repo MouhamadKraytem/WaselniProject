@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2023 at 08:13 AM
+-- Generation Time: Dec 15, 2023 at 04:03 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -39,7 +39,23 @@ CREATE TABLE `contact` (
 
 INSERT INTO `contact` (`messageID`, `userID`, `message`) VALUES
 (1, 49, 'd'),
-(2, 49, 'hello lorem');
+(2, 49, 'hello lorem'),
+(3, 49, 'hello lorem'),
+(4, 49, 'good project idea\r\n'),
+(5, 49, 'good project idea\r\n'),
+(6, 49, 'good project idea\r\n'),
+(7, 49, 'good project idea\r\n'),
+(8, 49, 'good project idea\r\n'),
+(9, 49, 'good project idea\r\n'),
+(10, 49, 'good project idea\r\n'),
+(11, 49, 'good project idea\r\n'),
+(12, 49, 'good project idea\r\n'),
+(13, 49, 'good project idea\r\n'),
+(14, 49, 'good project idea\r\n'),
+(15, 49, 'good project idea\r\n'),
+(16, 49, 'good project idea\r\n'),
+(17, 49, 'good project idea\r\n'),
+(18, 49, 'good project idea\r\n');
 
 -- --------------------------------------------------------
 
@@ -119,8 +135,7 @@ CREATE TABLE `request` (
 --
 
 INSERT INTO `request` (`requestID`, `tripID`, `studentID`, `answer`) VALUES
-(71, 36, 46, NULL),
-(72, 35, 46, NULL);
+(83, 39, 46, NULL);
 
 -- --------------------------------------------------------
 
@@ -139,9 +154,7 @@ CREATE TABLE `reservetrip` (
 --
 
 INSERT INTO `reservetrip` (`reservationID`, `tripID`, `studentID`) VALUES
-(17, 35, 51),
-(18, 35, 46),
-(19, 38, 46);
+(22, 36, 46);
 
 -- --------------------------------------------------------
 
@@ -204,9 +217,9 @@ CREATE TABLE `trip` (
 --
 
 INSERT INTO `trip` (`tripID`, `fromlocationID`, `toLocationID`, `time`, `dayID`, `availableNB`, `DriverID`) VALUES
-(35, 2, 1, 9, 2, 1, 49),
-(36, 3, 1, 10, 3, 3, 49),
-(38, 1, 3, 7, 1, 0, 53);
+(36, 3, 1, 10, 3, 2, 49),
+(38, 1, 3, 7, 1, 1, 53),
+(39, 4, 1, 9, 4, 3, 49);
 
 -- --------------------------------------------------------
 
@@ -222,23 +235,24 @@ CREATE TABLE `user` (
   `role` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
   `Description` varchar(500) DEFAULT NULL,
-  `locationID` int(11) DEFAULT NULL
+  `locationID` int(11) DEFAULT NULL,
+  `image` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `gender`, `password`, `role`, `email`, `Description`, `locationID`) VALUES
-(31, 'mouhamad', 'male', 'Mouhamad123$', 'driver', 'moohamadkraytem15@gmail.com', NULL, NULL),
-(34, 'Bahaa', 'male', 'Yuri7179#', 'student', 'mouaha@gmail.com', NULL, NULL),
-(46, 'Ammar', 'male', 'Mouhamad123#', 'student', 'mouhaamd12@gmail.com', NULL, NULL),
-(48, 'omar', 'male', '1231', 'driver', 'khtmeto@gmail.com', NULL, NULL),
-(49, 'Doummar', 'female', 'Doummar123#', 'driver', 'doummar123@gmail.com', NULL, NULL),
-(50, 'Naim', 'male', '12345678', 'student', 'naim@gmail.com', NULL, NULL),
-(51, 'Ahmad', 'male', 'Ahmad123#', 'student', 'ahmad123@gmail.com', NULL, NULL),
-(52, 'Tarek', 'female', '$2y$10$mNjl3mQEnbk0Rw9sLGdUD.J', 'driver', 'tarekrimeh234@gmail.com', NULL, NULL),
-(53, 'Shaza', 'female', 'Shaza123#', 'driver', 'shaza123@gmail.com', NULL, NULL);
+INSERT INTO `user` (`id`, `username`, `gender`, `password`, `role`, `email`, `Description`, `locationID`, `image`) VALUES
+(31, 'mouhamad', 'male', 'Mouhamad123$', 'driver', 'moohamadkraytem15@gmail.com', NULL, NULL, ''),
+(34, 'Bahaa', 'male', 'Yuri7179#', 'student', 'mouaha@gmail.com', NULL, NULL, ''),
+(46, 'Ammar', 'male', 'Mouhamad123#', 'student', 'mouhaamd12@gmail.com', NULL, NULL, ''),
+(48, 'omar', 'male', '1231', 'driver', 'khtmeto@gmail.com', NULL, NULL, ''),
+(49, 'Doummar', 'female', 'Doummar123#', 'driver', 'doummar123@gmail.com', NULL, 2, 'default.jpg'),
+(50, 'Naim', 'male', '12345678', 'student', 'naim@gmail.com', NULL, NULL, ''),
+(51, 'Ahmad', 'male', 'Ahmad123#', 'student', 'ahmad123@gmail.com', NULL, NULL, ''),
+(52, 'Tarek', 'female', '$2y$10$mNjl3mQEnbk0Rw9sLGdUD.J', 'driver', 'tarekrimeh234@gmail.com', NULL, NULL, ''),
+(53, 'Shaza', 'female', 'Shaza123#', 'driver', 'shaza123@gmail.com', NULL, NULL, '');
 
 --
 -- Indexes for dumped tables
@@ -324,7 +338,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `messageID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `messageID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `days`
@@ -342,13 +356,13 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `requestID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `requestID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `reservetrip`
 --
 ALTER TABLE `reservetrip`
-  MODIFY `reservationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `reservationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `time`
@@ -360,7 +374,7 @@ ALTER TABLE `time`
 -- AUTO_INCREMENT for table `trip`
 --
 ALTER TABLE `trip`
-  MODIFY `tripID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `tripID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `user`
