@@ -28,7 +28,7 @@ include('../connection.php');
       <?php
       
 if(isset($_GET['logout'])){
-   
+   session_start();
    session_destroy();
    unset($_GET);
    header('location:../login/');
