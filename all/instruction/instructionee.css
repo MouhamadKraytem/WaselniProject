@@ -144,7 +144,7 @@ body{
     justify-content: space-between;
     padding: 20px;
     color: whitesmoke;
-    background-color: aliceblue;
+     
 
 
 }
@@ -160,7 +160,7 @@ ul {
 
 }
 .navbar .nav-links li{
-    background-color: #243B55;
+    background-color: black;
     border-radius: 30px;
     padding: 5px 30px;
     border: 1px solid black;

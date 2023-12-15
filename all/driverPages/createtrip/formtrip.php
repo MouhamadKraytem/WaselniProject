@@ -54,7 +54,7 @@ if (isset($_POST['return'])) {
     <meta charset="utf-8" />
     <title>Create Trip | NEW</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-    <link rel="stylesheet" href="forme.css" />
+    <link rel="stylesheet" href="formee.css" />
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
   </head>
   <body>
@@ -62,10 +62,10 @@ if (isset($_POST['return'])) {
         <nav class="navbar">
             <h1 class="logo">W'aselni</h1>
             <ul class="nav-links">
-                <li class="active"><i href ="#" class ="fa fa-home"><a href="#"> Home</a></i></li>
-                <li><i class="fa-solid fa-taxi"><a href="#"> Services</a></i></li>
-                <li><i href ="#" class ="fa fa-times-circle"><a href="#"> ABOUT</a></i></li>
-                <li class=""><i href ="#" class ="fa fa-id-card"><a href="#"> Contact-US</a></i></li>
+                <li class="active"> <a href="#"> Home</a></i></li>
+                <li> <a href="#"> Services</a></i></li>
+                <li> <a href="#"> ABOUT</a></i></li>
+                <li class=""> <a href="#"> Contact-US</a></i></li>
                 
             </ul>
         </nav>

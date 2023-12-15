@@ -18,7 +18,7 @@
    outline: none; border: none;
    text-decoration: none;
 }
-
+ 
 *::-webkit-scrollbar{
    width: 10px;
 }
@@ -33,6 +33,7 @@
 body{
    margin: 0;
    padding:0;
+   background:url(bacg.jpg);
 }
 .btn,
 .delete-btn{

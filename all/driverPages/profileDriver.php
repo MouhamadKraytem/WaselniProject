@@ -17,20 +17,21 @@ $id = $_SESSION['id'];
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <style>
-        .navLINK{
+        /* .navLINK{
             color:white;
-        }
+        } */
     </style>
 </head>
-
-<body>
+ 
+  <body>
+ 
         <nav class="navbar">
             <h1 class="logo"> W'aselni</h1>
             <ul class="nav-links">
                 <li class="active"></i><a href="#"></a></i>Home</li>
                 <li class="active"></i><a href="#"></a>Services</li>
                 <li class="active"></i><a href="#"></a></i>ABOUT</li>
-                <li class="active navLINK"><a href="../contactform/contact.php">Contact-US</a></li>
+                <li class="active"><a href="../contactform/contact.php">Contact-US</a></li>
             </ul>
         </nav>
         <!-- <P class="img"><img src="dada.jpg"></p> -->
@@ -38,6 +39,7 @@ $id = $_SESSION['id'];
             <?php
                 include("./home.php");
             ?>
+            
             <div class="table">
     <main class="table">
         <section class="table__header">
@@ -48,7 +50,7 @@ $id = $_SESSION['id'];
                 <input type="search" placeholder="Search Data...">
             </div> -->
         </section>
-
+    
         <section class="table__body">
             <table>
                 <thead>
@@ -109,6 +111,7 @@ $id = $_SESSION['id'];
 </main>
 <section class="table__body">
 <thead> 
+    
     <?php
     //get nb of request 
     
@@ -141,15 +144,17 @@ $id = $_SESSION['id'];
         $nb = mysqli_num_rows($res);
                         
     ?>
-<a href="./triprequest/triprequest.php " >Trip Request <?php echo "($nb)"; ?></a>
-
+<a href="./triprequest/triprequest.php " class="tripR" >Trip Request <?php echo "($nb)"; ?></a>
+<style>
+   
+    </style>
     </div>  
 
 
 </div>
     </body>
     
-
+                   
 </html>
 
 

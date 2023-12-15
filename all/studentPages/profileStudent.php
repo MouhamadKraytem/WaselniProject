@@ -13,10 +13,12 @@ include('../connection.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Table</title>
-    <link rel="stylesheet" href="./profil.css">
+    <link rel="stylesheet" href="./profilee.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
-
+<style>
+   
+    </style>
 <body>
         <nav class="navbar">
             <h1 class="logo"> W'aselni</h1>
@@ -27,13 +29,17 @@ include('../connection.php');
                 <li class="active"><a href="#"></a></i>Contact-US</li>
             </ul>
         </nav>
+        
         <!-- <P class="img"><img src="dada.jpg"></p> -->
         <div class="container">
               <?php
                 include("./home.php");
             ?>
+             
             <div class="table">
+            <p><a href="../showtrip/showtrip.php" class="trips">find trips</a></p>
     <main class="table">
+     
         <section class="table__header">
             <h1>Customer's - W'aselni</h1>
             <div class="input-group">
@@ -41,7 +47,7 @@ include('../connection.php');
             </div>
             
         </section>
-
+        
         <section class="table__body">
             <table>
                 <thead>
@@ -55,6 +61,7 @@ include('../connection.php');
                         <!-- <th> Amount <span class="icon-arrow">&UpArrow;</span></th> -->
                     </tr>
                 </thead>
+              
                 <tbody>
                     <!-- Available // Full -->
                     <tr>
@@ -103,14 +110,17 @@ include('../connection.php');
                         
                     </tbody>
                 </table>
-                <p><a href="../showtrip/showtrip.php">find trips</a></p>
+                <!-- <p><a href="../showtrip/showtrip.php" class="trips">find trips</a></p> -->
             
         </section>
+         
     </main>
+     
     </div>  
 
-
+    
 </div>
+ 
     </body>
     
 

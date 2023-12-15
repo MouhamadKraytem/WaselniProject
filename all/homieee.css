@@ -311,16 +311,16 @@ margin: 10px;
     display: flex;
     width: 100%;
     justify-content: space-between;
-    padding: 20px;
+    padding: 15px;
     color: whitesmoke;
     background-color: aliceblue;
 
 
-}
+} 
 
-ul {
+ ul {
     list-style: none;
-}
+} 
 
 .nav-links {
     display: flex;
@@ -329,7 +329,7 @@ ul {
 
 }
 .navbar .nav-links li{
-    background-color: #243B55;
+    background-color: black;
     border-radius: 30px;
     padding: 5px 30px;
     border: 1px solid black;
@@ -354,7 +354,7 @@ ul {
   }
 
 .logo {
-    color: black;
+    color: white;
 }
 /* nav .navbar{
     position: relative;
@@ -1129,3 +1129,5 @@ background-color: #243B55;
     
 
 }
+ 
+ 

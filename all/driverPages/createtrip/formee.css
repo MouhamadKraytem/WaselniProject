@@ -10,14 +10,14 @@ body{
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: #FFF0CE;
+  background-color:#243B55;
   background-size: cover;
 }
 
 .container{
   width: 100%;
   max-width: 650px;
-  background: #0c356A;
+  background: #ffc61a;
   padding: 28px;
   margin: 0 28px;
   border-radius: 10px;
@@ -107,7 +107,7 @@ body{
   border:none;
   border-radius: 3px;
   color: black;
-  background: #f3cd34;
+  background: #243B55;
 }
 
 .form-submit-btn input:hover{
@@ -156,7 +156,7 @@ body{
   justify-content: space-between;
   padding: 20px;
   /* color: black; */
-  background-color: whitesmoke;
+   
 
 }
 
@@ -174,7 +174,7 @@ ul{
 }
 .nav-links li {
   margin: 0 30px;
-  background-color: #0c356A;
+  background-color: black;
   color: azure;
   border-radius: 0;
    
@@ -184,7 +184,7 @@ ul{
 }
  
 .nav-links li:hover{
-  background-color: #f3cd34;
+  background-color: #ffc61a;
 }
 .nav-links li a{
 
@@ -200,7 +200,7 @@ form .err{
 
 }
 .navbar .nav-links li{
-  background-color: #243B55;
+ 
   border-radius: 30px;
   padding: 5px 30px;
   border: 1px solid black;

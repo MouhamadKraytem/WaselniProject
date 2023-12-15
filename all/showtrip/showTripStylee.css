@@ -25,7 +25,7 @@ table tr {
     text-decoration: none;
     cursor: pointer;
     color: #ffffff;
-    background-color: #4caf50;
+    background-color: #243B55;
     border: none;
     border-radius: 6px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -34,7 +34,7 @@ table tr {
 
 /* Hover effect */
 .but:hover {
-    background-color: #45a049;
+    background-color: #f3cd34;
     transform: translateY(-2px);
 }
 
@@ -43,3 +43,4 @@ table tr {
     transform: translateY(0);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+ 

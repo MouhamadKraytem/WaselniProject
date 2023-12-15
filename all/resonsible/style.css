@@ -6,26 +6,28 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
+ 
 }
 body{
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #0c356A;
+  /* background: url(background.png); */
   padding: 40px;
 }
 ::selection{
   background: #0c356A;
   color: #fff;
 }
+ 
 .accordion{
   display: flex;
   max-width: 1010px;
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  background: #fff;
+  background: #243B55;
   border-radius: 25px;
   padding: 45px 90px 45px 60px;
 }
@@ -44,7 +46,7 @@ body{
 .accordion .accordion-text .title{
   font-size: 35px;
   font-weight: 600;
-  color: #0c356A;
+  color: white;
   font-family: 'Fira Sans', sans-serif;
 }
 .accordion .accordion-text .faq-text{
@@ -67,7 +69,7 @@ body{
 .accordion-text li .question-arrow .question{
   font-size: 18px;
   font-weight: 500;
-  color: #595959;
+  color: white;
   transition: all 0.3s ease;
 }
 .accordion-text li .question-arrow .arrow{
@@ -80,7 +82,7 @@ body{
 }
 .accordion-text li:hover .question-arrow .question,
 .accordion-text li:hover .question-arrow .arrow{
-  color: #0c356A;
+  color: #f2f2f2;
 }
 .accordion-text li.showAnswer .question-arrow .question,
 .accordion-text li.showAnswer .question-arrow .arrow{
@@ -172,7 +174,7 @@ button{
   justify-content: space-between;
   padding: 20px;
   color: whitesmoke;
-  background-color: aliceblue;
+   
 
 
 }
@@ -188,7 +190,7 @@ ul {
 
 }
 .navbar .nav-links li{
-  background-color: #243B55;
+  background-color: black;
   border-radius: 30px;
   padding: 5px 30px;
   border: 1px solid black;
