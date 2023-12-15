@@ -10,7 +10,7 @@ body{
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color:#243B55;
+  background-color:#0c356a;
   background-size: cover;
 }
 
@@ -107,7 +107,7 @@ body{
   border:none;
   border-radius: 3px;
   color: black;
-  background: #243B55;
+  background: #0c356a;
 }
 
 .form-submit-btn input:hover{

@@ -415,7 +415,7 @@ ul {
         transition: background-color 0.3s, color 0.3s;
     }
     .acc:hover{
-        background-color: #5d789c;
+        background-color: #0c356a;
             color: #fff;
     }
     .dec {
@@ -426,14 +426,14 @@ ul {
         text-align: center;
         text-decoration: none;
         cursor: pointer;
-        border: 2px solid #a2313a;
-        color: #a2313a;
+        border: 2px solid black;
+        color: black;
         background-color: #fff;
         border-radius: 5px;
         transition: background-color 0.3s, color 0.3s;
     }
     
     .dec:hover {
-        background-color: #a2313a;
+        background-color: black;
         color: #fff;
     }

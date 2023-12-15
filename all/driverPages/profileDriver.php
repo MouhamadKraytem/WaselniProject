@@ -2,7 +2,7 @@
 include('../connection.php');
 session_start();
 $id = $_SESSION['id'];
-
+ 
 ?>
 <?php
     //get nb of request 
@@ -79,7 +79,7 @@ $id = $_SESSION['id'];
         <section class="table__header">
             <h1>Your Trips</h1>
             <a href="./createtrip/formtrip.php" class='newtrip'>create a trip</a>
-            <a href="#"  class="trip">Your Trips</a>
+            <!-- <a href="#"  class="trip">Your Trips</a> -->
 
         </section>
     
