@@ -6,27 +6,13 @@
         font-family: sans-serif;
     }
 
-    /* body {
-        min-height: 100vh;
-        /* background: url(images/html_table.jpg) center / cover; */
-        /* background: #FFF0CE;} */
-        
-    
-    /* .navbar{
-        background-color: #FFF0CE;
-    } */
-body{
-    background-color: #243B55;
-}
     main.table {
         width: 55vw;
         height: 55vh;
-        background-color: #fff5;
         margin: 30px ;
         backdrop-filter: blur(7px);
         box-shadow: 0 .4rem .8rem #0005;
         border-radius: .8rem;
-
         overflow: hidden;
     }
 
@@ -369,12 +355,7 @@ body{
         font-weight: bold;
     }
 
-    /* .ctn {
-    padding: 8px 15px;
-    background: #243B55;
-    color: whitesmoke;
-    border-radius: 30px;
-} */
+
     @media only screen and (max-width:850px) {
         .menu-btn {
             display: block;
@@ -416,18 +397,13 @@ body{
 a {
     text-decoration: none;
 }
-/* a .newtrip{
-    background-color: red;
-    color:blue;
-} */
+
     /* profile container css */
 .prof{
     position: absolute;
     right: 0;
 }
-/* .newTrip{
-    background-color: #232323;
-}
+
   */
 .table__body  h3 .request {
     background-color: #6fcaea;
@@ -435,7 +411,7 @@ a {
  
  
 .tripR{
-    background-color: #0c356A;
-    color:white;
+
     margin-top: 50%;
 }
+

@@ -19,12 +19,12 @@
             </ul>
         </nav>
 
- <h3>Trip Request </h3>
- <div class="batikh">
-<div class="table">
-    <main class="table">
-        <!-- <section class="table__header"> -->
-<section class="table__body">
+        <div class="batikh">
+            <div class="table">
+                <main class="table">
+                    <!-- <section class="table__header"> -->
+                        <h3>Trip Request </h3>
+                        <section class="table__body">
             <table>
                 <thead>
                     <tr>
