@@ -17,8 +17,9 @@
         box-shadow: 0 .4rem .8rem #0005;
         border-radius: .8rem;
         overflow: hidden;
-        background-color: #eee;
+        background-color: #f2f2f2;
     }
+     
 
     .table__header {
         width: 100%;
@@ -31,7 +32,7 @@
     }
 
     .table__header .input-group {
-        width: 45%;
+        width: 35%;
         height: 90%;
         background-color: rgb(86, 50, 50);
         padding: 0 .8rem;
@@ -108,7 +109,7 @@
     th,
     td {
         border-collapse: collapse;
-        padding: 1rem;
+        padding: 0.8rem;
         text-align: left;
     }
 
@@ -116,7 +117,7 @@
         position: sticky;
         top: 0;
         left: 0;
-        background-color: #d5d1defe;
+         background-color: #d5d1defe;
 
         text-transform: capitalize;
     }
@@ -128,6 +129,7 @@
     tbody tr {
         --delay: .1s;
         transition: .5s ease-in-out var(--delay), background-color 0s;
+         
     }
 
     tbody tr.hide {
