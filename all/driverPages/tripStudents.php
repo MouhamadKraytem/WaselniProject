@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
   </head>
   <body>
+    <h1>Show Students:</h1>
     <section>
       <button class="show-modal"><i class='fa fa-users' aria-hidden='true'></i></button>
       <span class="overlay"></span>
@@ -69,7 +70,7 @@
         }
     }
     ?>
-        <h3>Thank you your message has been sent successfully</h3>
+        <h3>Thank you, Your request has been answered</h3>
 
         <div class="buttons">
           <button class="close-btn"><a href="profileDriver.php">Ok, Close</a></button>
@@ -116,6 +117,10 @@
    
     a {
         text-decoration:none;
+        color:white;
+    }
+    h1{
+        text-align:center;
         color:white;
     }
     </style>
