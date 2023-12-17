@@ -17,7 +17,7 @@ body{
 .container{
   width: 100%;
   max-width: 650px;
-  background: #ffc61a;
+  background: #2980b9;
   padding: 28px;
   margin: 0 28px;
   border-radius: 10px;
@@ -107,7 +107,8 @@ body{
   border:none;
   border-radius: 3px;
   color: black;
-  background: #0c356a;
+  background-color: #ffc61a;
+   
 }
 
 .form-submit-btn input:hover{

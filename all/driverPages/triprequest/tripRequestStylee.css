@@ -42,7 +42,7 @@ main.table {
 .table__header .input-group {
     width: 35%;
     height: 100%;
-    background-color: #fff5;
+  background: #2980b9;
     padding: 0 .8rem;
     border-radius: 2rem;
 
