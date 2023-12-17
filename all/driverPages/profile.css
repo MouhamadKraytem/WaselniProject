@@ -343,12 +343,13 @@
         color: #eee;
         font-size: 1.2em;
         margin-left: 30px;
+        
         font-weight: bold;
         background-color: black !important;
-        padding: 2px 10px;
-        border-radius: 20px;
+        padding: 2px 11px;
+        border-radius: 30px;
         transition: 0.2s;
     }
     .tripR:hover{
-        background-color: rgb(100, 100, 66) !important;
+        background-color: #f3cd34 !important;
     }
