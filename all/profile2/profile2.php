@@ -26,10 +26,12 @@ if (isset($_GET['userid'])) {
 <html>
     <head>
     
-        <link rel="stylesheet" href=" userProfile.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <title><?php echo "".$row['username']." profile"; ?></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="/path/to/font-awesome/css/all.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" href=" userProfiles.css">
+
     </head>
     
     
@@ -49,6 +51,7 @@ if (isset($_GET['userid'])) {
                         <div class="info">
                             <div class="col">
                             <i class="fab fa-twitter"></i>
+                            
                             </div>
                             <div class="col">
                             <i class="fab fa-facebook"></i>
@@ -61,7 +64,6 @@ if (isset($_GET['userid'])) {
                     </div>
                 <div class="right">
                     <div class="text">
-
                     <div class=sec1>
                         <h1>Profile-page</h1>
                         <h2> <?php echo "".$row['role']." "; ?></h2>
@@ -72,13 +74,17 @@ if (isset($_GET['userid'])) {
                         echo "<p class=desc>descriptiom</p>";
                     ?>
                     </div>
-                    <div class=sec1>
-                    <h3 id = loc>Location : </h3>
-                    <p><?php echo $row['locationName']; ?> </p>
-                    <button><i class="far fa-envelope"></i> send a message</button>
+                        <div class=sec1>
+                            <h3 id = loc>Location : </h3>
+                            <p><?php echo $row['locationName']; ?> </p>
+                            <?php
+                                if ($row['role'] === "driver") {
+                                    echo '<a href="../driverPages/rating/rating.php?driverID='.$row['id'].'"><button class = rateButton >Rate Driver</button></a>';
+                                }
+                            ?>  
+                        </div>
                     </div>
-                    </div>
-                  
+                
                 </div> 
             </div>
             

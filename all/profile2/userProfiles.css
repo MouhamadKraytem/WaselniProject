@@ -151,7 +151,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4cb3e9",endCo
     margin-bottom: 12px;
 }
 
-.right button{
+.right a button{
     width: 90%;
     margin-top:5px;
     text-align: center;
@@ -169,23 +169,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4cb3e9",endCo
     color: #fafafa;
     border: none;
     font-size: 1.2rem;
+    cursor: pointer;
+    border: 4px solid white;
+    transition: 0.3s;
 }
-.right button i {
-    float: left;
-    font-size: 1.4rem;
-    
-}
-a{
-    text-decoration: none;
-    background-color: #f3f3f3;
-    color:#0c356A;
-    margin: 50%;
-    border-radius: 10%;
-    
-   
-}
-a:hover {
-    background-color: rgb(189, 175, 22);
+.right a button:hover{
+    border: 4px solid black;
 }
 
 #loc{

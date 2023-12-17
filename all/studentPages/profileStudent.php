@@ -74,9 +74,11 @@ include('../connection.php');
                             t.tripID,
                             d.day,
                             tm.time,
+                            t.DriverID,
                             l_from.locationName AS fromLocationName,
                             l_to.locationName AS toLocationName,
                             driver.username AS driverName
+
                         FROM
                             reservetrip r
                         JOIN
@@ -98,7 +100,7 @@ include('../connection.php');
 
                         while ($row = mysqli_fetch_array($res)) {
                             echo "<tr>";
-                            echo "<td>".$row['driverName']."</td>";
+                            echo "<td><a href='../profile2/profile2.php?userid=".$row['DriverID']."'>".$row['driverName']."</a></td>";
                             echo "<td>".$row['fromLocationName']."</td>";
                             echo "<td>".$row['toLocationName']."</td>";  
                             echo "<td>".$row['day']." ".$row['time']."</td>";  

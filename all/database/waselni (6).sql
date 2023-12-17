@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2023 at 04:03 PM
+-- Generation Time: Dec 17, 2023 at 07:24 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -120,6 +120,28 @@ INSERT INTO `location` (`locationID`, `locationName`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `rating`
+--
+
+CREATE TABLE `rating` (
+  `ratingID` int(11) NOT NULL,
+  `driverID` int(11) NOT NULL,
+  `rate` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `opinion` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `rating`
+--
+
+INSERT INTO `rating` (`ratingID`, `driverID`, `rate`, `userID`, `opinion`) VALUES
+(6, 49, 4, 46, '45hvkl'),
+(7, 49, 4, 46, 'tkiyc');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `request`
 --
 
@@ -135,7 +157,7 @@ CREATE TABLE `request` (
 --
 
 INSERT INTO `request` (`requestID`, `tripID`, `studentID`, `answer`) VALUES
-(83, 39, 46, NULL);
+(84, 39, 46, NULL);
 
 -- --------------------------------------------------------
 
@@ -219,7 +241,9 @@ CREATE TABLE `trip` (
 INSERT INTO `trip` (`tripID`, `fromlocationID`, `toLocationID`, `time`, `dayID`, `availableNB`, `DriverID`) VALUES
 (36, 3, 1, 10, 3, 2, 49),
 (38, 1, 3, 7, 1, 1, 53),
-(39, 4, 1, 9, 4, 3, 49);
+(39, 4, 1, 9, 4, 3, 49),
+(40, 2, 3, 10, 4, 3, 49),
+(41, 3, 4, 7, 1, 1, 49);
 
 -- --------------------------------------------------------
 
@@ -281,6 +305,14 @@ ALTER TABLE `gender`
 --
 ALTER TABLE `location`
   ADD PRIMARY KEY (`locationID`);
+
+--
+-- Indexes for table `rating`
+--
+ALTER TABLE `rating`
+  ADD PRIMARY KEY (`ratingID`),
+  ADD KEY `driverID` (`driverID`),
+  ADD KEY `userID` (`userID`);
 
 --
 -- Indexes for table `request`
@@ -353,10 +385,16 @@ ALTER TABLE `location`
   MODIFY `locationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `rating`
+--
+ALTER TABLE `rating`
+  MODIFY `ratingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `requestID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `requestID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `reservetrip`
@@ -374,7 +412,7 @@ ALTER TABLE `time`
 -- AUTO_INCREMENT for table `trip`
 --
 ALTER TABLE `trip`
-  MODIFY `tripID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `tripID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -385,6 +423,13 @@ ALTER TABLE `user`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `rating`
+--
+ALTER TABLE `rating`
+  ADD CONSTRAINT `rating_ibfk_1` FOREIGN KEY (`driverID`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `rating_ibfk_2` FOREIGN KEY (`userID`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `request`
@@ -421,3 +466,4 @@ COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
