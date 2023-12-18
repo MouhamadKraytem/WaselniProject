@@ -7,18 +7,17 @@ include('../connection.php');
 </head>
       <div class="profile">
          <?php
-         $user_id =$_SESSION['id'] ;
+         $user_id =$_SESSION['id'];
             $query =  "SELECT * FROM `user` WHERE id = '$user_id'";
             $res = mysqli_query($conn,$query);
 
             $userData = mysqli_fetch_array($res);
             $image = './withprofile/uploaded_img/'.$userData['image'];
-            echo $image;
+            // echo $image;
             if($userData['image'] == NULL){
                echo '<img src="images/default-avatar.png">';
             }else{
                echo "<img src=".$image." alt=userImage>";
-                
             }
             ?>
             <!-- <img src="./withprofile/images/default-avatar.png" alt=""> -->

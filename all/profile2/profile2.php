@@ -45,6 +45,15 @@ if (isset($_GET['userid'])) {
                     
                         <img class="cover" src="Aixen.jpg ">
                             <div class="box">
+                                <?php
+            $image = '../driverPages/withprofile/uploaded_img/'.$row['image'];
+            // echo $image;
+            if($row['image'] == NULL){
+               echo '<img src="images/default-avatar.png" class=profile>';
+            }else{
+               echo "<img src=".$image." alt=userImage class=profile>";
+            }
+                                ?>
                             <img class="profile" src=<?php echo $row['image']; ?>>
                             </div>
                         <h1><?php echo  $row['username']; ?></h1>
