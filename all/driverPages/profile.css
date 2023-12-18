@@ -144,7 +144,7 @@
     tbody tr td,
     tbody tr td p,
     tbody tr td img {
-        transition: .2s ease-in-out;
+        transition: 0.2s ease-in-out;
     }
 
     tbody tr.hide td,
@@ -257,6 +257,7 @@
         border-radius: 30px;
         padding: 5px 30px;
         border: 1px solid black;
+        transition: 0.2s ease-in-out;
     }
 
     .navbar .nav-links li:hover {
@@ -270,7 +271,7 @@
         color: white;
         background-color: #0c356A;
         cursor: pointer;
-
+        transition: 0.2s ease-in-out;
     }
 
     .nav-links li:hover {

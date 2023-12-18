@@ -34,7 +34,8 @@ $id = $_SESSION['id'];
 
         $res = mysqli_query($conn, $query);
         $nb = mysqli_num_rows($res);
-                        
+        $filePath = __FILE__;
+        
     ?>
 
 
@@ -46,7 +47,7 @@ $id = $_SESSION['id'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Table</title>
-    <link rel="stylesheet" href="./profilee.css">
+    <link rel="stylesheet" href="./profile.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <style>
@@ -64,7 +65,7 @@ $id = $_SESSION['id'];
                 <li class="active"></i><a href="#"></a></i>Home</li>
                 <li class="active"></i><a href="#"></a>Services</li>
                 <li class="active"></i><a href="#"></a></i>ABOUT</li>
-                <li class="active"><a href="../contactform/contact.php">Contact-US</a></li>
+                <li class="active"><a href="../contactform/contact.php?prevPage=<?php echo $filePath?>">Contact-US</a></li>
             </ul>
         </nav>
         <!-- <P class="img"><img src="dada.jpg"></p> -->

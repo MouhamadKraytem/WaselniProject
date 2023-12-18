@@ -63,15 +63,11 @@ if (isset($_SESSION['id'])) {
                 <div class="button-area">
                     <button type="submit" name = sb>Send Message</button>
                     <!-- <span>Sending your message</span> --> <span></span>
+                    
                     <?php
-                    if ($_SESSION['role'] == "driver") {
-                        # code...
-                        echo "<a href='../driverPages/profileDriver.php'><button>return</button></a>";
-                    }else if($_SESSION['role'] == "student"){
-                        # code...
-                        echo "<a href='../studentPages/profileStudent.php'><button>return</button></a>";
-                    }
-
+                        $prev=$_GET['prevPage'];
+                        echo $prev;
+                        echo "<a href=$prev><button>Return</button></a>";
                     ?>
                     
                 </div>
