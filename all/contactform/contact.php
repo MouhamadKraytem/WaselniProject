@@ -26,7 +26,7 @@ if (isset($_SESSION['id'])) {
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <title>Contact Form </title>
-        <link rel="stylesheet" href="contactStylee.css">
+        <link rel="stylesheet" href="contactStyle.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon>family=Material+Icons">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all/min/css"/>
 
@@ -65,9 +65,13 @@ if (isset($_SESSION['id'])) {
                     <!-- <span>Sending your message</span> --> <span></span>
                     
                     <?php
-                        $prev=$_GET['prevPage'];
-                        echo $prev;
-                        echo "<a href=$prev><button>Return</button></a>";
+                        if ($_SESSION['role']=="driver") {
+                            # code...
+                            echo "<a href='../driverPages/profileDriver.php' class=ret>Return</a>";
+                        }else {
+                            # code...
+                            echo "<a href='../studentPages/profileStudent.php' class=ret>Return</a>";
+                        }
                     ?>
                     
                 </div>
