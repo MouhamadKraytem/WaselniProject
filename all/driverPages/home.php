@@ -10,14 +10,18 @@ include('../connection.php');
          $user_id =$_SESSION['id'] ;
             $query =  "SELECT * FROM `user` WHERE id = '$user_id'";
             $res = mysqli_query($conn,$query);
+
             $userData = mysqli_fetch_array($res);
-            // if($fetch['image'] == ''){
-            //    echo '<img src="images/default-avatar.png">';
-            // }else{
-            //    echo '<img src="uploaded_img/'.$fetch['image'].'">';
-            // }
+            $image = './withprofile/uploaded_img/'.$userData['image'];
+            echo $image;
+            if($userData['image'] == NULL){
+               echo '<img src="images/default-avatar.png">';
+            }else{
+               echo "<img src=".$image." alt=userImage>";
+                
+            }
             ?>
-            <img src="./withprofile/images/default-avatar.png" alt="">
+            <!-- <img src="./withprofile/images/default-avatar.png" alt=""> -->
 
          <h3> Welcome back , <?php echo $userData['username']; ?></h3>
          <a href="./withprofile/profile.php" class="btn">update profile</a>
