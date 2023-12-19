@@ -65,7 +65,7 @@ $id = $_SESSION['id'];
                 <li class="active"></i><a href="#"></a></i>Home</li>
                 <li class="active"></i><a href="#"></a>Services</li>
                 <li class="active"></i><a href="#"></a></i>ABOUT</li>
-                <li class="active"><a href="../contactform/contact.php?prevPage=<?php echo $filePath?>">Contact-US</a></li>
+                <li class="active"><a href="../contactform/contact.php?">Contact-US</a></li>
             </ul>
         </nav>
         <!-- <P class="img"><img src="dada.jpg"></p> -->

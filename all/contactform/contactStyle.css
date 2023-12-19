@@ -100,7 +100,7 @@ form .button-area{
     justify-content: space-evenly;
 }
 
-.button-area button {
+.button-area button , .ret {
     font-size: 18px;
     border: none;
     color: #fff;
@@ -108,6 +108,7 @@ form .button-area{
     border-radius: 5px;
     background: #333;
     padding: 13px 25px;
+    text-decoration: none;
 }
 
 button-area span {

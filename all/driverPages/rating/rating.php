@@ -47,7 +47,8 @@ if (isset($_POST['sb'])) {
 			<textarea name="opinion" cols="30" rows="5" placeholder="Your opinion..."></textarea>
 			<div class="btn-group">
 				<button type="submit" class="btn submit "name=sb>Submit</button>
-				<button class="btn cancel">Cancel</button>
+				<!-- need php code for return -->
+				<a href='../'><button class="btn cancel">Cancel</button></a>
 			</div>
 		</form>
 	</div>
