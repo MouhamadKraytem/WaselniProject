@@ -77,7 +77,7 @@ $id = $_SESSION['id'];
             <div class="table">
                 <div class="links">
                 <a href="./triprequest/triprequest.php " class="tripR" >Trip Request <?php echo "($nb)"; ?></a>
-                <a href="allRating.php" class=tripR>Your Rates</a>
+                <a href="./showRating/tablerating.php" class=tripR>Your Rates</a>
                 </div>
     <main class="table">
         <section class="table__header">
