@@ -26,3 +26,15 @@ function sendRequest(tripID) {
         xmlhttp.open("GET", "./sendRequest.php?tripID=" + tripID, true);
         xmlhttp.send();
     }
+
+function filterLocation(loc) {
+    console.log(loc);
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            document.getElementById("result").innerHTML = xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("GET", "./filterLocation.php?loc="+loc, true);
+    xmlhttp.send();
+}

@@ -1,9 +1,11 @@
 <?php
+if (isset($_GET['loc'])) {
+
 include('../connection.php');
-$drivername=$_GET['dname'];
+$loc=$_GET['loc'];
 session_start();
 $id = $_SESSION['id'];
-$getAlltrips = "SELECT
+$getTripByLocation = "SELECT
     t.tripID,
     t.DriverID,     
     l1.locationName AS fromLocation,
@@ -21,20 +23,21 @@ JOIN days d ON t.dayID = d.dayID
 JOIN time ti ON t.time = ti.timeId
 WHERE
     t.availableNB > 0
-    AND u.username LIKE '$drivername%'
+    AND (
+        l1.locationID = $loc
+        OR l2.locationID = $loc
+    )
     AND NOT EXISTS (
         SELECT 1
         FROM reservetrip rt
         WHERE rt.tripID = t.tripID AND rt.studentID = $id
-    )
+    )";
 
-";
 
-$getTripResult = mysqli_query($conn , $getAlltrips);
-        if (mysqli_affected_rows($conn) == 0) {
-            echo "No trip Found";
-        }
-        while ($row = mysqli_fetch_array($getTripResult)) {
+
+        $getTripByLocationRes = mysqli_query($conn , $getTripByLocation);
+        
+        while ($row = mysqli_fetch_array($getTripByLocationRes)) {
         echo "<tr>";
         echo "<td><a href=../profile2/profile2.php?userid=".$row['DriverID']." class=profileLink>".$row['driverName']."</a></td>";
         echo "<td>".$row['fromLocation']."</td>";
@@ -43,7 +46,7 @@ $getTripResult = mysqli_query($conn , $getAlltrips);
         echo "<td>".$row['time']."</td>";
         echo "<td>".$row['availableNB']."</td>";
         echo "<td class = link><button class=but onclick=sendRequest(".$row['tripID'].")>send request</button></td>";
-
+        echo "<td class = requestStatus></td>";
         
         if (isset($_GET['err'])) {
             if ($_GET['err'] == $row['tripID'] ) {
@@ -73,6 +76,7 @@ $getTripResult = mysqli_query($conn , $getAlltrips);
             }
         }
         echo "</tr>";
-        
     }
+}
+
 ?>

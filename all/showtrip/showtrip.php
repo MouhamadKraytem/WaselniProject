@@ -42,6 +42,19 @@ while ($row = mysqli_fetch_array($res)) {
                                         <input type="text" name="dname"  class="form-control" placeholder="Search Driver Name"  onkeyup="showtrip(this.value)">
                                         <button type="submit" class="btn btn-primary" name=search >Search</button>
                                     </div>
+                                    <div class=selcet >
+                                        <label for="loc">select location</label>
+                                        <select name="loc" id="locations" onchange="filterLocation(this.value)" > 
+                                        <?php
+                                        $query = 'SELECT * FROM `location` WHERE 1';   
+                                        $res= mysqli_query($conn , $query);
+                                        while ($row = mysqli_fetch_array($res)) {
+                                            echo "<option value=".$row['locationID'].">".$row['locationName']."</option>";
+                                        }
+                                        ?>
+                                        </select>
+
+                                    </div>
                                 </form>
 
                             </div>
@@ -49,11 +62,11 @@ while ($row = mysqli_fetch_array($res)) {
                     </div>
                 </div>
             </div>
-
             <div class="col-md-12">
                 <div class="card mt-4">
                     <div class="card-body">
                         <table class="table table-bordered">
+                        <div id = requestStatus>Available requests</div>
                             <thead> 
                                 <tr>
                                     <th>Driver Name</th>
@@ -62,11 +75,9 @@ while ($row = mysqli_fetch_array($res)) {
                                     <th>Day</th>
                                     <th>Time</th>
                                     <th>available Place</th>
-                                    
                                 </tr>
                             </thead>
                             <tbody id=result>
-
                             </tbody>
                         </table>
                     </div>
@@ -89,5 +100,3 @@ a.profileLink{
     
 }
     </style>
-
-    
