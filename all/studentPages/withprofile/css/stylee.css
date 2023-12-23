@@ -33,14 +33,14 @@
 body{
    margin: 0;
    padding:0;
-   
+   background-color: #0c356a;
 }
 .btn,
 .delete-btn{
    width: 100%;
    border-radius: 5px;
    padding:10px 30px;
-   color:var(--white);
+   color: white ;
    display: block;
    text-align: center;
    cursor: pointer;
@@ -175,7 +175,7 @@ body{
 
 .update-profile{
    min-height: 100vh;
-   background-color: var(--light-bg);
+   background-color:#0c356a;
    display: flex;
    align-items: center;
    justify-content: center;
