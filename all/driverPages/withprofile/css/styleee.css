@@ -138,7 +138,7 @@ body{
 
 .container .profile{
    padding:20px;
-   background-color: var(--white);
+   background-color: #fff6;
    box-shadow: var(--box-shadow);
    text-align: center;
    width: 400px;
