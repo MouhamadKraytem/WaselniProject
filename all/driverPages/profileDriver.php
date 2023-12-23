@@ -96,7 +96,6 @@ $id = $_SESSION['id'];
                         <th> Schedule </th>
                         <th> available space </th>
                         <th> Show Students</th>
-                        <th> Edit</th>
                         <th> Delete</th>
                         
                     </tr>
@@ -134,7 +133,6 @@ $id = $_SESSION['id'];
                             echo "<td>".$row['tripDay']." ".$row['tripTime']."</td>";  
                             echo "<td>".$row['availableNB'] ."</td>";
                             echo "<td><a href='tripStudents.php?trip=".$row['tripID']."'><i class='fa fa-users' aria-hidden='true'></a></td>";
-                            echo "<td><a href='#'><i class='fa fa-pencil-square-o' aria-hidden='true'></a></td>";
                             echo "<td><a href='deleteTrip.php?tripID=".$row['tripID']."'><i class='fa fa-trash-o' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                         }

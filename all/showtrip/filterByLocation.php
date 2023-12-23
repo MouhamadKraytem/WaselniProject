@@ -25,7 +25,8 @@ WHERE
     t.availableNB > 0
     AND (
         l1.locationID = $loc
-        OR l2.locationID = $loc
+        OR
+        l2.locationID = $loc
     )
     AND NOT EXISTS (
         SELECT 1

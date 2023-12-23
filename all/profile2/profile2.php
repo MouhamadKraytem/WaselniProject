@@ -10,12 +10,19 @@ if (isset($_GET['userid'])) {
     JOIN location AS l ON user.locationID = l.locationID
     WHERE id = $userId";
     $getUserInfoRes= mysqli_query($conn , $getUserInfo);
-
+    
     $row = mysqli_fetch_array($getUserInfoRes);
-
+    if ( $row["role"] == "driver" ) {
+        # code...
+        $image = '../driverPages/withprofile/uploaded_img/'.$row['image'];
+    }else {
+        # code...
+        $image = "../studentPages/withprofile/uploaded_img/".$row['image'];
+    }
 }else {
     header('location:../index.html');
 }
+
 
 ?>
 
@@ -46,7 +53,7 @@ if (isset($_GET['userid'])) {
                         <img class="cover" src="Aixen.jpg ">
                             <div class="box">
                                 <?php
-            $image = '../driverPages/withprofile/uploaded_img/'.$row['image'];
+            
             // echo $image;
             if($row['image'] == NULL){
                echo '<img src="images/default-avatar.png" class=profile>';
@@ -54,7 +61,7 @@ if (isset($_GET['userid'])) {
                echo "<img src=".$image." alt=userImage class=profile>";
             }
                                 ?>
-                            <img class="profile" src=<?php echo $row['image']; ?>>
+                            
                             </div>
                         <h1><?php echo  $row['username']; ?></h1>
                         <div class="info">

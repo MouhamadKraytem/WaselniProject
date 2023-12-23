@@ -35,6 +35,6 @@ function filterLocation(loc) {
             document.getElementById("result").innerHTML = xmlhttp.responseText;
         }
     }
-    xmlhttp.open("GET", "./filterLocation.php?loc="+loc, true);
+    xmlhttp.open("GET", "./filterByLocation.php?loc="+loc, true);
     xmlhttp.send();
 }

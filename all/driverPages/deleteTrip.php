@@ -6,8 +6,13 @@ if (isset($_GET['tripID'])) {
     $tripID = $_GET['tripID'];
 
     // Perform the deletion
+    $deleteReservation = "DELETE FROM `reservetrip` WHERE `tripID` = $tripID";
+    $res = mysqli_query($conn, $deleteReservation);
+    
+
     $deleteTrip = "DELETE FROM trip WHERE tripID = $tripID";
     $result = mysqli_query($conn, $deleteTrip);
+
 
     if ($result) {
         // Deletion successful, you can redirect to another page or display a success message

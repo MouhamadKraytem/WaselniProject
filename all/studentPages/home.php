@@ -34,13 +34,13 @@ if(isset($_GET['logout'])){
             $query =  "SELECT * FROM `user` WHERE id = '$user_id'";
             $res = mysqli_query($conn,$query);
             $userData = mysqli_fetch_array($res);
-            // if($fetch['image'] == ''){
-            //    echo '<img src="images/default-avatar.png">';
-            // }else{
-            //    echo '<img src="uploaded_img/'.$fetch['image'].'">';
-            // }
+            if($userData['image'] == NULL){
+               echo '<img src="images/default-avatar.png">';
+            }else{
+               echo '<img src="./withprofile/uploaded_img/'.$userData['image'].'">';
+            }
             ?>
-            <img src="./withprofile/images/default-avatar.png" alt="">
+
 
          <h3> Welcome back , <?php echo $userData['username']; ?></h3>
          <a href="./withprofile/profile.php" class="btn">update profile</a>

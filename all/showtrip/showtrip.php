@@ -40,11 +40,11 @@ while ($row = mysqli_fetch_array($res)) {
                                 <form action="" method="post">
                                     <div class="input-group mb-3">
                                         <input type="text" name="dname"  class="form-control" placeholder="Search Driver Name"  onkeyup="showtrip(this.value)">
-                                        <button type="submit" class="btn btn-primary" name=search >Search</button>
+                                        <!-- <button type="submit" class="btn btn-primary" name=search >Search</button> -->
                                     </div>
                                     <div class=selcet >
-                                        <label for="loc">select location</label>
-                                        <select name="loc" id="locations" onchange="filterLocation(this.value)" > 
+                                        <label for="loc">Select Location</label>
+                                        <select name="loc" id="loc" onchange="filterLocation(this.value)" > 
                                         <?php
                                         $query = 'SELECT * FROM `location` WHERE 1';   
                                         $res= mysqli_query($conn , $query);
