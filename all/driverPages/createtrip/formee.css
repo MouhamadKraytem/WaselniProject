@@ -107,13 +107,13 @@ body{
   border:none;
   border-radius: 3px;
   color: black;
-  background-color: #ffc61a;
+  background-color: white;
    
 }
 
 .form-submit-btn input:hover{
 
-  background:  white;
+  background:  #ffc61a;
   color: black;
     
 
@@ -156,6 +156,7 @@ body{
   width: 100%;
   justify-content: space-between;
   padding: 20px;
+  background-color: #0000007a;
   /* color: black; */
    
 

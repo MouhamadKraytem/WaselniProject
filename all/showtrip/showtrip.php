@@ -21,7 +21,7 @@ while ($row = mysqli_fetch_array($res)) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- small css file -->
-    <link rel="stylesheet" href="./showTripStylee.css">
+    <link rel="stylesheet" href="./showTripStyleee.css">
     <title>Show trip for students :</title>
 </head>
 <body>
@@ -42,7 +42,7 @@ while ($row = mysqli_fetch_array($res)) {
                                         <input type="text" name="dname"  class="form-control" placeholder="Search Driver Name"  onkeyup="showtrip(this.value)">
                                         <!-- <button type="submit" class="btn btn-primary" name=search >Search</button> -->
                                     </div>
-                                    <div class=selcet >
+                                    <div class=select >
                                         <label for="loc">Select Location</label>
                                         <select name="loc" id="loc" onchange="filterLocation(this.value)" > 
                                         <?php

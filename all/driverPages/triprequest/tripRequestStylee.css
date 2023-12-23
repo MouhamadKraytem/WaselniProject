@@ -42,7 +42,7 @@ main.table {
 .table__header .input-group {
     width: 35%;
     height: 100%;
-  background: #2980b9;
+  background: #fff5 ;
     padding: 0 .8rem;
     border-radius: 2rem;
 
@@ -75,7 +75,7 @@ main.table {
 .table__body {
     width: 95%;
     max-height: calc(89% - 1.6rem);
-    background-color: #fffb;
+    background-color: #fff5;
     
     margin: .8rem auto;
     border-radius: .6rem;
@@ -320,6 +320,10 @@ background-color: #6fcaea;
 
 h3 {
     text-align: center;
+      background-color: #0000007a;
+      padding-top: 20px;
+      color:#fff;
+      color:white;
 }
     
 .return {

@@ -1,29 +1,44 @@
-* {
-    margin: 0;
+    * {
+        margin: 0;
         padding: 0;
 
         box-sizing: border-box;
         font-family: sans-serif;
+        
     }
+
+    body {
+        /* min-height: 100vh;
+        background: url(images/html_table.jpg) center / cover; */
+       
+        /* background-color: #ebc474; */
+       background-color: #0c356a !important;;
+        
+    }
+    /* .container{
+        
+         
+        
+    } */
     .container {
         background-color: #0c356a !important;
     }
-
     main.table {
         width: 55vw;
-        height: 55vh;
-        margin: 30px;
+        height: 60vh;
+        background-color: #fff5;
+        margin: 30px ;
         backdrop-filter: blur(7px);
         box-shadow: 0 .4rem .8rem #0005;
         border-radius: .8rem;
-        overflow: hidden;
         background-color: #f2f2f2;
+        overflow: hidden;
     }
-     
 
     .table__header {
         width: 100%;
-        background-color: #fff5;
+        height: 10%;
+        background-color: #fff4;
         padding: .8rem 1rem;
 
         display: flex;
@@ -33,8 +48,8 @@
 
     .table__header .input-group {
         width: 35%;
-        height: 90%;
-        background-color: rgb(86, 50, 50);
+        height: 100%;
+        background-color: #fff5;
         padding: 0 .8rem;
         border-radius: 2rem;
 
@@ -48,7 +63,7 @@
     .table__header .input-group:hover {
         width: 25%;
         background-color: #fff8;
-        box-shadow: 0 .1rem .4rem #0002;
+        box-shadow: 0 .1rem .4rem #243B55;
     }
 
     .table__header .input-group img {
@@ -69,8 +84,7 @@
         max-height: calc(89% - 1.6rem);
         background-color: #fffb;
 
-        margin: .9rem auto;
-
+        margin: .8rem auto;
         border-radius: .6rem;
 
         overflow: auto;
@@ -109,16 +123,17 @@
     th,
     td {
         border-collapse: collapse;
-        padding: 0.8rem;
-        text-align: left;
+        padding: 1rem;
+        text-align: center;
+        vertical-align:auto;
     }
 
     thead th {
         position: sticky;
         top: 0;
         left: 0;
-         background-color: #d5d1defe;
-
+        background-color: #d5d1defe;
+        cursor: pointer;
         text-transform: capitalize;
     }
 
@@ -129,7 +144,6 @@
     tbody tr {
         --delay: .1s;
         transition: .5s ease-in-out var(--delay), background-color 0s;
-         
     }
 
     tbody tr.hide {
@@ -144,7 +158,7 @@
     tbody tr td,
     tbody tr td p,
     tbody tr td img {
-        transition: 0.2s ease-in-out;
+        transition: .2s ease-in-out;
     }
 
     tbody tr.hide td,
@@ -160,8 +174,7 @@
         transition: .2s ease-in-out .5s;
     }
 
-
-
+    
 
     @media (max-width: 1000px) {
         td:not(:first-of-type) {
@@ -187,7 +200,9 @@
         border: 1.4px solid #6c00bd;
     }
 
-
+    thead th:hover {
+        color: #0023bd;
+    }
 
     thead th.active span.icon-arrow {
         background-color: #6c00bd;
@@ -202,32 +217,9 @@
     tbody td.active {
         color: #6c00bd;
     }
-
-    .export__file {
-        position: relative;
-    }
-
-    .export__file .export__file-btn {
-        display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        background: #fff6 url(images/export.png) center / 80% no-repeat;
-        border-radius: 50%;
-        transition: .2s ease-in-out;
-    }
-
-    .export__file .export__file-btn:hover {
-        background-color: #fff;
-        transform: scale(1.15);
-        cursor: pointer;
-    }
-
-
-
-
-
+        
     .navbar {
-
+        /* background-color: #fff6 !important; */
         position: absolute;
         top: 0;
         left: 0;
@@ -235,8 +227,9 @@
         width: 100%;
         justify-content: space-between;
         padding: 20px;
-        background-color: #0c356A;
-
+        color: whitesmoke;
+        background-color: #0000007a;
+        /* background-color: aliceblue; */
 
 
     }
@@ -248,36 +241,36 @@
     .nav-links {
         display: flex;
         align-items: center;
-
+ 
 
     }
-
-    .navbar .nav-links li {
+    .trips{
+        background-color: #243B55;
+        color:white;
+        border-radius: 10%;
+      
+    }
+    .navbar .nav-links li{
         background-color: black;
         border-radius: 30px;
         padding: 5px 30px;
         border: 1px solid black;
-        transition: 0.2s ease-in-out;
+        cursor: pointer;
     }
-
     .navbar .nav-links li:hover {
-        color: white;
+        color:  white;
         border-radius: 30px;
-        border: 1px solid white;
+        border:1px solid white  ;
     }
-
     .nav-links li {
         margin: 0 30px;
         color: white;
-        background-color: #0c356A;
-        cursor: pointer;
-        transition: 0.2s ease-in-out;
+        background-color: #0023bd;
+        transition: 0.2s;
     }
-
-    .nav-links li:hover {
-        background-color: #f3cd34;
+    .nav-links li:hover{
+        background-color: #ebc474;
     }
-
     .logo {
         color: black;
     }
@@ -288,7 +281,12 @@
         font-weight: bold;
     }
 
-
+    /* .ctn {
+    padding: 8px 15px;
+    background: #243B55;
+    color: whitesmoke;
+    border-radius: 30px;
+} */
     @media only screen and (max-width:850px) {
         .menu-btn {
             display: block;
@@ -302,6 +300,7 @@
             position: absolute;
             top: 30px;
             left: 30px;
+            color:white;
 
         }
 
@@ -310,7 +309,7 @@
             width: 100%;
             height: 100vh;
             justify-content: center;
-            background: #484872;
+            /* background: #484872; */
             margin-top: -900px;
             transition: all 0.5s ease;
 
@@ -330,29 +329,27 @@
     a {
         text-decoration: none;
     }
-
     /* profile container css */
-    .prof {
-        position: absolute;
-        right: 0;
+    .prof{
+    position: absolute;
+    right: 0;
     }
-
-    */ .table__body h3 .request {
-        background-color: #6fcaea;
+    
+    li i:hover{
+        cursor: pointer;
     }
-
-
-    .tripR {
-        color: #eee;
-        font-size: 1.2em;
-        margin-left: 30px;
-        
-        font-weight: bold;
-        background-color: black !important;
-        padding: 2px 11px;
-        border-radius: 30px;
-        transition: 0.2s;
-    }
-    .tripR:hover{
-        background-color: #f3cd34 !important;
-    }
+        /* .tripF {
+            color: white;
+            font-size: 0.8em;
+            margin-left: 30px;
+            
+            font-weight: bold;
+             
+            padding: 20px;
+            border-radius: 30px;
+            transition: 0.2s;
+        } */
+    
+        /* .tripF:hover{
+            background-color: #f3cd34 !important;
+        } */

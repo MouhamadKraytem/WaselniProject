@@ -54,12 +54,12 @@ if (isset($_POST['return'])) {
     <meta charset="utf-8" />
     <title>Create Trip | NEW</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-    <link rel="stylesheet" href="formeee.css" />
+    <link rel="stylesheet" href="formee.css" />
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
   </head>
   <body>
         
-        <nav class="navbar">
+        <!-- <nav class="navbar">
             <h1 class="logo">W'aselni</h1>
             <ul class="nav-links">
                 <li class="active"> <a href="#"> Home</a></i></li>
@@ -68,7 +68,7 @@ if (isset($_POST['return'])) {
                 <li class=""> <a href="#"> Contact-US</a></i></li>
                 
             </ul>
-        </nav>
+        </nav> -->
  
     <div class="container">
       <h1 class="form-title">Create New Trip</h1>

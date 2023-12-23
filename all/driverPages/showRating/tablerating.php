@@ -29,7 +29,7 @@ $getRates = "SELECT
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>table </title>
-    <link rel="stylesheet" href="./tableratings.css">
+    <link rel="stylesheet" href="./tableratingsss.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -37,7 +37,7 @@ $getRates = "SELECT
         <table>
           <thead>
             <tr>
-              <th  >Student</th>
+              <th>Student</th>
               <th>Comment</th>
               <th>Rate</th>
               
@@ -90,5 +90,7 @@ $getRates = "SELECT
         </table>
       </div>
     </div>
+    <a href="" class="ret">Return </a>
 </body>
+ 
 </html>

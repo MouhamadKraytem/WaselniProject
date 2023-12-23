@@ -33,7 +33,7 @@
 body{
    margin: 0;
    padding:0;
-   background:url(bacg.jpg);
+   
 }
 .btn,
 .delete-btn{
@@ -74,10 +74,12 @@ body{
    color:var(--white);
    font-size: 20px;
 }
-
+.container{
+   background-color: #0c356a !important;
+}
 .form-container{
    min-height: 100vh;
-   background-color: var(--light-bg);
+     background-color: #0c356a !important;;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -126,7 +128,7 @@ body{
 
 .container{
    min-height: 100vh;
-   background-color: var(--light-bg);
+   background-color: #0c356a !important;
    display: flex;
    align-items: center;
    justify-content: space-evenly;

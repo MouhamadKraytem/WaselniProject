@@ -18,9 +18,8 @@ if (isset($_SESSION['id'])) {
 }
 
 ?>
-
-
-<!DOCTYPE html>
+ 
+ <!DOCTYPE html>
 <htMl>
     <head>
         <meta charset="UTF-8"/>
@@ -34,13 +33,13 @@ if (isset($_SESSION['id'])) {
     <body>
         <div class="wrapper">
             <header> Send us a Message</header>
-            <form action="#" method=POST>
-                <!-- <div class="dbl-field">
+            <form action="#" method=POST> 
+                 <div class="dbl-field">
                     <div class="field">
                         <input type="text"  name= "name"placeholder="Enter your name">
                         <i class="fas fa-user"></i>
-                    </div>
-                    <div class="field">
+                    </div> 
+                    <!-- <div class="field">
                         <input type="text"  name ="email"placeholder="Enter your email">
                         <i class="fas fa-envelope"></i>
                     </div>
@@ -56,13 +55,14 @@ if (isset($_SESSION['id'])) {
                         <i class="fas fa-globe"></i>
                     </div>
                 </div> -->
+</div>
                 <div class="message">
                     <textarea placeholder="write your message" name = msg></textarea>
                     <i class="material-icons"></i>
                 </div> 
                 <div class="button-area">
                     <button type="submit" name = sb>Send Message</button>
-                    <!-- <span>Sending your message</span> --> <span></span>
+                     <span> </span> <span></span>
                     
                     <?php
                         if ($_SESSION['role']=="driver") {
@@ -74,9 +74,9 @@ if (isset($_SESSION['id'])) {
                         }
                     ?>
                     
-                </div>
+                 </div>
             </form>
             </div>
-            <script src="script.js"></script>
+            <script src="script.js"></script> --> 
     </body>
 </htMl>

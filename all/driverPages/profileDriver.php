@@ -47,7 +47,7 @@ $id = $_SESSION['id'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Table</title>
-    <link rel="stylesheet" href="./profile.css">
+    <link rel="stylesheet" href="./profilee.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <style>
@@ -60,12 +60,12 @@ $id = $_SESSION['id'];
   <body>
         <div class="page">
         <nav class="navbar">
-            <h1 class="logo"> W'aselni</h1>
+            <h1 class="logo">W'aselni</h1>
             <ul class="nav-links">
-                <li class="active"></i><a href="#"></a></i>Home</li>
-                <li class="active"></i><a href="#"></a>Services</li>
-                <li class="active"></i><a href="#"></a></i>ABOUT</li>
-                <li class="active"><a href="../contactform/contact.php?">Contact-US</a></li>
+                 <a href=".../driverPages/index.html" class="tripR">Home</a></li>
+                <a href="./triprequest/triprequest.php " class="tripR" >Trip Request <?php echo "($nb)"; ?></a>
+                <a href="./showRating/tablerating.php" class=tripR>Your Rates</a>
+                 <a href="../contactform/contact.php?" class="tripR">Contact-US</a></li>
             </ul>
         </nav>
         <!-- <P class="img"><img src="dada.jpg"></p> -->
@@ -75,10 +75,10 @@ $id = $_SESSION['id'];
             ?>
             
             <div class="table">
-                <div class="links">
+                <!-- <div class="links">
                 <a href="./triprequest/triprequest.php " class="tripR" >Trip Request <?php echo "($nb)"; ?></a>
                 <a href="./showRating/tablerating.php" class=tripR>Your Rates</a>
-                </div>
+                </div> -->
     <main class="table">
         <section class="table__header">
             <h1>Your Trips</h1>
