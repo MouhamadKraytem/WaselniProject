@@ -3,9 +3,9 @@ table tr th {
     text-align: center;
     
 }
-.container{
+/* .container{
     background-color: #243B55;
-}
+} */
 
 body{
     background-color:#0c356a;
@@ -14,18 +14,21 @@ table{
     border-collapse: collapse;
     background-color: white;
     color:white;
+    margin: 3px;
+    max-height: 400px;
+}
+table tr th{
+    color:black;
 }
 table tr td.dynamic{
     border-left: none;
     
 }
-table thead tr th {
-    color:white;
-}
-table tr td.link{
+
+/* table tr td.link{
     border-right: none;
     color:#ffffff;
-}
+} */
 table tr {
     vertical-align: middle;
      

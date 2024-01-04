@@ -70,7 +70,7 @@ include('./signup.php');
         
                 <input type="submit" id="btn" value="SignUp" name = "sb"/>
             </form>
-            <p class="login">Already have an accont ?<a href="../login/index.php">Log In</a></p>
+            <p class="login">Already have an account ?<a href="../login/index.php">Log In</a></p>
       </div>
       <?php
       

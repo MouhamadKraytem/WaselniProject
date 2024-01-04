@@ -47,7 +47,7 @@ WHERE
         echo "<td>".$row['time']."</td>";
         echo "<td>".$row['availableNB']."</td>";
         echo "<td class = link><button class=but onclick=sendRequest(".$row['tripID'].")>send request</button></td>";
-        echo "<td class = requestStatus></td>";
+   
         
         if (isset($_GET['err'])) {
             if ($_GET['err'] == $row['tripID'] ) {
@@ -55,7 +55,6 @@ WHERE
                 echo "<td class = dynamic>request already sended</td>";
             }else {
                 # code...
-                echo "<td class = dynamic></td>";
             }
         }
         if (isset($_GET['req'])) {
@@ -64,7 +63,7 @@ WHERE
                 echo "<td class = dynamic>request sent</td>";
             }else {
                 # code...
-                echo "<td class = dynamic></td>";
+                
             }
         }
         if (isset($_GET['full'])) {
@@ -73,7 +72,7 @@ WHERE
                 echo "<td class = dynamic>this trip are full</td>";
             }else {
                 # code...
-                echo "<td class = dynamic></td>";
+                
             }
         }
         echo "</tr>";

@@ -48,7 +48,7 @@ Order By driverName ASC
                                                 echo "<td class = dynamic>request already sended</td>";
                                             }else {
                                                 # code...
-                                                echo "<td class = dynamic></td>";
+                                                
                                             }
                                         }
                                         if (isset($_GET['req'])) {
@@ -57,7 +57,7 @@ Order By driverName ASC
                                                 echo "<td class = dynamic>request sent</td>";
                                             }else {
                                                 # code...
-                                                echo "<td class = dynamic></td>";
+                                                
                                             }
                                         }
                                         if (isset($_GET['full'])) {
@@ -66,7 +66,7 @@ Order By driverName ASC
                                                 echo "<td class = dynamic>this trip are full</td>";
                                             }else {
                                                 # code...
-                                                echo "<td class = dynamic></td>";
+                                                
                                             }
                                         }
                                         echo "</tr>";

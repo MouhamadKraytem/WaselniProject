@@ -21,7 +21,7 @@ while ($row = mysqli_fetch_array($res)) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- small css file -->
-    <link rel="stylesheet" href="./showTripStyleee.css">
+    <link rel="stylesheet" href="./showTripStylee.css">
     <title>Show trip for students :</title>
 </head>
 <body>

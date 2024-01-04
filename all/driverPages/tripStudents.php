@@ -33,7 +33,7 @@
     <title>thank you || DMZ</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="thankyous.css" />
+    <link rel="stylesheet" href="tripStd.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
   </head>
@@ -44,8 +44,8 @@
       <span class="overlay"></span>
     
       <div class="modal-box">
-        <i class="fa-regular fa-circle-check"></i>
-        <h2>Completed</h2>
+        <!-- <i class="fa-regular fa-circle-check"></i> -->
+        <h2>Students</h2>
         <?php
     if (isset($_GET['trip'])) {
         include("../connection.php");
@@ -70,29 +70,12 @@
         }
     }
     ?>
-        <h3>Thank you, Your request has been answered</h3>
 
         <div class="buttons">
-          <button class="close-btn"><a href="profileDriver.php">Ok, Close</a></button>
+          <button class="close-btn"><a href="profileDriver.php">Return</a></button>
         </div>
       </div>
     </section>
-
-
-    
-
-    <!-- <script>
-      const section = document.querySelector("section"),
-        overlay = document.querySelector(".overlay"),
-        showBtn = document.querySelector(".show-modal"),
-        closeBtn = document.querySelector(".close-btn");
-
-      showBtn.addEventListener("click", () => section.classList.add("active"));
-
-      overlay.addEventListener("click", () => section.classList.remove("active"));
-
-      closeBtn.addEventListener("click", () => section.classList.remove("active"));
-    </script> -->
     <script>
       const section = document.querySelector("section"),
         overlay = document.querySelector(".overlay"),
