@@ -32,8 +32,8 @@ input {
 
 #btn {
   width: 100%;
-  color: black;
-  background-color: rgb(189, 175, 22);
+  color: white;
+  background-color: #243B55;
   padding: 10px;
   font-size: large;
   border-radius: 10px;

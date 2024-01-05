@@ -74,7 +74,7 @@ body{
 }
 .accordion-text li .question-arrow .arrow{
   font-size: 20px;
-  color: #595959;
+  color: white;
   transition: all 0.3s ease;
 }
 .accordion-text li.showAnswer .question-arrow .arrow{
@@ -86,7 +86,7 @@ body{
 }
 .accordion-text li.showAnswer .question-arrow .question,
 .accordion-text li.showAnswer .question-arrow .arrow{
-  color: #0c356A;
+  color: whitesmoke;
 }
 .accordion-text li .line{
   display: block;
@@ -99,7 +99,7 @@ body{
   width: 92%;
   font-size: 15px;
   font-weight: 500;
-  color: #595959;
+  color: white;
   display: none;
 }
 .accordion-text li.showAnswer p{
@@ -157,12 +157,18 @@ a{
   
 }
 button{
-  background-color: #f3cd34;
-  margin: 20px    ;
-  color: #0c356A;
+  background-color: #0c356A;
+  margin: 20px;
+   height: 40px;
+   width: 50px;
+  border-radius: 20%;
   padding-top: -20px;
   font-style: italic;
-  border-left: #0c356A;
+  /* border-left: #0c356A; */
+}
+button a{
+  color:white;
+   
 }
 .navbar {
         

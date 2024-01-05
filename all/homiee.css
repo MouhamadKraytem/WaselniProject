@@ -172,6 +172,10 @@ section {
     flex-direction: column;
     align-items: center;
 }
+/* .row .col .ctn {
+    background-color: #243B55;
+    color:white;
+} */
 .events .row {
     margin-top: 50px;
 
