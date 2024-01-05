@@ -138,7 +138,7 @@ body{
 
 .container .profile{
    padding:20px;
-   background-color: #fff6;
+   background-color: #81C4E6;
    box-shadow: var(--box-shadow);
    text-align: center;
    width: 400px;
@@ -180,13 +180,13 @@ body{
    align-items: center;
    justify-content: center;
    padding:20px;
-   background-color: #0c356A;
+   background-color: #BCD7ED;
     
 }
 
 .update-profile form{
    padding:20px;
-   background-color: var(--white);
+   background-color: #81C4E6;
    box-shadow: var(--box-shadow);
    text-align: center;
    width: 700px;

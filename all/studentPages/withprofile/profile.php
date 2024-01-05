@@ -139,9 +139,9 @@ if(isset($_POST['update_profile'])){
 </body>
 </html>
 <style>
-   body{
+   /* body{
       background:url(bacg.jpg);
-   }
+   } */
    
    
    </style>

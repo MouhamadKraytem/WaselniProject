@@ -14,7 +14,7 @@
 }
 
 body {
-	background:#0c356a;
+	background:#BCD7ED;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -28,7 +28,7 @@ body {
 
 
 .wrapper {
-	background: #fff6;
+	background: #81C4E6;
 	padding: 2rem;
 	max-width: 576px;
 	width: 100%;

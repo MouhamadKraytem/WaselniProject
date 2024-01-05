@@ -3,7 +3,7 @@ include('../connection.php');
 ?>
 <head>
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="./withprofile/css/styleee.css">
+   <link rel="stylesheet" href="./withprofile/css/stylee.css">
 </head>
       <div class="profile">
          <?php

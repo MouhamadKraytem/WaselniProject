@@ -7,14 +7,14 @@ body{
     /* min-height: 100vh; */
     display: flex;
     font-family: 'Roboto', sans-serif;
-    background-color: #0c356a;
+    background-color: #BCD7ED;
      
 }
 .table_responsive {
     width: 95%;
     height: 100%;
-    border: 1px solid #0c356a;
-    background-color: #0c356a;
+    border: 1px solid #BCD7ED;
+    background-color: #BCD7ED;
     padding: 35px;
     overflow: auto;
     margin: auto;

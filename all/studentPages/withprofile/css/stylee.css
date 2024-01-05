@@ -128,7 +128,7 @@ body{
 
 .container{
    min-height: 100vh;
-   background-color: #0c356a !important;
+   background-color: #BCD7ED !important;
    display: flex;
    align-items: center;
    justify-content: space-evenly;
@@ -138,7 +138,7 @@ body{
 
 .container .profile{
    padding:20px;
-   background-color: var(--white);
+   background-color: #81C4E6;
    box-shadow: var(--box-shadow);
    text-align: center;
    width: 400px;
@@ -175,7 +175,7 @@ body{
 
 .update-profile{
    min-height: 100vh;
-   background-color:#0c356a;
+   background-color:#BCD7ED;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -184,7 +184,7 @@ body{
 
 .update-profile form{
    padding:20px;
-   background-color: var(--white);
+   background-color:#81C4E6;
    box-shadow: var(--box-shadow);
    text-align: center;
    width: 700px;

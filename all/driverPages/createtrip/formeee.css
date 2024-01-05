@@ -10,14 +10,14 @@ body{
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color:#0c356a;
+  background-color:#BCD7ED;
   background-size: cover;
 }
 
 .container{
   width: 100%;
   max-width: 650px;
-  background: #2980b9;
+  background: #81C4E6;
   padding: 28px;
   margin: 0 28px;
   border-radius: 10px;

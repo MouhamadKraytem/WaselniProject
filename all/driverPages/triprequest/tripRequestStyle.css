@@ -9,7 +9,7 @@
 body {
     min-height: 100vh;
     /* background: url(images/html_table.jpg) center / cover; */
-    background-color: #0c356A !important;
+    background-color: #BCD7ED !important;
     }
     
     
@@ -19,7 +19,7 @@ main.table {
     position: absolute;
     width: 75vw;
     height: 70vh;
-    background-color: #f2f2f2;
+    background-color: #81C4E6;
     top: 10%;
     left: 14%;
     backdrop-filter: blur(7px);
@@ -31,7 +31,7 @@ main.table {
 .table__header {
     width: 90%;
     height: 10%;
-    background-color: #fff4;
+    background-color: #81C4E6;
     padding: .8rem 1rem;
 
     display: flex;
@@ -75,7 +75,7 @@ main.table {
 .table__body {
     width: 95%;
     max-height: calc(89% - 1.6rem);
-    background-color: #fff5;
+    background-color: #81C4E6;
     
     margin: .8rem auto;
     border-radius: .6rem;
