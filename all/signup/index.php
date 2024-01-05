@@ -7,35 +7,39 @@ include('./signup.php');
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sign In Waselni</title>
+    <title>SignUP Waselni</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="./singnInStyleee.css">
+    <link rel="stylesheet" href="./singnInStylee.css">
   </head>
   <body>
       <div id="form">
-            <h1 id="heading">Welcom Back  </h1><br>
+            <h1 id="heading">  Welcome  </h1><br>
             
             <form name="form" action="./index.php" method=post>
 
                 <i class="fa fa-user fa-lg"></i>
+                 
                 <input type="text" id="user" name="username" placeholder="Enter Username"  > <br>
                 <span class="error"><?php echo isset($errors['username']) ? $errors['username'] : '' ?></span>
                 <br>
                 
 
                 <i class="fa-solid fa-envelope fa-lg"></i>
+                
                 <input type="email" id="email" name="email" placeholder="Enter Email" ><br>
                 <span class="error"><?php echo isset($errors['email']) ? $errors['email'] : '' ?></span>
                 <br>
 
 
                 <i class="fa-solid fa-lock fa-lg"></i>
+                 
                 <input type="password" id="pass" name="pass" placeholder="Create Password" ><br>
                 <span class="error"><?php echo isset($errors['password']) ? $errors['password'] : '' ?></span>
                 <br>
 
                 <i class="fa-solid fa-lock fa-lg"></i>
+                 
                 <input type="password" id="cpass" name="cpass" placeholder="Retype Password" ><br>
                 <span class="error"><?php echo isset($errors['cpassword']) ? $errors['cpassword']: '' ?></span>
                 <br>

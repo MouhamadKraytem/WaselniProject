@@ -883,7 +883,7 @@ background-color: #243B55;
     background-position: center;
 }
 .fast-booking .fast-hading{
-    color: #243B55;
+    color: white;
     font-size: 38px;
     text-align: center;
     padding-top: 2rem;
@@ -912,7 +912,7 @@ background-color: #243B55;
 }
 .inner-fast-text h1{
     font-size: 22px;
-    color: #243B55;
+    color: white;
     padding: 1rem;
 }
 .inner-fast-text p{

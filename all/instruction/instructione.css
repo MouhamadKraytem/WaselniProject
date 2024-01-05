@@ -17,7 +17,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--body-clr);
+	background-color: #191d28;
 }
 .testimonials-section{
 	width: 100%;

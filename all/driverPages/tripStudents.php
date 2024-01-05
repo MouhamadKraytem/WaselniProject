@@ -33,11 +33,10 @@
     <title>thank you || DMZ</title>
 
     <!-- CSS -->
-<<<<<<< HEAD
-    <link rel="stylesheet" href="thankyou.css" />
-=======
-    <link rel="stylesheet" href="tripStd.css" />
->>>>>>> f7a548d3398558a551f0cd47326eb0471251083c
+
+    <link rel="stylesheet" href="thankyous.css" />
+    <link rel="stylesheet" href="tripStds.css" />
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
   </head>
