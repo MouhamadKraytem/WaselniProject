@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2023 at 07:24 PM
+-- Generation Time: Jan 01, 2024 at 10:02 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -137,7 +137,11 @@ CREATE TABLE `rating` (
 
 INSERT INTO `rating` (`ratingID`, `driverID`, `rate`, `userID`, `opinion`) VALUES
 (6, 49, 4, 46, '45hvkl'),
-(7, 49, 4, 46, 'tkiyc');
+(7, 49, 4, 46, 'tkiyc'),
+(8, 49, 4, 46, 'moaihamd'),
+(9, 49, 3, 34, 'doummar'),
+(10, 49, 2, 46, 'ibihbihbi'),
+(11, 49, 3, 46, '');
 
 -- --------------------------------------------------------
 
@@ -157,7 +161,7 @@ CREATE TABLE `request` (
 --
 
 INSERT INTO `request` (`requestID`, `tripID`, `studentID`, `answer`) VALUES
-(84, 39, 46, NULL);
+(93, 47, 46, NULL);
 
 -- --------------------------------------------------------
 
@@ -170,13 +174,6 @@ CREATE TABLE `reservetrip` (
   `tripID` int(11) NOT NULL,
   `studentID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `reservetrip`
---
-
-INSERT INTO `reservetrip` (`reservationID`, `tripID`, `studentID`) VALUES
-(22, 36, 46);
 
 -- --------------------------------------------------------
 
@@ -239,11 +236,8 @@ CREATE TABLE `trip` (
 --
 
 INSERT INTO `trip` (`tripID`, `fromlocationID`, `toLocationID`, `time`, `dayID`, `availableNB`, `DriverID`) VALUES
-(36, 3, 1, 10, 3, 2, 49),
 (38, 1, 3, 7, 1, 1, 53),
-(39, 4, 1, 9, 4, 3, 49),
-(40, 2, 3, 10, 4, 3, 49),
-(41, 3, 4, 7, 1, 1, 49);
+(47, 2, 3, 10, 4, 3, 49);
 
 -- --------------------------------------------------------
 
@@ -260,7 +254,7 @@ CREATE TABLE `user` (
   `email` varchar(30) NOT NULL,
   `Description` varchar(500) DEFAULT NULL,
   `locationID` int(11) DEFAULT NULL,
-  `image` varchar(30) DEFAULT NULL
+  `image` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -270,13 +264,14 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `username`, `gender`, `password`, `role`, `email`, `Description`, `locationID`, `image`) VALUES
 (31, 'mouhamad', 'male', 'Mouhamad123$', 'driver', 'moohamadkraytem15@gmail.com', NULL, NULL, ''),
 (34, 'Bahaa', 'male', 'Yuri7179#', 'student', 'mouaha@gmail.com', NULL, NULL, ''),
-(46, 'Ammar', 'male', 'Mouhamad123#', 'student', 'mouhaamd12@gmail.com', NULL, NULL, ''),
+(46, 'Ammar', 'male', 'Mouhamad123#', 'student', 'mouhaamd12@gmail.com', 'ghjk', 3, '9e1c2662-bc12-4ee1-beb6-39a147241f9f.jpg'),
 (48, 'omar', 'male', '1231', 'driver', 'khtmeto@gmail.com', NULL, NULL, ''),
-(49, 'Doummar', 'female', 'Doummar123#', 'driver', 'doummar123@gmail.com', NULL, 2, 'default.jpg'),
+(49, 'Doummar', 'female', 'Doummar123#', 'driver', 'doummar123@gmail.com', NULL, 2, 'lynx.png'),
 (50, 'Naim', 'male', '12345678', 'student', 'naim@gmail.com', NULL, NULL, ''),
 (51, 'Ahmad', 'male', 'Ahmad123#', 'student', 'ahmad123@gmail.com', NULL, NULL, ''),
 (52, 'Tarek', 'female', '$2y$10$mNjl3mQEnbk0Rw9sLGdUD.J', 'driver', 'tarekrimeh234@gmail.com', NULL, NULL, ''),
-(53, 'Shaza', 'female', 'Shaza123#', 'driver', 'shaza123@gmail.com', NULL, NULL, '');
+(53, 'Shaza', 'female', 'Shaza123#', 'driver', 'shaza123@gmail.com', NULL, NULL, ''),
+(54, 'abdallah Korhani', 'male', 'abdallahK@123', 'student', 'abdallahkorhani1@gmail.com', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -388,19 +383,19 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `ratingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ratingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `requestID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `requestID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `reservetrip`
 --
 ALTER TABLE `reservetrip`
-  MODIFY `reservationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `reservationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `time`
@@ -412,13 +407,13 @@ ALTER TABLE `time`
 -- AUTO_INCREMENT for table `trip`
 --
 ALTER TABLE `trip`
-  MODIFY `tripID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `tripID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- Constraints for dumped tables

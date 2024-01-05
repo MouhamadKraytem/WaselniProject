@@ -50,11 +50,6 @@ $id = $_SESSION['id'];
     <link rel="stylesheet" href="./profile.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel= " stylesheet "href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <style>
-        /* .navLINK{
-            color:white;
-        } */
-    </style>
 </head>
  
   <body>
@@ -82,6 +77,14 @@ $id = $_SESSION['id'];
     <main class="table">
         <section class="table__header">
             <h1>Your Trips</h1>
+            <h4><?php
+                if (isset($_GET["msg"])) {
+                    # code...
+                    echo $_GET["msg"];
+                }else {
+                    echo "";
+                }
+            ?></h4>
             <a href="./createtrip/formtrip.php" class='newtrip'>create a trip</a>
             <!-- <a href="#"  class="trip">Your Trips</a> -->
 
@@ -97,7 +100,7 @@ $id = $_SESSION['id'];
                         <th> available space </th>
                         <th> Show Students</th>
                         <th> Delete</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>

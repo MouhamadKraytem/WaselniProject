@@ -57,7 +57,7 @@ body{
 }
 
 .delete-btn{
-   background-color: var(--red);
+   background-color: var(--black);
 }
 
 .delete-btn:hover{

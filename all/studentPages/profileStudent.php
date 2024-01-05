@@ -41,7 +41,7 @@ include('../connection.php');
     <main class="table">
      
         <section class="table__header">
-            <h1>Customer's - W'aselni</h1>
+            <h1>Driver's - W'aselni</h1>
             <!-- <div class="input-group">
                 <input type="search" placeholder="Search Data...">
             </div> -->
@@ -119,6 +119,7 @@ include('../connection.php');
 </div>  
 
 </div>
+
 </body>
     
 

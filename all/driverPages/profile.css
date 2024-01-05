@@ -8,7 +8,9 @@
     .container {
         background-color: #BCD7ED !important;
     }
-
+    ul li a{
+        color: white !important;
+    }
     main.table {
         width: 55vw;
         height: 55vh;
@@ -281,7 +283,7 @@
     }
 
     .logo {
-        color: black;
+        color: white;
     }
 
     .active {

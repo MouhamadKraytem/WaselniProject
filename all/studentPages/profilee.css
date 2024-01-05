@@ -11,9 +11,18 @@
        background-color: #BCD7ED !important;
         
     }
+
     
+
+    table tr td a {
+        color:blue !important;
+    }
+
     .container {
         background-color: #BCD7ED !important;
+    }
+    a{
+        color: white !important;
     }
     main.table {
         width: 55vw;
@@ -74,7 +83,7 @@
     .table__body {
         width: 95%;
         max-height: calc(89% - 1.6rem);
-        background-color: #fff6;
+        background-color: #81C4E6;
 
         margin: .8rem auto;
         border-radius: .6rem;

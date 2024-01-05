@@ -90,7 +90,10 @@ $getRates = "SELECT
         </table>
       </div>
     </div>
+
     <a href="" class="ret">Return</a>
+
+
 </body>
  
 </html>

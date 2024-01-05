@@ -60,7 +60,7 @@ $getTripResult = mysqli_query($conn , $getAlltrips);
                 echo "<td class = dynamic>request sent</td>";
             }else {
                 # code...
-                echo "<td class = dynamic></td>";
+                
             }
         }
         if (isset($_GET['full'])) {
@@ -69,7 +69,7 @@ $getTripResult = mysqli_query($conn , $getAlltrips);
                 echo "<td class = dynamic>this trip are full</td>";
             }else {
                 # code...
-                echo "<td class = dynamic></td>";
+                
             }
         }
         echo "</tr>";
