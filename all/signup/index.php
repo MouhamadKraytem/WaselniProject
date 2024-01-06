@@ -1,6 +1,18 @@
 <?php 
 include('../connection.php');
 include('./signup.php');
+session_start();
+if (isset($_SESSION['role'])) {
+    # code...
+    $role = $_SESSION['role'];
+	echo $role;
+    if ($role == "driver") {
+        # code...
+        header("location:../driverPages/profileDriver.php");
+    }else {
+        header("location:../studentPages/profileStudent.php");
+    }
+}
     ?>
 <!doctype html>
 <html lang="en">

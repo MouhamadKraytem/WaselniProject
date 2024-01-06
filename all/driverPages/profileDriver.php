@@ -55,9 +55,9 @@ $id = $_SESSION['id'];
   <body>
         <div class="page">
         <nav class="navbar">
-            <h1 class="logo">W'aselni</h1>
+            <a href="../index.php"><h1 class="logo">W'aselni</h1></a>
             <ul class="nav-links">
-                 <a href=".../driverPages/index.html" class="tripR">Home</a></li>
+                 <a href="../index.php" class="tripR">Home</a></li>
                 <a href="./triprequest/triprequest.php " class="tripR" >Trip Request <?php echo "($nb)"; ?></a>
                 <a href="./showRating/tablerating.php" class=tripR>Your Rates</a>
                  <a href="../contactform/contact.php?" class="tripR">Contact-US</a></li>

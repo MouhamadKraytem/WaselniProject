@@ -149,9 +149,8 @@
         <section class="about">
             <div class="about-image">
                 <img src="img.jpg">
-            <!-- </div> -->
+           
             <div class="about-content">
-                <h2> </h2>
                 <p>Hello!
                     We would like to announce the establishment of <b>Wassalni,</b> 
                     a company dedicated to developing a specialized website for students,
@@ -165,6 +164,7 @@
                 <a href="About.html" class="read-more">Read More</a>
             </div>
             </div>
+            
         </section>
     </div>
     <!--conttact form -->
@@ -196,7 +196,7 @@
           <div class="right-side">
             <div class="topic-text">Send us a message</div>
             <p>If you have any business from me or any kind of inquiries related to my software, our company you can send me a message from here. It is my pleasure to help you.</p>
-          <form action="#">
+          <form action="" method=post>
             <div class="input-box">
               <input type="text" placeholder="Enter your name">
             </div>
@@ -207,25 +207,28 @@
                 <textarea placeholder="write your message" name = msg></textarea>
             </div>
             <div class="button">
-              <input type="button" value="Send Now" >
+              <input type="submit" value="Send Now" class=ctn name=sb id=send>
             </div>
           </form>
+          <?php
+            if (!isset($_SESSION["id"]) && isset($_POST['sb'])) {
+                # code...
+                echo "<p class=ll>you need to <a href='./signup/index.php' class=link>Sign up</a> first <br>";
+                echo "Or <a href='./signup/index.php' class=link>Login</a> </p>";
+                echo "<script>window.scrollTo(0,3700);</script>";
+                
+            }
+          ?>
         </div>
         </div>
       </div>
-    <!-- <a href="../signup/index.php" >letstart</a> -->
-    <!--footer-->
-    <!-- <section class="footer">
-        <p>Email:alzahabidoummar@gmail.com | phone:0096171612665</p>
-        <p>Copyright @ 2023 || <b>october</b></p>
-    </section> -->
+
     <div class="footer">
         <a href="#" class="fo"><span class="fa fa-whatsapp"></span></a>
         <a href="#" class="fo"><span class="fa fa-facebook-f"></span></a>
         <a href="#" class="fo"><span class="fa fa-instagram"></span></a>
         <a href="#"><span class="fa fa-envelope"></span></a>
     </div>
-
     <script>
         const menuBtn = document.querySelector('.menu-btn')
         const navlinks = document.querySelector('.nav-links')
@@ -233,8 +236,7 @@
         menuBtn.addEventListener('click', () => {
             navlinks.classList.toggle('mobile-menu')
         })
-
- 
+    
     </script>
 </body>
 

@@ -196,6 +196,7 @@ p{
 }
 .events .ctn {
     margin-top: 20px;
+    margin-bottom: 20px;
     
 }
 body , html {
@@ -715,9 +716,9 @@ body.dark .search-field i{
     transition: 0.5s ease;
 }
 
-.about-image:hover img{
+/* .about-image:hover img{
     transform: scale(1.2);
-}
+} */
 
 .about-content{
     flex: 1;
@@ -1138,6 +1139,19 @@ background-color: #243B55;
     margin-bottom: 35px;
     
 
+
+}
+
+.link{
+    color: red;
+    text-decoration:underline;
+    
+}
+
+.ll{
+    font-size: 1.3em;
+    padding: 0;
+    margin: 0;
 }
 /* .footer  a {
     color:white;
