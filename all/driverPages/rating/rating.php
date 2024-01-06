@@ -48,7 +48,7 @@ if (isset($_POST['sb'])) {
 			<div class="btn-group">
 				<button type="submit" class="btn submit "name=sb>Submit</button>
 				<!-- need php code for return -->
-				<a href='../'><button class="btn cancel">Cancel</button></a>
+				<a href='../../studentPages/profileStudent.php'><button class="btn cancel">Cancel</button></a>
 			</div>
 		</form>
 	</div>
