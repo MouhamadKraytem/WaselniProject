@@ -17,7 +17,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #191d28;
+	background-color: #BCD7ED;
 }
 .testimonials-section{
 	width: 100%;
@@ -95,7 +95,8 @@ body{
 .profile-desc span:nth-child(1){
 	font-size: 24px;
 	font-weight: bold;
-	color: var(--primary-clr);
+	color: var(--heading-clr);
+	color:white;
 }
 .profile-desc span:nth-child(2){
 	font-size: 15px;
