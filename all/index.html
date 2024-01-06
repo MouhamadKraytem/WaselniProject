@@ -187,7 +187,7 @@
               <div class="text-two">0096171794133</div>
             </div>
             <div class="email details">
-              <i class="fas fa-envelope"></i>
+                <!-- <span class="fa fa-envelope"></span> -->
               <div class="topic">Email</div>
               <div class="text-one">alzahabidoummar@gmail.com</div>
               <div class="text-two">Mouhamadkraytem2002@gmail.com</div>
