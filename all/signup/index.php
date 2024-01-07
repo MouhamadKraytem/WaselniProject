@@ -58,7 +58,7 @@ if (isset($_SESSION['role'])) {
 
                 <label for="gender">Select your gender:</label>
 
-        <select name="gender" id="gender">
+        <select name="gender" id="gender"  class="form-control">
             <?php
                 $query = "SELECT * FROM `gender` ";
 
@@ -68,11 +68,11 @@ if (isset($_SESSION['role'])) {
                     echo "<option value=".$row["gender"].">".$row['gender']."</option>";
                 }
             ?>
-        </select></br></br>
+        </select>
 
 
         <label for="rol">Select Categorie :</label>
-        <select name="rol" id="rol">
+        <select name="rol" id="rol"  class="form-control">
         <?php
                 $query = "SELECT * FROM `role` ";
 
