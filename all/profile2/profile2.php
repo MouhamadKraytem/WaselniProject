@@ -5,20 +5,26 @@ if (isset($_GET['userid'])) {
 
     session_start();    
     $userId = $_GET["userid"];
-    $getUserInfo = "SELECT user.*, l.locationName
+    $getUserInfo = "SELECT user.*
     FROM user 
-    JOIN location AS l ON user.locationID = l.locationID
     WHERE id = $userId";
     $getUserInfoRes= mysqli_query($conn , $getUserInfo);
     
     $row = mysqli_fetch_array($getUserInfoRes);
-    if ( $row["role"] == "driver" ) {
+    
+    if (isset($row["image"])) {
+        # code...
+        if ( $row["role"] == "driver" ) {
         # code...
         $image = '../driverPages/withprofile/uploaded_img/'.$row['image'];
-    }else {
+        }else {
         # code...
         $image = "../studentPages/withprofile/uploaded_img/".$row['image'];
     }
+    }else {
+        $image = "../studentPages/withprofile/images/default-avatar.png";
+    }
+    
 }else {
     header('location:../index.html');
 }
@@ -55,15 +61,12 @@ if (isset($_GET['userid'])) {
                                 <?php
             
             // echo $image;
-            if($row['image'] == NULL){
-               echo '<img src="images/default-avatar.png" class=profile>';
-            }else{
-               echo "<img src=".$image." alt=userImage class=profile>";
-            }
+            echo '<img src="'.$image.'" class=profile>';
+            
                                 ?>
                             
                             </div>
-                        <h1><?php echo  $row['username']; ?></h1>
+                        <h1><?php echo $row['username']?></h1>
                         <div class="info">
                             <div class="col">
                             <i class="fab fa-twitter"></i>
@@ -87,13 +90,21 @@ if (isset($_GET['userid'])) {
                     <div class=sec1>
                     <h3>BIO:</h3>
                     <?php
-                        echo "<p class=desc>descriptiom</p>";
+                        if (!isset($row['Description'])) {
+                            echo "description";
+                        }else {
+                            echo $row['Description'];
+                        }
                     ?>
                     </div>
                         <div class=sec1>
                             <h3 id = loc>Location : </h3>
-                            <p><?php echo $row['locationName']; ?> </p>
-                            <?php
+                            <p><?php if (!isset($row['locationID'])) {
+                                            echo "location";
+                                    }else {
+                                        echo $row['locationID'];
+                                    }?> </p>
+                                <?php
                                 if ($row['role'] === "driver") {
                                     echo '<a href="../driverPages/rating/rating.php?driverID='.$row['id'].'"><button class = rateButton >Rate Driver</button></a>';
                                 }
