@@ -23,10 +23,10 @@ include('../connection.php');
         <nav class="navbar">
             <h1 class="logo">W'aselni</h1>
             <ul class="nav-links">
-                <li class="active"><a href="#"></a>Home</li>
-                <li class="active"> <a href="../showtrip/showtrip.php">Find Trips </li></a>
-                <li class="active"> <a href="#"> </a>ABOUT </li>
-                <li class="active"><a href="../contactform/contact.php?"> Contact-US </a></li>
+                <a href="#"><li class="active">Home</li></a>
+                <a href="../showtrip/showtrip.php"><li class="active"> Find Trips </a></li>
+                <a href="#"><li class="active">  ABOUT </li></a>
+                <a href="../contactform/contact.php?"><li class="active"> Contact-US </li></a>
             </ul>
         </nav>
         

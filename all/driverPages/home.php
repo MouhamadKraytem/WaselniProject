@@ -15,7 +15,7 @@ include('../connection.php');
             $image = './withprofile/uploaded_img/'.$userData['image'];
             // echo $image;
             if($userData['image'] == NULL){
-               echo '<img src="images/default-avatar.png">';
+               echo '<img src="./withprofile/images/default-avatar.png">';
             }else{
                echo "<img src=".$image." alt=userImage>";
             }

@@ -37,6 +37,8 @@ $getRates = "SELECT
         <table>
           <thead>
             <tr>
+              
+              <th></th>
               <th>Student</th>
               <th>Comment</th>
               <th>Rate</th>
@@ -50,8 +52,8 @@ $getRates = "SELECT
           while ($row = mysqli_fetch_array($getRatesRes)) {
             $rate = $row["rate"];
             echo "<tr>";           
-            echo "<td><div class=doubleInfo><img src='../withprofile/uploaded_img/".$row['image']."' > 
-                <span>".$row['username']."</span></div></td>";
+            echo "<td><div class=doubleInfo><img src='../../studentPages/withprofile/uploaded_img/".$row['image']."' > 
+                </td><td><span>".$row['username']."</span></div></td>";
             echo "<td>".$row['opinion']."</td>";
 
           

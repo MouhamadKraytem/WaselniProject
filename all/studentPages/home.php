@@ -35,7 +35,7 @@ if(isset($_GET['logout'])){
             $res = mysqli_query($conn,$query);
             $userData = mysqli_fetch_array($res);
             if($userData['image'] == NULL){
-               echo '<img src="images/default-avatar.png">';
+               echo '<img src="./withprofile/images/default-avatar.png">';
             }else{
                echo '<img src="./withprofile/uploaded_img/'.$userData['image'].'">';
             }
